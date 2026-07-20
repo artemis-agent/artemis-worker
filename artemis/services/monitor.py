@@ -42,7 +42,7 @@ async def check_active_jobs(
                 Company.ats_type, Company.ats_config, Company.slug,
             )
             .join(Company, Job.company_id == Company.id)
-            .where(Job.is_active == True)
+            .where(Job.is_active.is_(True))
             .where((Job.check_status.is_(None)) | (Job.check_status != "stale"))
             .order_by(Job.last_checked_at.asc().nulls_first())
             .limit(batch_size)

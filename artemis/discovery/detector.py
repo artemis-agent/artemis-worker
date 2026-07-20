@@ -5,7 +5,6 @@ from urllib.parse import urlparse
 import httpx
 from bs4 import BeautifulSoup
 
-from artemis.core.models import ATSType
 from artemis.scrapers.base import USER_AGENTS
 
 
@@ -110,7 +109,7 @@ async def detect_ats(careers_url: str) -> DetectionResult:
             response = await client.get(careers_url)
             html = response.text
             final_url = str(response.url)
-    except Exception as e:
+    except Exception:
         # Can't fetch page — fall through to blind probing
         html = ""
         final_url = careers_url

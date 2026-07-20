@@ -91,7 +91,7 @@ def slug_candidates(name: str, website: str = "") -> list[str]:
     """
     cands: set[str] = set()
     base = _normalize(name)
-    words = base.split()
+    _words = base.split()  # noqa: F841
 
     # 1. No-spaces / no-punctuation lowercase — primary slug, always safe to
     #    use even if the result happens to look like a common word (e.g.
@@ -447,13 +447,13 @@ async def main():
     print(f"{'═' * 70}")
     print(f"  Hits:   {len(hits)}")
     print(f"  Misses: {len(misses)}")
-    print(f"\nBy ATS:")
+    print("\nBy ATS:")
     by_ats: dict[str, int] = {}
     for h in hits:
         by_ats[h["ats"]] = by_ats.get(h["ats"], 0) + 1
     for ats, n in sorted(by_ats.items(), key=lambda x: -x[1]):
         print(f"  {ats:<20} {n}")
-    print(f"\nBy source:")
+    print("\nBy source:")
     by_src: dict[str, int] = {}
     for h in hits:
         by_src[h["discovered_from"]] = by_src.get(h["discovered_from"], 0) + 1
@@ -463,7 +463,7 @@ async def main():
     # Save summary
     with open("/tmp/probe_summary.json", "w") as f:
         json.dump({"hits": hits, "miss_count": len(misses), "miss_sample": misses[:30]}, f, indent=2, default=str)
-    print(f"\nSummary at /tmp/probe_summary.json")
+    print("\nSummary at /tmp/probe_summary.json")
 
 
 if __name__ == "__main__":

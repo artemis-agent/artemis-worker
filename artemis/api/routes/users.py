@@ -2,13 +2,11 @@
 
 import logging
 import uuid
-from datetime import datetime, timezone
 
 from starlette.requests import Request
 from starlette.responses import JSONResponse
 from starlette.routing import Route
 
-from artemis.core.config import settings
 
 logger = logging.getLogger("artemis.api.users")
 

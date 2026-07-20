@@ -34,11 +34,11 @@ async def demo(permalink: str):
         print("    (cannot continue without a website)")
         return
 
-    print(f"\n[2] Domain extracted for search anchoring")
+    print("\n[2] Domain extracted for search anchoring")
     print(f"    domain  = {_query_domain(website)}")
 
-    print(f"\n[3] Running discover_company (dry_run=True, no YAML written)")
-    print(f"    queries that will be issued:")
+    print("\n[3] Running discover_company (dry_run=True, no YAML written)")
+    print("    queries that will be issued:")
     company_name = permalink.replace("-", " ").title()
     result = await discover_company(
         name=company_name,
@@ -47,7 +47,7 @@ async def demo(permalink: str):
         dry_run=True,
     )
 
-    print(f"\n[4] Result")
+    print("\n[4] Result")
     print(f"    status         = {result.status}")
     print(f"    ats            = {result.ats}")
     print(f"    ats_config     = {result.ats_config}")

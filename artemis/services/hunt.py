@@ -325,7 +325,6 @@ async def run_discovery_agent(seed_sources: list[str] | None = None, max_compani
 
 async def _expand_via_search(limit: int) -> dict:
     """Discover more companies by searching for 'top tech companies hiring' etc."""
-    from artemis.discovery.sources import search_careers_page
 
     search_queries = [
         "top tech startups hiring 2026",

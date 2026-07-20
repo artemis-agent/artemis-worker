@@ -98,7 +98,7 @@ async def main():
     # Dump full results as JSON
     with open("/tmp/fortune500_results.json", "w") as f:
         json.dump(results, f, indent=2, default=str)
-    print(f"\nFull results saved to /tmp/fortune500_results.json")
+    print("\nFull results saved to /tmp/fortune500_results.json")
 
 
 if __name__ == "__main__":

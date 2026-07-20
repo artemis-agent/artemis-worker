@@ -3,9 +3,9 @@
 import asyncio
 import logging
 
-logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s %(message)s")
-
 from artemis.discovery.search import default_searcher
+
+logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s %(message)s")
 
 
 async def main():

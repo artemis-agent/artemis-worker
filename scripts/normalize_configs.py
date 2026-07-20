@@ -182,7 +182,7 @@ def main() -> int:
     print(f"  Unchanged       : {len(files) - total_changed - parse_errors}")
     print(f"  Dry run         : {args.dry_run}")
     if summary:
-        print(f"\nChange categories:")
+        print("\nChange categories:")
         for cat, n in sorted(summary.items(), key=lambda x: -x[1]):
             print(f"  {cat:<50} {n}")
     return 0

@@ -251,10 +251,10 @@ async def _compute_recommendations(user_id: str, limit: int = 20) -> list[dict]:
     6. Desired role match (title alignment with user's desired roles)
     7. Recency boost (newer postings ranked slightly higher)
     """
-    from artemis.core.models import Job, User
-    from artemis.normalizer.skill_taxonomy import normalize_skill, get_skill_category
+    from artemis.core.models import User
+    from artemis.normalizer.skill_taxonomy import get_skill_category
     from sqlalchemy import text
-    from datetime import datetime, timezone, timedelta
+    from datetime import datetime, timezone
 
     async with async_session() as session:
         # Get user's latest resume embedding

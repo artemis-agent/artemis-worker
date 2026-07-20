@@ -43,7 +43,6 @@ class SmartRecruitersScraper(BaseScraper):
                     except (ValueError, TypeError):
                         pass
 
-                company_info = item.get("company", {})
                 job_url = f"https://jobs.smartrecruiters.com/{company_id}/{ref}" if ref else ""
 
                 jobs.append(ScrapedJob(

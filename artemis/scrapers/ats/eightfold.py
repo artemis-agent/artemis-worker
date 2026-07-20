@@ -254,7 +254,7 @@ def _normalize_employment_type(et: str) -> str:
 def _extract_jsonld_location(loc) -> str:
     """Turn jobLocation (dict or list of dicts) into a readable string."""
     if isinstance(loc, list):
-        return " | ".join(filter(None, (_extract_jsonld_location(l) for l in loc)))
+        return " | ".join(filter(None, (_extract_jsonld_location(loc) for loc in loc)))
     if not isinstance(loc, dict):
         return ""
     addr = loc.get("address") or {}

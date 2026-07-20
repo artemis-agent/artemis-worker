@@ -188,7 +188,7 @@ def daily_agent_discover_task(daily_cap: int = 30):
             targets,
             concurrency=5,
             max_companies=daily_cap,
-            summary_path=f"/tmp/agent_discover_daily.json",
+            summary_path="/tmp/agent_discover_daily.json",
         )
         logger.info(
             f"daily agent discover: {result['hits']}/{result['total']} new companies "

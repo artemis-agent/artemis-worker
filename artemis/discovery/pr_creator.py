@@ -1,4 +1,3 @@
-import pathlib
 
 import yaml
 from github import Auth, Github

@@ -20,7 +20,7 @@ async def main():
     concurrency = int(sys.argv[2]) if len(sys.argv) > 2 else 5
 
     names = _candidates_not_yet_known(max_companies)
-    print(f"\n== Bulk agent discovery ==")
+    print("\n== Bulk agent discovery ==")
     print(f"  candidates : {len(names)}")
     print(f"  concurrency: {concurrency}")
     print(f"  estimated  : ~{len(names) * 10 / concurrency / 60:.0f} min")

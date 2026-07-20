@@ -14,7 +14,8 @@ logging.getLogger("artemis.discovery.agent").setLevel(logging.INFO)
 async def main():
     name = sys.argv[1] if len(sys.argv) > 1 else "Vanta"
     # Clear any existing yaml so the early-exit doesn't short-circuit.
-    import pathlib, re
+    import pathlib
+    import re
     from artemis.core.config import settings
     slug = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
     p = pathlib.Path(settings.configs_dir) / f"{slug}.yaml"

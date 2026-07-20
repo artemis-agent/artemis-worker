@@ -41,16 +41,16 @@ async def main():
     pick = rng.choice(tail)
     name = pick["name"]
     website = pick.get("website", "")
-    print(f"\n== Step 2: picked random company ==")
+    print("\n== Step 2: picked random company ==")
     print(f"  name    : {name}")
     print(f"  website : {website}")
 
-    print(f"\n== Step 3: hunt (discover_company) ==")
+    print("\n== Step 3: hunt (discover_company) ==")
     t0 = time.perf_counter()
     result = await discover_company(name, website=website)
     hunt_s = time.perf_counter() - t0
 
-    print(f"\n== Results ==")
+    print("\n== Results ==")
     print(f"  status            : {result.status}")
     print(f"  ats               : {result.ats}")
     print(f"  ats_config        : {result.ats_config}")
@@ -59,7 +59,7 @@ async def main():
     print(f"  search_calls      : {result.search_calls}")
     print(f"  llm_calls         : {result.llm_calls}")
     print(f"  est_cost_usd      : ~${result.llm_calls * 0.01:.4f}")
-    print(f"\n== Timing ==")
+    print("\n== Timing ==")
     print(f"  crunchbase fetch  : {fetch_s:.1f}s")
     print(f"  hunt (end-to-end) : {hunt_s:.1f}s")
     yaml_written = result.status == "discovered"

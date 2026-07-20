@@ -1,6 +1,6 @@
 """Pydantic schemas for internal API request/response validation."""
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 
 
 # ── Jobs / Scrape ──

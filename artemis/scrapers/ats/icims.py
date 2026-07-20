@@ -1,6 +1,5 @@
 import json
 import re
-from urllib.parse import quote
 
 from bs4 import BeautifulSoup
 

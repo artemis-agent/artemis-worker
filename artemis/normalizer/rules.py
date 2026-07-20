@@ -2,7 +2,7 @@
 
 import re
 
-from artemis.normalizer.skill_taxonomy import SKILL_TAXONOMY, normalize_skill
+from artemis.normalizer.skill_taxonomy import SKILL_TAXONOMY
 
 
 # ── Skill extraction ──────────────────────────────────────────────────────

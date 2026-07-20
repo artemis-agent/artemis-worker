@@ -10,7 +10,6 @@ import uuid
 from datetime import datetime, timezone
 
 from sqlalchemy import select, text
-from sqlalchemy.dialects.postgresql import insert as pg_insert
 
 from artemis.core.database import async_session
 from artemis.core.models import Company, CompanyStatus, Job, ScrapeRun, ScrapeRunStatus
@@ -151,7 +150,7 @@ async def scrape_company(company_id: str, query: str = "", limit: int = 0) -> di
             if scraped:
                 scraped_urls = {sj.url for sj in scraped}
                 existing_active = await session.execute(
-                    select(Job).where(Job.company_id == company.id, Job.is_active == True)
+                    select(Job).where(Job.company_id == company.id, Job.is_active.is_(True))
                 )
                 for job in existing_active.scalars():
                     if job.url not in scraped_urls:

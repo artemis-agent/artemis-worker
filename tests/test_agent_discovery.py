@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import pytest
 
 from artemis.discovery.agent import (
     _canonical_careers_url,

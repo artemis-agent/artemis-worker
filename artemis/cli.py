@@ -3,7 +3,6 @@ import asyncio
 import click
 from sqlalchemy import select, text
 
-from artemis.core.config import settings
 
 
 @click.group()

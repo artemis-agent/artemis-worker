@@ -19,7 +19,6 @@ import json
 import logging
 import pathlib
 import re
-import sys
 import time
 from urllib.parse import urlparse
 
@@ -286,13 +285,13 @@ async def main():
     print(f"\n{'═' * 70}")
     print(f"  BULK DISCOVERY RESULTS — {len(results)} companies, {time.time()-started:.0f}s")
     print(f"{'═' * 70}")
-    print(f"\nBy status:")
+    print("\nBy status:")
     for s, n in sorted(by_status.items(), key=lambda x: -x[1]):
         print(f"  {s:<20} {n}")
-    print(f"\nBy detected ATS:")
+    print("\nBy detected ATS:")
     for ats, n in sorted(by_ats.items(), key=lambda x: -x[1]):
         print(f"  {ats:<20} {n}")
-    print(f"\nBy source:")
+    print("\nBy source:")
     for s, d in by_source.items():
         pct = 100 * d['ok'] / d['total'] if d['total'] else 0
         print(f"  {s:<15} {d['ok']:>4}/{d['total']:<4} ({pct:.0f}% success)")

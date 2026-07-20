@@ -1,4 +1,3 @@
-import pytest
 from artemis.scrapers.base import ScrapedJob
 
 

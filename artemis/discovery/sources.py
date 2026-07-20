@@ -685,7 +685,6 @@ async def fetch_yc_companies(limit: int = 500) -> list[dict]:
     results = []
     page = 1
     per_page = 25  # YC API ignores larger per_page values and always returns 25
-    OLD_BATCHES_OK = True
 
     def _accept(co: dict) -> bool:
         name = co.get("name", "")
@@ -835,7 +834,6 @@ async def fetch_builtin_companies(limit: int = 100) -> list[dict]:
 
 async def search_careers_page(company_name: str) -> str | None:
     """Find a company's careers page via DuckDuckGo search."""
-    from urllib.parse import unquote, urlparse, parse_qs
 
     query = f"{company_name} careers jobs site"
     async with httpx.AsyncClient(timeout=15.0, follow_redirects=True) as client:
