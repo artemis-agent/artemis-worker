@@ -1,0 +1,11 @@
+name: AgentMail
+slug: agentmail
+ats: ashby
+ats_config:
+  board_token: agentmail
+careers_url: https://agentmail.to
+verified: true
+discovered_from: yc
+discovered_jobs: 2
+last_verified: '2026-06-01'
+evidence_url: null

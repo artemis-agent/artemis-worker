@@ -1,0 +1,11 @@
+name: X (Twitter)
+slug: x-twitter
+ats: greenhouse
+ats_config:
+  board_token: xai
+careers_url: https://careers.x.com
+verified: false
+discovered_from: fortune500
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

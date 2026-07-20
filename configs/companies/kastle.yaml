@@ -1,0 +1,11 @@
+name: Kastle
+slug: kastle
+ats: ashby
+ats_config:
+  board_token: kastle
+careers_url: https://kastle.ai/
+verified: true
+discovered_from: yc
+discovered_jobs: 8
+last_verified: '2026-06-01'
+evidence_url: null

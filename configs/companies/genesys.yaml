@@ -1,0 +1,13 @@
+name: Genesys
+slug: genesys
+ats: workday
+ats_config:
+  tenant: genesys
+  site_id: Genesys
+  wd_version: '1'
+careers_url: https://genesys.wd1.myworkdayjobs.com/Genesys
+verified: true
+discovered_from: agent
+discovered_jobs: 204
+last_verified: '2026-06-01'
+evidence_url: https://genesys.wd1.myworkdayjobs.com/Genesys

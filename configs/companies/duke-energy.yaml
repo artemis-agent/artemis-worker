@@ -1,0 +1,13 @@
+name: Duke Energy
+slug: duke-energy
+ats: workday
+ats_config:
+  tenant: dukeenergy
+  site_id: search
+  wd_version: '1'
+careers_url: https://duke-energy.com/our-company/careers
+verified: true
+discovered_from: fortune500
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

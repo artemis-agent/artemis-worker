@@ -1,0 +1,11 @@
+name: Wayfair
+slug: wayfair
+ats: smartrecruiters
+ats_config:
+  company_id: wayfair
+careers_url: https://wayfair.com
+verified: true
+discovered_from: fortune500
+discovered_jobs: 1
+last_verified: '2026-06-01'
+evidence_url: null

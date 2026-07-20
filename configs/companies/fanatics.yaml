@@ -1,0 +1,11 @@
+name: Fanatics
+slug: fanatics
+ats: greenhouse
+ats_config:
+  board_token: fanaticsinc
+careers_url: https://job-boards.greenhouse.io/fanaticsinc
+verified: true
+discovered_from: agent
+discovered_jobs: 25
+last_verified: '2026-06-01'
+evidence_url: https://job-boards.greenhouse.io/fanaticsinc

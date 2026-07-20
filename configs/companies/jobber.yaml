@@ -1,0 +1,11 @@
+name: Jobber
+slug: jobber
+ats: ashby
+ats_config:
+  board_token: jobber
+careers_url: https://jobber.com
+verified: true
+discovered_from: curated
+discovered_jobs: 37
+last_verified: '2026-06-01'
+evidence_url: null

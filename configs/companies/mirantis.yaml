@@ -1,0 +1,11 @@
+name: Mirantis
+slug: mirantis
+ats: smartrecruiters
+ats_config:
+  company_id: mirantis
+careers_url: http://www.mirantis.com
+verified: true
+discovered_from: crunchbase
+discovered_jobs: 31
+last_verified: '2026-06-01'
+evidence_url: null

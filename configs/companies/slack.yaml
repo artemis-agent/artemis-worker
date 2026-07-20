@@ -1,0 +1,13 @@
+name: Slack
+slug: slack
+ats: workday
+ats_config:
+  tenant: salesforce
+  site_id: Slack
+  wd_version: '12'
+careers_url: https://slack.com/careers
+verified: false
+discovered_from: fortune500
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

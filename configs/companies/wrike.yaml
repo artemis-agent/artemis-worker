@@ -1,0 +1,11 @@
+name: Wrike
+slug: wrike
+ats: greenhouse
+ats_config:
+  board_token: wrike
+careers_url: https://wrike.com
+verified: true
+discovered_from: curated
+discovered_jobs: 52
+last_verified: '2026-06-01'
+evidence_url: null

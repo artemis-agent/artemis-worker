@@ -1,0 +1,13 @@
+name: Unilever
+slug: unilever
+ats: workday
+ats_config:
+  tenant: unilever
+  site_id: Unilever_Experienced_Professionals
+  wd_version: '3'
+careers_url: https://careers.unilever.com
+verified: true
+discovered_from: fortune500
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

@@ -1,0 +1,13 @@
+name: AT&T
+slug: at-t
+ats: workday
+ats_config:
+  tenant: att
+  site_id: ATTGeneral
+  wd_version: '1'
+careers_url: https://att.jobs
+verified: true
+discovered_from: fortune500
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

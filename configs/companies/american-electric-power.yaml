@@ -1,0 +1,13 @@
+name: American Electric Power
+slug: american-electric-power
+ats: workday
+ats_config:
+  tenant: aep
+  site_id: AEPCareerSite
+  wd_version: '1'
+careers_url: https://aep.com/careers
+verified: true
+discovered_from: fortune500
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

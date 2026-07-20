@@ -1,0 +1,11 @@
+name: Upwork
+slug: upwork
+ats: greenhouse
+ats_config:
+  board_token: upwork
+careers_url: https://upwork.com
+verified: true
+discovered_from: curated
+discovered_jobs: 12
+last_verified: '2026-06-01'
+evidence_url: null

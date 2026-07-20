@@ -1,0 +1,11 @@
+name: Ashby
+slug: ashby
+ats: ashby
+ats_config:
+  board_token: ashby
+careers_url: https://ashby.com
+verified: true
+discovered_from: curated
+discovered_jobs: 56
+last_verified: '2026-06-01'
+evidence_url: null

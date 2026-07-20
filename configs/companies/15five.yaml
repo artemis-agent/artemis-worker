@@ -1,0 +1,11 @@
+name: 15Five
+slug: 15five
+ats: lever
+ats_config:
+  company: 15five
+careers_url: https://15five.com
+verified: true
+discovered_from: curated
+discovered_jobs: 1
+last_verified: '2026-06-01'
+evidence_url: null

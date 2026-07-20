@@ -1,0 +1,13 @@
+name: Symbotic
+slug: symbotic
+ats: workday
+ats_config:
+  tenant: symbotic
+  site_id: Symbotic
+  wd_version: '504'
+careers_url: https://symbotic.wd504.myworkdayjobs.com/Symbotic
+verified: true
+discovered_from: agent
+discovered_jobs: 156
+last_verified: '2026-06-01'
+evidence_url: https://symbotic.wd504.myworkdayjobs.com/Symbotic

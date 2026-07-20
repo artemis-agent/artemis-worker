@@ -1,0 +1,13 @@
+name: Workday Adaptive
+slug: workday-adaptive
+ats: workday
+ats_config:
+  tenant: workday
+  site_id: Workday
+  wd_version: '5'
+careers_url: https://workday.wd5.myworkdayjobs.com/en-US/Workday/login
+verified: true
+discovered_from: agent
+discovered_jobs: 315
+last_verified: '2026-06-01'
+evidence_url: https://workday.wd5.myworkdayjobs.com/en-US/Workday/login

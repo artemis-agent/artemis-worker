@@ -1,0 +1,11 @@
+name: Fulcrum
+slug: fulcrum
+ats: ashby
+ats_config:
+  board_token: fulcrum
+careers_url: https://fulcrumresearch.ai
+verified: true
+discovered_from: yc
+discovered_jobs: 10
+last_verified: '2026-06-01'
+evidence_url: null

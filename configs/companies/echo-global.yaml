@@ -1,0 +1,13 @@
+name: Echo Global
+slug: echo-global
+ats: workday
+ats_config:
+  tenant: echo
+  site_id: Echo_Logistics
+  wd_version: '1'
+careers_url: https://echo.wd1.myworkdayjobs.com/Echo_Logistics
+verified: true
+discovered_from: agent
+discovered_jobs: 26
+last_verified: '2026-06-01'
+evidence_url: https://echo.wd1.myworkdayjobs.com/Echo_Logistics

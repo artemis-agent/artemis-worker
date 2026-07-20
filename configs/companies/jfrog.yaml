@@ -1,0 +1,11 @@
+name: JFrog
+slug: jfrog
+ats: greenhouse
+ats_config:
+  board_token: jfrog
+careers_url: https://jfrog.com
+verified: true
+discovered_from: curated
+discovered_jobs: 98
+last_verified: '2026-06-01'
+evidence_url: null

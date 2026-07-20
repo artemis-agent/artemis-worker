@@ -1,0 +1,11 @@
+name: Peak XV Partners
+slug: peak-xv-partners
+ats: greenhouse
+ats_config:
+  board_token: peak
+careers_url: https://www.peakxv.com
+verified: true
+discovered_from: crunchbase
+discovered_jobs: 51
+last_verified: '2026-06-01'
+evidence_url: null

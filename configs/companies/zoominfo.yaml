@@ -1,0 +1,11 @@
+name: ZoomInfo
+slug: zoominfo
+ats: greenhouse
+ats_config:
+  board_token: zoominfo
+careers_url: https://zoominfo.com
+verified: true
+discovered_from: curated
+discovered_jobs: 60
+last_verified: '2026-06-01'
+evidence_url: null

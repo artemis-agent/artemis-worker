@@ -1,0 +1,13 @@
+name: Proofpoint
+slug: proofpoint
+ats: workday
+ats_config:
+  tenant: proofpoint
+  site_id: ProofpointCareers
+  wd_version: '5'
+careers_url: https://proofpoint.wd5.myworkdayjobs.com/ProofpointCareers
+verified: true
+discovered_from: agent
+discovered_jobs: 173
+last_verified: '2026-06-01'
+evidence_url: https://proofpoint.wd5.myworkdayjobs.com/ProofpointCareers

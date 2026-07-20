@@ -1,0 +1,11 @@
+name: Take-Two
+slug: take-two
+ats: greenhouse
+ats_config:
+  board_token: taketwo
+careers_url: https://taketwo.com
+verified: true
+discovered_from: curated
+discovered_jobs: 32
+last_verified: '2026-06-01'
+evidence_url: null

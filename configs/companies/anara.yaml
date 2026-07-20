@@ -1,0 +1,11 @@
+name: Anara
+slug: anara
+ats: ashby
+ats_config:
+  board_token: anara
+careers_url: https://anara.com
+verified: true
+discovered_from: yc
+discovered_jobs: 4
+last_verified: '2026-06-01'
+evidence_url: null

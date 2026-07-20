@@ -1,0 +1,12 @@
+name: "Est\xE9e Lauder"
+slug: est-e-lauder
+ats: eightfold
+ats_config:
+  company: elcompanies
+  domain: elcompanies.com
+careers_url: https://elcompanies.com/en/careers
+verified: true
+discovered_from: fortune500
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

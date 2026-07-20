@@ -1,0 +1,11 @@
+name: Oklo
+slug: oklo
+ats: greenhouse
+ats_config:
+  board_token: oklo
+careers_url: https://oklo.com/careers
+verified: true
+discovered_from: crunchbase
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

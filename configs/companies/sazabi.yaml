@@ -1,0 +1,11 @@
+name: Sazabi
+slug: sazabi
+ats: ashby
+ats_config:
+  board_token: sazabi
+careers_url: https://www.sazabi.com/
+verified: true
+discovered_from: yc
+discovered_jobs: 8
+last_verified: '2026-06-01'
+evidence_url: null

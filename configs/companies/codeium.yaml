@@ -1,0 +1,11 @@
+name: Codeium
+slug: codeium
+ats: ashby
+ats_config:
+  board_token: cognition
+careers_url: https://codeium.com/careers
+verified: true
+discovered_from: wellfound
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

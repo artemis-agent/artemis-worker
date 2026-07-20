@@ -1,0 +1,11 @@
+name: Starburst
+slug: starburst
+ats: greenhouse
+ats_config:
+  board_token: starburst
+careers_url: https://www.starburst.io/careers
+verified: true
+discovered_from: crunchbase
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

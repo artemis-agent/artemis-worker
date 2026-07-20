@@ -1,0 +1,11 @@
+name: Parabilis Medicines
+slug: parabilis-medicines
+ats: greenhouse
+ats_config:
+  board_token: parabilismed
+careers_url: https://parabilismed.com
+verified: true
+discovered_from: crunchbase
+discovered_jobs: 18
+last_verified: '2026-06-01'
+evidence_url: null

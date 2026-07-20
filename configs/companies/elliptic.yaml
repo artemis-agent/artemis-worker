@@ -1,0 +1,11 @@
+name: Elliptic
+slug: elliptic
+ats: ashby
+ats_config:
+  board_token: elliptic
+careers_url: https://elliptic.com
+verified: true
+discovered_from: curated
+discovered_jobs: 49
+last_verified: '2026-06-01'
+evidence_url: null

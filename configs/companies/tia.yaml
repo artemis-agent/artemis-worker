@@ -1,0 +1,11 @@
+name: Tia
+slug: tia
+ats: greenhouse
+ats_config:
+  board_token: tia
+careers_url: https://tia.com
+verified: true
+discovered_from: curated
+discovered_jobs: 33
+last_verified: '2026-06-01'
+evidence_url: null

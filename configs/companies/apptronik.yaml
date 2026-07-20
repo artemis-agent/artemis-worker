@@ -1,0 +1,11 @@
+name: Apptronik
+slug: apptronik
+ats: greenhouse
+ats_config:
+  board_token: apptronik
+careers_url: https://apptronik.com
+verified: true
+discovered_from: curated
+discovered_jobs: 87
+last_verified: '2026-06-01'
+evidence_url: null

@@ -1,0 +1,11 @@
+name: Disc Medicine
+slug: disc-medicine
+ats: greenhouse
+ats_config:
+  board_token: discmedicine
+careers_url: https://job-boards.greenhouse.io/discmedicine
+verified: true
+discovered_from: agent
+discovered_jobs: 7
+last_verified: '2026-06-02'
+evidence_url: https://job-boards.greenhouse.io/discmedicine

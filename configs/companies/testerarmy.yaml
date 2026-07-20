@@ -1,0 +1,11 @@
+name: TesterArmy
+slug: testerarmy
+ats: greenhouse
+ats_config:
+  board_token: tester
+careers_url: https://tester.army
+verified: true
+discovered_from: yc
+discovered_jobs: 1
+last_verified: '2026-06-01'
+evidence_url: null

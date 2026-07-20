@@ -1,0 +1,11 @@
+name: Twingate
+slug: twingate
+ats: lever
+ats_config:
+  company: twingate
+careers_url: https://twingate.com
+verified: true
+discovered_from: curated
+discovered_jobs: 1
+last_verified: '2026-06-01'
+evidence_url: null

@@ -1,0 +1,11 @@
+name: Whoop
+slug: whoop
+ats: lever
+ats_config:
+  company: whoop
+careers_url: https://whoop.com
+verified: true
+discovered_from: curated
+discovered_jobs: 1
+last_verified: '2026-06-01'
+evidence_url: null

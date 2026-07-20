@@ -1,0 +1,13 @@
+name: Remitly
+slug: remitly
+ats: workday
+ats_config:
+  tenant: remitly
+  site_id: Remitly_Careers
+  wd_version: '5'
+careers_url: https://remitly.wd5.myworkdayjobs.com/Remitly_Careers
+verified: true
+discovered_from: agent
+discovered_jobs: 117
+last_verified: '2026-06-01'
+evidence_url: https://remitly.wd5.myworkdayjobs.com/Remitly_Careers

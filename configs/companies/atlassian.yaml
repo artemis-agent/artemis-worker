@@ -1,0 +1,11 @@
+name: Atlassian
+slug: atlassian
+ats: lever
+ats_config:
+  company: atlassian
+careers_url: https://atlassian.com/company/careers
+verified: false
+discovered_from: fortune500
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

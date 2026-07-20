@@ -1,0 +1,13 @@
+name: Clari
+slug: clari
+ats: workday
+ats_config:
+  tenant: clarioclinical
+  site_id: clarioclinical_careers
+  wd_version: '1'
+careers_url: https://clarioclinical.wd1.myworkdayjobs.com/clarioclinical_careers
+verified: true
+discovered_from: agent
+discovered_jobs: 77
+last_verified: '2026-06-01'
+evidence_url: https://clarioclinical.wd1.myworkdayjobs.com/clarioclinical_careers

@@ -1,0 +1,13 @@
+name: Home Depot
+slug: home-depot
+ats: workday
+ats_config:
+  tenant: homedepot
+  site_id: CareerDepotCanada
+  wd_version: '5'
+careers_url: https://homedepot.wd5.myworkdayjobs.com/en-US/CareerDepotCanada/login
+verified: true
+discovered_from: agent
+discovered_jobs: 408
+last_verified: '2026-06-01'
+evidence_url: https://homedepot.wd5.myworkdayjobs.com/en-US/CareerDepotCanada/login

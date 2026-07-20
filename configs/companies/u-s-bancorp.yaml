@@ -1,0 +1,13 @@
+name: U.S. Bancorp
+slug: u-s-bancorp
+ats: workday
+ats_config:
+  tenant: usbank
+  site_id: US_Bank_Careers
+  wd_version: '1'
+careers_url: https://careers.usbank.com
+verified: true
+discovered_from: fortune500
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

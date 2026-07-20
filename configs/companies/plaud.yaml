@@ -1,0 +1,11 @@
+name: Plaud
+slug: plaud
+ats: ashby
+ats_config:
+  board_token: plaud
+careers_url: https://plaud.com
+verified: true
+discovered_from: curated
+discovered_jobs: 84
+last_verified: '2026-06-01'
+evidence_url: null

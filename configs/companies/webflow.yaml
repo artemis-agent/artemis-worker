@@ -1,0 +1,11 @@
+name: Webflow
+slug: webflow
+ats: greenhouse
+ats_config:
+  board_token: webflow
+careers_url: https://webflow.com
+verified: true
+discovered_from: curated
+discovered_jobs: 18
+last_verified: '2026-06-01'
+evidence_url: null

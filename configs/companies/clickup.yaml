@@ -1,0 +1,11 @@
+name: ClickUp
+slug: clickup
+ats: ashby
+ats_config:
+  board_token: clickup
+careers_url: https://clickup.com
+verified: true
+discovered_from: curated
+discovered_jobs: 69
+last_verified: '2026-06-01'
+evidence_url: null

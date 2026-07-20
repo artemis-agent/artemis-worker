@@ -1,0 +1,13 @@
+name: Levi Strauss
+slug: levi-strauss
+ats: workday
+careers_url: https://levistraussandco.wd5.myworkdayjobs.com/External/jobs
+ats_config:
+  tenant: levistraussandco
+  site_id: External
+  wd_version: '5'
+verified: true
+last_verified: '2026-06-01'
+discovered_jobs: 937
+discovered_from: agent
+evidence_url: https://levistraussandco.wd5.myworkdayjobs.com/External/jobs

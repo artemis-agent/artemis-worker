@@ -1,0 +1,11 @@
+name: Hinge Health
+slug: hinge-health
+ats: ashby
+ats_config:
+  board_token: hinge-health
+careers_url: https://hinge-health.com
+verified: true
+discovered_from: curated
+discovered_jobs: 79
+last_verified: '2026-06-01'
+evidence_url: null

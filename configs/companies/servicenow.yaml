@@ -1,0 +1,11 @@
+name: ServiceNow
+slug: servicenow
+ats: smartrecruiters
+ats_config:
+  company_id: servicenow
+careers_url: https://servicenow.com
+verified: true
+discovered_from: fortune500
+discovered_jobs: 478
+last_verified: '2026-06-01'
+evidence_url: null

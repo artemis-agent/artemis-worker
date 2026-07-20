@@ -1,0 +1,11 @@
+name: Ramp
+slug: ramp
+ats: ashby
+ats_config:
+  board_token: ramp
+careers_url: https://jobs.ashbyhq.com/ramp
+verified: true
+discovered_from: manual
+discovered_jobs: 0
+last_verified: '2026-04-30'
+evidence_url: null

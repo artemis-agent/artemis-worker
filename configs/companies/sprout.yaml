@@ -1,0 +1,11 @@
+name: Sprout
+slug: sprout
+ats: icims
+ats_config:
+  careers_url: https://distributioncenter-sprouts.icims.com/jobs/search
+careers_url: https://distributioncenter-sprouts.icims.com/jobs/login?loginOnly=1
+verified: true
+discovered_from: agent
+discovered_jobs: 1
+last_verified: '2026-06-01'
+evidence_url: https://distributioncenter-sprouts.icims.com/jobs/login?loginOnly=1

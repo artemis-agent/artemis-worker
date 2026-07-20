@@ -1,0 +1,11 @@
+name: Vacasa
+slug: vacasa
+ats: greenhouse
+ats_config:
+  board_token: vacasa
+careers_url: https://vacasa.com
+verified: true
+discovered_from: curated
+discovered_jobs: 47
+last_verified: '2026-06-01'
+evidence_url: null

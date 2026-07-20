@@ -1,0 +1,11 @@
+name: Junction Bioscience
+slug: junction-bioscience
+ats: ashby
+ats_config:
+  board_token: junction
+careers_url: https://www.junction.bio/
+verified: true
+discovered_from: yc
+discovered_jobs: 12
+last_verified: '2026-06-01'
+evidence_url: null

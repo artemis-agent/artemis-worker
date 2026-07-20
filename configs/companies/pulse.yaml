@@ -1,0 +1,11 @@
+name: Pulse
+slug: pulse
+ats: greenhouse
+ats_config:
+  board_token: pulse
+careers_url: https://www.runpulse.com/
+verified: true
+discovered_from: yc
+discovered_jobs: 2488
+last_verified: '2026-06-01'
+evidence_url: null

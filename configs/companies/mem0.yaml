@@ -1,0 +1,11 @@
+name: Mem0
+slug: mem0
+ats: ashby
+ats_config:
+  board_token: mem0
+careers_url: https://mem0.ai
+verified: true
+discovered_from: yc
+discovered_jobs: 5
+last_verified: '2026-06-01'
+evidence_url: null

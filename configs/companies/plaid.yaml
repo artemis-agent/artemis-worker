@@ -1,0 +1,11 @@
+name: Plaid
+slug: plaid
+ats: ashby
+ats_config:
+  board_token: plaid
+careers_url: https://plaid.com
+verified: true
+discovered_from: curated
+discovered_jobs: 91
+last_verified: '2026-06-01'
+evidence_url: null

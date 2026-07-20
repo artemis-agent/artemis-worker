@@ -1,0 +1,13 @@
+name: Aurora
+slug: aurora
+ats: workday
+ats_config:
+  tenant: auroragov
+  site_id: Careers
+  wd_version: '1'
+careers_url: https://auroragov.wd1.myworkdayjobs.com/Careers
+verified: true
+discovered_from: agent
+discovered_jobs: 39
+last_verified: '2026-06-01'
+evidence_url: https://auroragov.wd1.myworkdayjobs.com/Careers

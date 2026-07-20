@@ -1,0 +1,13 @@
+name: Bullhorn
+slug: bullhorn
+ats: workday
+ats_config:
+  tenant: bullhorn
+  site_id: BullhornCareers
+  wd_version: '1'
+careers_url: https://bullhorn.wd1.myworkdayjobs.com/BullhornCareers/
+verified: true
+discovered_from: agent
+discovered_jobs: 15
+last_verified: '2026-06-01'
+evidence_url: https://bullhorn.wd1.myworkdayjobs.com/BullhornCareers/

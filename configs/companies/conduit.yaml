@@ -1,0 +1,11 @@
+name: Conduit
+slug: conduit
+ats: ashby
+ats_config:
+  board_token: conduit
+careers_url: https://conduit.ai/?utm_source=referral&utm_medium=organic&utm_campaign=ycombinator
+verified: true
+discovered_from: yc
+discovered_jobs: 4
+last_verified: '2026-06-01'
+evidence_url: null

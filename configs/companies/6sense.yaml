@@ -1,0 +1,11 @@
+name: 6sense
+slug: 6sense
+ats: greenhouse
+ats_config:
+  board_token: 6sense
+careers_url: https://6sense.com
+verified: true
+discovered_from: curated
+discovered_jobs: 34
+last_verified: '2026-06-01'
+evidence_url: null

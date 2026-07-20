@@ -1,0 +1,13 @@
+name: Wonder
+slug: wonder
+ats: workday
+ats_config:
+  tenant: wonder
+  site_id: WG
+  wd_version: '1'
+careers_url: https://wonder.wd1.myworkdayjobs.com/WG
+verified: true
+discovered_from: agent
+discovered_jobs: 63
+last_verified: '2026-06-01'
+evidence_url: https://wonder.wd1.myworkdayjobs.com/WG

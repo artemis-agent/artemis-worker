@@ -1,0 +1,13 @@
+name: RingCentral
+slug: ringcentral
+ats: workday
+ats_config:
+  tenant: ringcentral
+  site_id: RingCentral_Careers
+  wd_version: '1'
+careers_url: https://ringcentral.wd1.myworkdayjobs.com/RingCentral_Careers/
+verified: true
+discovered_from: agent
+discovered_jobs: 233
+last_verified: '2026-06-01'
+evidence_url: https://ringcentral.wd1.myworkdayjobs.com/RingCentral_Careers/

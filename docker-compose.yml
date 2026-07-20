@@ -1,0 +1,181 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: artemis
+      POSTGRES_PASSWORD: artemis
+      POSTGRES_DB: artemis
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U artemis"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  minio:
+    image: minio/minio
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: artemis
+      MINIO_ROOT_PASSWORD: artemis123
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - miniodata:/data
+    healthcheck:
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  app:
+    build: .
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    env_file: .env
+    environment:
+      ARTEMIS_DATABASE_URL: postgresql+asyncpg://artemis:artemis@postgres:5432/artemis
+      ARTEMIS_REDIS_URL: redis://redis:6379/0
+      ARTEMIS_S3_ENDPOINT: http://minio:9000
+    volumes:
+      - .:/app
+    working_dir: /app
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+          cpus: "2"
+
+  scrape-worker:
+    build: .
+    command: celery -A artemis.core.celery_app worker -Q scrape -c 2 --loglevel=info -n scrape@%h
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    env_file: .env
+    environment:
+      ARTEMIS_DATABASE_URL: postgresql+asyncpg://artemis:artemis@postgres:5432/artemis
+      ARTEMIS_REDIS_URL: redis://redis:6379/0
+      ARTEMIS_S3_ENDPOINT: http://minio:9000
+    volumes:
+      - .:/app
+    working_dir: /app
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: "1"
+
+  enrich-worker:
+    build: .
+    command: celery -A artemis.core.celery_app worker -Q enrich -c 1 --loglevel=info -n enrich@%h
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    env_file: .env
+    environment:
+      ARTEMIS_DATABASE_URL: postgresql+asyncpg://artemis:artemis@postgres:5432/artemis
+      ARTEMIS_REDIS_URL: redis://redis:6379/0
+      ARTEMIS_S3_ENDPOINT: http://minio:9000
+    volumes:
+      - .:/app
+    working_dir: /app
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: "1"
+
+  internal-api:
+    build: .
+    command: artemis serve-internal
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    env_file: .env
+    environment:
+      ARTEMIS_DATABASE_URL: postgresql+asyncpg://artemis:artemis@postgres:5432/artemis
+      ARTEMIS_REDIS_URL: redis://redis:6379/0
+      ARTEMIS_S3_ENDPOINT: http://minio:9000
+    ports:
+      - "8081:8081"
+    volumes:
+      - .:/app
+    working_dir: /app
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: "1"
+
+  monitor-worker:
+    build: .
+    command: celery -A artemis.core.celery_app worker -Q monitor -c 1 --loglevel=info -n monitor@%h
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    env_file: .env
+    environment:
+      ARTEMIS_DATABASE_URL: postgresql+asyncpg://artemis:artemis@postgres:5432/artemis
+      ARTEMIS_REDIS_URL: redis://redis:6379/0
+      ARTEMIS_S3_ENDPOINT: http://minio:9000
+    volumes:
+      - .:/app
+    working_dir: /app
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: "1"
+
+  celery-beat:
+    build: .
+    command: celery -A artemis.core.celery_app beat --loglevel=info
+    depends_on:
+      redis:
+        condition: service_healthy
+    env_file: .env
+    environment:
+      ARTEMIS_DATABASE_URL: postgresql+asyncpg://artemis:artemis@postgres:5432/artemis
+      ARTEMIS_REDIS_URL: redis://redis:6379/0
+      ARTEMIS_S3_ENDPOINT: http://minio:9000
+    volumes:
+      - .:/app
+    working_dir: /app
+    restart: unless-stopped
+
+volumes:
+  pgdata:
+  miniodata:

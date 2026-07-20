@@ -1,0 +1,11 @@
+name: Lemonade
+slug: lemonade
+ats: ashby
+ats_config:
+  board_token: lemonade
+careers_url: https://lemonade.com
+verified: true
+discovered_from: curated
+discovered_jobs: 43
+last_verified: '2026-06-01'
+evidence_url: null

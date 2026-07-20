@@ -1,0 +1,11 @@
+name: Redis
+slug: redis
+ats: ashby
+ats_config:
+  board_token: redis
+careers_url: https://redis.com
+verified: true
+discovered_from: curated
+discovered_jobs: 90
+last_verified: '2026-06-01'
+evidence_url: null

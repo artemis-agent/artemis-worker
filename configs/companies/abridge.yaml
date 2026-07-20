@@ -1,0 +1,11 @@
+name: Abridge
+slug: abridge
+ats: ashby
+ats_config:
+  board_token: abridge
+careers_url: https://abridge.com
+verified: true
+discovered_from: curated
+discovered_jobs: 63
+last_verified: '2026-06-01'
+evidence_url: null

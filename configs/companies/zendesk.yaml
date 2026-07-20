@@ -1,0 +1,13 @@
+name: Zendesk
+slug: zendesk
+ats: workday
+ats_config:
+  tenant: zendesk
+  site_id: zendesk
+  wd_version: '1'
+careers_url: https://zendesk.com/jobs
+verified: true
+discovered_from: fortune500
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

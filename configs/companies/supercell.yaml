@@ -1,0 +1,11 @@
+name: Supercell
+slug: supercell
+ats: ashby
+ats_config:
+  board_token: supercell
+careers_url: https://supercell.com
+verified: true
+discovered_from: curated
+discovered_jobs: 47
+last_verified: '2026-06-01'
+evidence_url: null

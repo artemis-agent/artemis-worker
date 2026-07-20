@@ -1,0 +1,13 @@
+name: Tinuiti
+slug: tinuiti
+ats: workday
+ats_config:
+  tenant: tinuiti
+  site_id: Tinuiti
+  wd_version: '12'
+careers_url: https://tinuiti.wd12.myworkdayjobs.com/Tinuiti
+verified: true
+discovered_from: agent
+discovered_jobs: 86
+last_verified: '2026-06-01'
+evidence_url: https://tinuiti.wd12.myworkdayjobs.com/Tinuiti

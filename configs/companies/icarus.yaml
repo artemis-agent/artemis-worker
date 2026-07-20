@@ -1,0 +1,11 @@
+name: Icarus
+slug: icarus
+ats: greenhouse
+ats_config:
+  board_token: icarus
+careers_url: https://www.icarus.one/
+verified: true
+discovered_from: yc
+discovered_jobs: 12
+last_verified: '2026-06-01'
+evidence_url: null

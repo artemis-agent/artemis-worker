@@ -1,0 +1,11 @@
+name: Dispatch
+slug: dispatch
+ats: ashby
+ats_config:
+  board_token: dispatch
+careers_url: https://dispatch.space/
+verified: true
+discovered_from: yc
+discovered_jobs: 4
+last_verified: '2026-06-01'
+evidence_url: null

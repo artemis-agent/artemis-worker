@@ -1,0 +1,11 @@
+name: Wolt
+slug: wolt
+ats: greenhouse
+ats_config:
+  board_token: wolt
+careers_url: https://wolt.com
+verified: true
+discovered_from: curated
+discovered_jobs: 293
+last_verified: '2026-06-01'
+evidence_url: null

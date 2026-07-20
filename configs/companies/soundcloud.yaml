@@ -1,0 +1,11 @@
+name: SoundCloud
+slug: soundcloud
+ats: greenhouse
+ats_config:
+  board_token: soundcloud71
+careers_url: https://job-boards.greenhouse.io/soundcloud71?error=true
+verified: true
+discovered_from: agent
+discovered_jobs: 11
+last_verified: '2026-06-01'
+evidence_url: https://job-boards.greenhouse.io/soundcloud71?error=true

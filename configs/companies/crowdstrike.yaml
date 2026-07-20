@@ -1,0 +1,13 @@
+name: CrowdStrike
+slug: crowdstrike
+ats: workday
+ats_config:
+  tenant: crowdstrike
+  site_id: crowdstrikecareers
+  wd_version: '5'
+careers_url: https://crowdstrike.wd5.myworkdayjobs.com/crowdstrikecareers
+verified: true
+discovered_from: agent
+discovered_jobs: 475
+last_verified: '2026-06-01'
+evidence_url: https://crowdstrike.wd5.myworkdayjobs.com/crowdstrikecareers

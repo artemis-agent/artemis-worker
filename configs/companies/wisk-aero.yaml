@@ -1,0 +1,13 @@
+name: Wisk Aero
+slug: wisk-aero
+ats: workday
+ats_config:
+  tenant: wisk
+  site_id: Wisk_Careers
+  wd_version: '108'
+careers_url: https://wisk.wd108.myworkdayjobs.com/Wisk_Careers
+verified: true
+discovered_from: agent
+discovered_jobs: 22
+last_verified: '2026-06-01'
+evidence_url: https://wisk.wd108.myworkdayjobs.com/Wisk_Careers

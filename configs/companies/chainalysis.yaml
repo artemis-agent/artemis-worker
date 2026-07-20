@@ -1,0 +1,11 @@
+name: Chainalysis
+slug: chainalysis
+ats: ashby
+ats_config:
+  board_token: chainalysis-careers
+careers_url: https://jobs.ashbyhq.com/chainalysis-careers
+verified: true
+discovered_from: agent
+discovered_jobs: 48
+last_verified: '2026-06-01'
+evidence_url: https://jobs.ashbyhq.com/chainalysis-careers

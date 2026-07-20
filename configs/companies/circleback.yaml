@@ -1,0 +1,11 @@
+name: Circleback
+slug: circleback
+ats: ashby
+ats_config:
+  board_token: circleback
+careers_url: https://circleback.ai
+verified: true
+discovered_from: yc
+discovered_jobs: 4
+last_verified: '2026-06-01'
+evidence_url: null

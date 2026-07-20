@@ -1,0 +1,11 @@
+name: Dashlane
+slug: dashlane
+ats: greenhouse
+ats_config:
+  board_token: dashlane
+careers_url: https://dashlane.com
+verified: true
+discovered_from: curated
+discovered_jobs: 16
+last_verified: '2026-06-01'
+evidence_url: null

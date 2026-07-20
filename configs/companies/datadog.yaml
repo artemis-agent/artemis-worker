@@ -1,0 +1,11 @@
+name: Datadog
+slug: datadog
+ats: greenhouse
+ats_config:
+  board_token: datadog
+careers_url: https://datadog.com
+verified: true
+discovered_from: fortune500
+discovered_jobs: 424
+last_verified: '2026-06-01'
+evidence_url: null

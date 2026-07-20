@@ -1,0 +1,11 @@
+name: Cybereason
+slug: cybereason
+ats: greenhouse
+ats_config:
+  board_token: cybereason
+careers_url: https://cybereason.com
+verified: true
+discovered_from: curated
+discovered_jobs: 4
+last_verified: '2026-06-01'
+evidence_url: null

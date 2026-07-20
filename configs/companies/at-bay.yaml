@@ -1,0 +1,11 @@
+name: At-Bay
+slug: at-bay
+ats: greenhouse
+ats_config:
+  board_token: atbayjobs
+careers_url: https://job-boards.greenhouse.io/atbayjobs
+verified: true
+discovered_from: agent
+discovered_jobs: 30
+last_verified: '2026-06-01'
+evidence_url: https://job-boards.greenhouse.io/atbayjobs

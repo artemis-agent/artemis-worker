@@ -1,0 +1,11 @@
+name: Mark43
+slug: mark43
+ats: greenhouse
+ats_config:
+  board_token: mark43
+careers_url: https://mark43.com
+verified: true
+discovered_from: curated
+discovered_jobs: 36
+last_verified: '2026-06-01'
+evidence_url: null

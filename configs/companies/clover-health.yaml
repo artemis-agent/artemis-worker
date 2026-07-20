@@ -1,0 +1,11 @@
+name: Clover Health
+slug: clover-health
+ats: greenhouse
+ats_config:
+  board_token: cloverhealth
+careers_url: https://cloverhealth.com
+verified: true
+discovered_from: curated
+discovered_jobs: 56
+last_verified: '2026-06-01'
+evidence_url: null

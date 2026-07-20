@@ -1,0 +1,11 @@
+name: Path Robotics
+slug: path-robotics
+ats: greenhouse
+ats_config:
+  board_token: pathrobotics
+careers_url: https://pathrobotics.com
+verified: true
+discovered_from: curated
+discovered_jobs: 43
+last_verified: '2026-06-01'
+evidence_url: null

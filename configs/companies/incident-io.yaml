@@ -1,0 +1,11 @@
+name: incident.io
+slug: incident-io
+ats: ashby
+ats_config:
+  board_token: incident
+careers_url: https://jobs.ashbyhq.com/incident
+verified: true
+discovered_from: agent
+discovered_jobs: 23
+last_verified: '2026-06-01'
+evidence_url: https://jobs.ashbyhq.com/incident

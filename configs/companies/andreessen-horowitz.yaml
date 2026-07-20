@@ -1,0 +1,11 @@
+name: Andreessen Horowitz
+slug: andreessen-horowitz
+ats: greenhouse
+ats_config:
+  board_token: a16z
+careers_url: https://www.a16z.com/careers
+verified: true
+discovered_from: crunchbase
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

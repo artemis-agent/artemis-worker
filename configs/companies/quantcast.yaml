@@ -1,0 +1,11 @@
+name: Quantcast
+slug: quantcast
+ats: lever
+ats_config:
+  company: quantcast
+careers_url: https://quantcast.com
+verified: true
+discovered_from: curated
+discovered_jobs: 1
+last_verified: '2026-06-01'
+evidence_url: null

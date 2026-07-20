@@ -1,0 +1,11 @@
+name: Netlify
+slug: netlify
+ats: greenhouse
+ats_config:
+  board_token: netlify
+careers_url: https://netlify.com
+verified: true
+discovered_from: curated
+discovered_jobs: 2
+last_verified: '2026-06-01'
+evidence_url: null

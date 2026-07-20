@@ -1,0 +1,11 @@
+name: Polymath
+slug: polymath
+ats: ashby
+ats_config:
+  board_token: polymath
+careers_url: https://polymathlabs.ai/
+verified: true
+discovered_from: yc
+discovered_jobs: 5
+last_verified: '2026-06-01'
+evidence_url: null

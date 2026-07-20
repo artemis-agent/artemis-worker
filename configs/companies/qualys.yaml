@@ -1,0 +1,13 @@
+name: Qualys
+slug: qualys
+ats: workday
+ats_config:
+  tenant: qualys
+  site_id: Careers
+  wd_version: '5'
+careers_url: https://qualys.wd5.myworkdayjobs.com/Careers
+verified: true
+discovered_from: agent
+discovered_jobs: 166
+last_verified: '2026-06-01'
+evidence_url: https://qualys.wd5.myworkdayjobs.com/Careers

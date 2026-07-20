@@ -1,0 +1,11 @@
+name: DocuSign
+slug: docusign
+ats: smartrecruiters
+ats_config:
+  company_id: docusign
+careers_url: https://docusign.com
+verified: true
+discovered_from: curated
+discovered_jobs: 4
+last_verified: '2026-06-01'
+evidence_url: null

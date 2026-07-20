@@ -1,0 +1,11 @@
+name: Signifyd
+slug: signifyd
+ats: greenhouse
+ats_config:
+  board_token: signifyd95
+careers_url: https://job-boards.greenhouse.io/signifyd95
+verified: true
+discovered_from: agent
+discovered_jobs: 10
+last_verified: '2026-06-01'
+evidence_url: https://job-boards.greenhouse.io/signifyd95/jobs/7811751

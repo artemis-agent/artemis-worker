@@ -1,0 +1,11 @@
+name: Vannevar Labs
+slug: vannevar-labs
+ats: greenhouse
+ats_config:
+  board_token: vannevarlabs
+careers_url: https://vannevarlabs.com
+verified: true
+discovered_from: curated
+discovered_jobs: 28
+last_verified: '2026-06-01'
+evidence_url: null

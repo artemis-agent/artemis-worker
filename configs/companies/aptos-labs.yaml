@@ -1,0 +1,11 @@
+name: Aptos Labs
+slug: aptos-labs
+ats: greenhouse
+ats_config:
+  board_token: aptoslabs
+careers_url: https://aptoslabs.com
+verified: true
+discovered_from: curated
+discovered_jobs: 4
+last_verified: '2026-06-01'
+evidence_url: null

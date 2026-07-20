@@ -1,0 +1,11 @@
+name: Bill.com
+slug: bill-com
+ats: greenhouse
+ats_config:
+  board_token: billcom
+careers_url: https://billcom.com
+verified: true
+discovered_from: curated
+discovered_jobs: 19
+last_verified: '2026-06-01'
+evidence_url: null

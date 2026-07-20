@@ -1,0 +1,11 @@
+name: Doppler
+slug: doppler
+ats: ashby
+ats_config:
+  board_token: doppler
+careers_url: https://doppler.com
+verified: true
+discovered_from: curated
+discovered_jobs: 3
+last_verified: '2026-06-01'
+evidence_url: null

@@ -1,0 +1,11 @@
+name: Sift Science
+slug: sift-science
+ats: ashby
+ats_config:
+  board_token: siftstack
+careers_url: https://jobs.ashbyhq.com/siftstack/
+verified: true
+discovered_from: agent
+discovered_jobs: 30
+last_verified: '2026-06-01'
+evidence_url: https://jobs.ashbyhq.com/siftstack/

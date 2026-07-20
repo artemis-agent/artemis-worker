@@ -1,0 +1,11 @@
+name: Samsara
+slug: samsara
+ats: greenhouse
+ats_config:
+  board_token: samsara
+careers_url: https://samsara.com
+verified: true
+discovered_from: curated
+discovered_jobs: 324
+last_verified: '2026-06-01'
+evidence_url: null

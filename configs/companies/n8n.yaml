@@ -1,0 +1,11 @@
+name: n8n
+slug: n8n
+ats: ashby
+ats_config:
+  board_token: n8n
+careers_url: https://n8n.io
+verified: true
+discovered_from: crunchbase
+discovered_jobs: 44
+last_verified: '2026-06-01'
+evidence_url: null

@@ -1,0 +1,11 @@
+name: Skyscanner
+slug: skyscanner
+ats: greenhouse
+ats_config:
+  board_token: skyscanner
+careers_url: https://skyscanner.com
+verified: true
+discovered_from: curated
+discovered_jobs: 19
+last_verified: '2026-06-01'
+evidence_url: null

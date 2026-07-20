@@ -1,0 +1,11 @@
+name: Sidekick
+slug: sidekick
+ats: ashby
+ats_config:
+  board_token: sidekick
+careers_url: https://www.textsidekick.com/
+verified: true
+discovered_from: yc
+discovered_jobs: 2
+last_verified: '2026-06-01'
+evidence_url: null

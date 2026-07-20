@@ -1,0 +1,13 @@
+name: Rappi
+slug: rappi
+ats: workday
+ats_config:
+  tenant: rappi
+  site_id: Rappi_jobs
+  wd_version: '12'
+careers_url: https://rappi.wd12.myworkdayjobs.com/es/Rappi_jobs
+verified: true
+discovered_from: agent
+discovered_jobs: 21
+last_verified: '2026-06-01'
+evidence_url: https://rappi.wd12.myworkdayjobs.com/es/Rappi_jobs

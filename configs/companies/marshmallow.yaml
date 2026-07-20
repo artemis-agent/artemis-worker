@@ -1,0 +1,11 @@
+name: Marshmallow
+slug: marshmallow
+ats: ashby
+ats_config:
+  board_token: marshmallow
+careers_url: https://marshmallow.com
+verified: true
+discovered_from: curated
+discovered_jobs: 20
+last_verified: '2026-06-01'
+evidence_url: null

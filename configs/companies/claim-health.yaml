@@ -1,0 +1,11 @@
+name: Claim Health
+slug: claim-health
+ats: ashby
+ats_config:
+  board_token: claim-health
+careers_url: https://www.claimhealth.com
+verified: true
+discovered_from: yc
+discovered_jobs: 6
+last_verified: '2026-06-01'
+evidence_url: null

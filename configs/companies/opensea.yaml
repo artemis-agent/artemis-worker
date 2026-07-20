@@ -1,0 +1,11 @@
+name: OpenSea
+slug: opensea
+ats: ashby
+ats_config:
+  board_token: opensea
+careers_url: https://opensea.com
+verified: true
+discovered_from: curated
+discovered_jobs: 4
+last_verified: '2026-06-01'
+evidence_url: null

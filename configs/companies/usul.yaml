@@ -1,0 +1,11 @@
+name: Usul
+slug: usul
+ats: ashby
+ats_config:
+  board_token: usul
+careers_url: https://www.usul.com
+verified: true
+discovered_from: yc
+discovered_jobs: 7
+last_verified: '2026-06-01'
+evidence_url: null

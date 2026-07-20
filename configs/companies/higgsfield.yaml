@@ -1,0 +1,11 @@
+name: Higgsfield
+slug: higgsfield
+ats: ashby
+ats_config:
+  board_token: higgsfieldai
+careers_url: https://higgsfield.ai/careers
+verified: true
+discovered_from: crunchbase
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

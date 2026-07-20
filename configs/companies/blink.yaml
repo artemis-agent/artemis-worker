@@ -1,0 +1,11 @@
+name: Blink
+slug: blink
+ats: ashby
+ats_config:
+  board_token: blink
+careers_url: https://joinblink.com
+verified: true
+discovered_from: crunchbase
+discovered_jobs: 7
+last_verified: '2026-06-01'
+evidence_url: null

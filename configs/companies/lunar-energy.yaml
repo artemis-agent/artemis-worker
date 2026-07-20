@@ -1,0 +1,11 @@
+name: Lunar Energy
+slug: lunar-energy
+ats: greenhouse
+ats_config:
+  board_token: lunarenergy
+careers_url: https://lunarenergy.com
+verified: true
+discovered_from: curated
+discovered_jobs: 14
+last_verified: '2026-06-01'
+evidence_url: null

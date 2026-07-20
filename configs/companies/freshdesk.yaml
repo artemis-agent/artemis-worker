@@ -1,0 +1,11 @@
+name: Freshdesk
+slug: freshdesk
+ats: smartrecruiters
+ats_config:
+  company_id: Freshworks
+careers_url: https://careers.smartrecruiters.com/Freshworks
+verified: true
+discovered_from: agent
+discovered_jobs: 27
+last_verified: '2026-06-01'
+evidence_url: https://careers.smartrecruiters.com/Freshworks

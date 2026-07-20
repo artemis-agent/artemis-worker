@@ -1,0 +1,11 @@
+name: Yotpo
+slug: yotpo
+ats: greenhouse
+ats_config:
+  board_token: yotpo
+careers_url: https://yotpo.com
+verified: true
+discovered_from: curated
+discovered_jobs: 28
+last_verified: '2026-06-01'
+evidence_url: null

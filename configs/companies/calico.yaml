@@ -1,0 +1,11 @@
+name: Calico
+slug: calico
+ats: greenhouse
+ats_config:
+  board_token: calicolabs
+careers_url: https://www.calicolabs.com/careers?gh_jid=5889169002
+verified: true
+discovered_from: agent
+discovered_jobs: 27
+last_verified: '2026-06-01'
+evidence_url: https://www.calicolabs.com/careers?gh_jid=5889169002

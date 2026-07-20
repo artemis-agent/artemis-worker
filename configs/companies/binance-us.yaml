@@ -1,0 +1,11 @@
+name: Binance.US
+slug: binance-us
+ats: lever
+ats_config:
+  company: binance
+careers_url: https://jobs.lever.co/binance
+verified: true
+discovered_from: agent
+discovered_jobs: 1
+last_verified: '2026-06-01'
+evidence_url: https://jobs.lever.co/binance

@@ -1,0 +1,13 @@
+name: Moderna
+slug: moderna
+ats: workday
+ats_config:
+  tenant: modernatx
+  site_id: M_tx
+  wd_version: '1'
+careers_url: https://modernatx.com/careers
+verified: true
+discovered_from: fortune500
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

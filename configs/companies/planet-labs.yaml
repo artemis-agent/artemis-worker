@@ -1,0 +1,11 @@
+name: Planet Labs
+slug: planet-labs
+ats: greenhouse
+ats_config:
+  board_token: planetlabs
+careers_url: https://planetlabs.com
+verified: true
+discovered_from: curated
+discovered_jobs: 77
+last_verified: '2026-06-01'
+evidence_url: null

@@ -1,0 +1,11 @@
+name: Applied Digital
+slug: applied-digital
+ats: ashby
+ats_config:
+  board_token: applied
+careers_url: https://ir.applieddigital.com
+verified: true
+discovered_from: crunchbase
+discovered_jobs: 213
+last_verified: '2026-06-01'
+evidence_url: null

@@ -1,0 +1,11 @@
+name: ICEYE
+slug: iceye
+ats: ashby
+ats_config:
+  board_token: iceye
+careers_url: https://iceye.com
+verified: true
+discovered_from: curated
+discovered_jobs: 110
+last_verified: '2026-06-01'
+evidence_url: null

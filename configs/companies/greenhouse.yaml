@@ -1,0 +1,11 @@
+name: Greenhouse
+slug: greenhouse
+ats: greenhouse
+ats_config:
+  board_token: greenhouse
+careers_url: https://greenhouse.com
+verified: true
+discovered_from: curated
+discovered_jobs: 22
+last_verified: '2026-06-01'
+evidence_url: null

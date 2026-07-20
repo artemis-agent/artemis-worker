@@ -1,0 +1,13 @@
+name: DataRobot
+slug: datarobot
+ats: workday
+ats_config:
+  tenant: datarobot
+  site_id: DataRobot_External_Careers
+  wd_version: '1'
+careers_url: https://datarobot.wd1.myworkdayjobs.com/DataRobot_External_Careers/
+verified: true
+discovered_from: agent
+discovered_jobs: 33
+last_verified: '2026-06-01'
+evidence_url: https://datarobot.wd1.myworkdayjobs.com/DataRobot_External_Careers/

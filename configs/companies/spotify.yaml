@@ -1,0 +1,11 @@
+name: Spotify
+slug: spotify
+ats: lever
+ats_config:
+  company: spotify
+careers_url: https://spotify.com
+verified: true
+discovered_from: fortune500
+discovered_jobs: 1
+last_verified: '2026-06-01'
+evidence_url: null

@@ -1,0 +1,11 @@
+name: Ultra
+slug: ultra
+ats: ashby
+ats_config:
+  board_token: ultra
+careers_url: https://ultra.tech
+verified: true
+discovered_from: yc
+discovered_jobs: 5
+last_verified: '2026-06-01'
+evidence_url: null

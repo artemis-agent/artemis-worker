@@ -1,0 +1,11 @@
+name: Opencall
+slug: opencall
+ats: ashby
+ats_config:
+  board_token: opencall
+careers_url: https://opencall.ai
+verified: true
+discovered_from: yc
+discovered_jobs: 1
+last_verified: '2026-06-01'
+evidence_url: null

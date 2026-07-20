@@ -1,0 +1,13 @@
+name: Sentera
+slug: sentera
+ats: workday
+ats_config:
+  tenant: sentara
+  site_id: SCS
+  wd_version: '1'
+careers_url: https://sentara.wd1.myworkdayjobs.com/SCS
+verified: true
+discovered_from: agent
+discovered_jobs: 2000
+last_verified: '2026-06-01'
+evidence_url: https://sentara.wd1.myworkdayjobs.com/SCS

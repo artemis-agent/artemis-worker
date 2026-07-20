@@ -1,0 +1,13 @@
+name: Sonder
+slug: sonder
+ats: workday
+ats_config:
+  tenant: sonder
+  site_id: Join_Sonder
+  wd_version: '1'
+careers_url: https://sonder.wd1.myworkdayjobs.com/Join_Sonder
+verified: true
+discovered_from: agent
+discovered_jobs: 39
+last_verified: '2026-06-01'
+evidence_url: https://sonder.wd1.myworkdayjobs.com/Join_Sonder

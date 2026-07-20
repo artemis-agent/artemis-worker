@@ -1,0 +1,11 @@
+name: Cedar
+slug: cedar
+ats: ashby
+ats_config:
+  board_token: cedar
+careers_url: https://mail.cedarcopilot.com/
+verified: true
+discovered_from: yc
+discovered_jobs: 3
+last_verified: '2026-06-01'
+evidence_url: null

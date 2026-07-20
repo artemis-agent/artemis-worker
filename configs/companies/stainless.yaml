@@ -1,0 +1,11 @@
+name: Stainless
+slug: stainless
+ats: ashby
+ats_config:
+  board_token: stainlessapi
+careers_url: https://www.stainless.com/careers
+verified: false
+discovered_from: crunchbase
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

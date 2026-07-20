@@ -1,0 +1,11 @@
+name: Navier AI
+slug: navier-ai
+ats: greenhouse
+ats_config:
+  board_token: navierai
+careers_url: http://navier.ai
+verified: true
+discovered_from: yc
+discovered_jobs: 2
+last_verified: '2026-06-01'
+evidence_url: null

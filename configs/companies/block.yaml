@@ -1,0 +1,11 @@
+name: Block
+slug: block
+ats: greenhouse
+ats_config:
+  board_token: block
+careers_url: https://block.xyz/careers
+verified: false
+discovered_from: fortune500
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

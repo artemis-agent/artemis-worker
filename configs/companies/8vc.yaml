@@ -1,0 +1,11 @@
+name: 8VC
+slug: 8vc
+ats: ashby
+ats_config:
+  board_token: 8vc
+careers_url: https://www.8vc.com/careers
+verified: true
+discovered_from: crunchbase
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

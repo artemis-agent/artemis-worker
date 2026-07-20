@@ -1,0 +1,11 @@
+name: Sarvam AI
+slug: sarvam-ai
+ats: ashby
+ats_config:
+  board_token: sarvam
+careers_url: https://www.sarvam.space/careers
+verified: true
+discovered_from: crunchbase
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

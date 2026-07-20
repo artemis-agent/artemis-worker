@@ -1,0 +1,11 @@
+name: Sila Nanotechnologies
+slug: sila-nanotechnologies
+ats: greenhouse
+ats_config:
+  board_token: silananotechnologies
+careers_url: https://silananotechnologies.com
+verified: true
+discovered_from: curated
+discovered_jobs: 35
+last_verified: '2026-06-01'
+evidence_url: null

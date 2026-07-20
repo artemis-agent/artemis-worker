@@ -1,0 +1,11 @@
+name: Honeycomb
+slug: honeycomb
+ats: greenhouse
+ats_config:
+  board_token: honeycomb
+careers_url: https://www.honeycomb.io
+verified: true
+discovered_from: crunchbase
+discovered_jobs: 12
+last_verified: '2026-06-01'
+evidence_url: null

@@ -1,0 +1,11 @@
+name: Booking Holdings
+slug: booking-holdings
+ats: icims
+ats_config:
+  careers_url: https://employees-holdings-workingatbooking.icims.com/jobs/search
+careers_url: https://employees-holdings-workingatbooking.icims.com/jobs/login?loginOnly=1&redirect=&in_iframe=1&sso_connection=hs-14233-saml
+verified: true
+discovered_from: agent
+discovered_jobs: 1
+last_verified: '2026-06-01'
+evidence_url: https://employees-holdings-workingatbooking.icims.com/jobs/login?loginOnly=1&redirect=&in_iframe=1&sso_connection=hs-14233-saml

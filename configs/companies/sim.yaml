@@ -1,0 +1,11 @@
+name: Sim
+slug: sim
+ats: ashby
+ats_config:
+  board_token: sim
+careers_url: https://sim.ai
+verified: true
+discovered_from: yc
+discovered_jobs: 5
+last_verified: '2026-06-01'
+evidence_url: null

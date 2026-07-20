@@ -1,0 +1,11 @@
+name: Color Health
+slug: color-health
+ats: ashby
+ats_config:
+  board_token: color-health
+careers_url: https://color-health.com
+verified: true
+discovered_from: curated
+discovered_jobs: 10
+last_verified: '2026-06-01'
+evidence_url: null

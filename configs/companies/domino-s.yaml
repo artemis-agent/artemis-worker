@@ -1,0 +1,11 @@
+name: Domino's
+slug: domino-s
+ats: smartrecruiters
+ats_config:
+  company_id: dominos
+careers_url: https://dominos.com
+verified: true
+discovered_from: fortune500
+discovered_jobs: 24662
+last_verified: '2026-06-01'
+evidence_url: null

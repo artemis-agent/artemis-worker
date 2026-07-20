@@ -1,0 +1,13 @@
+name: Autodesk
+slug: autodesk
+ats: workday
+ats_config:
+  tenant: autodesk
+  site_id: Ext
+  wd_version: '1'
+careers_url: https://autodesk.wd1.myworkdayjobs.com/Ext
+verified: true
+discovered_from: agent
+discovered_jobs: 645
+last_verified: '2026-06-01'
+evidence_url: https://autodesk.wd1.myworkdayjobs.com/Ext

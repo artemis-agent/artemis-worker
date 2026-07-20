@@ -1,0 +1,11 @@
+name: FanDuel
+slug: fanduel
+ats: greenhouse
+ats_config:
+  board_token: fanduel
+careers_url: https://fanduel.com
+verified: true
+discovered_from: curated
+discovered_jobs: 126
+last_verified: '2026-06-01'
+evidence_url: null

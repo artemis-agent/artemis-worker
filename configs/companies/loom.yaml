@@ -1,0 +1,11 @@
+name: Loom
+slug: loom
+ats: ashby
+ats_config:
+  board_token: loom
+careers_url: https://loom.com/careers
+verified: false
+discovered_from: wellfound
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

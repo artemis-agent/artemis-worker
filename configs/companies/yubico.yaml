@@ -1,0 +1,11 @@
+name: Yubico
+slug: yubico
+ats: greenhouse
+ats_config:
+  board_token: yubico
+careers_url: http://www.yubico.com
+verified: true
+discovered_from: crunchbase
+discovered_jobs: 13
+last_verified: '2026-06-01'
+evidence_url: null

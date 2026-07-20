@@ -1,0 +1,11 @@
+name: Wise
+slug: wise
+ats: smartrecruiters
+ats_config:
+  company_id: wise
+careers_url: https://wise.com
+verified: true
+discovered_from: curated
+discovered_jobs: 376
+last_verified: '2026-06-01'
+evidence_url: null

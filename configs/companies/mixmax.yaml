@@ -1,0 +1,11 @@
+name: Mixmax
+slug: mixmax
+ats: greenhouse
+ats_config:
+  board_token: mixmax
+careers_url: https://mixmax.com
+verified: true
+discovered_from: curated
+discovered_jobs: 2
+last_verified: '2026-06-01'
+evidence_url: null

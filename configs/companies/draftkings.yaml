@@ -1,0 +1,13 @@
+name: DraftKings
+slug: draftkings
+ats: workday
+ats_config:
+  tenant: draftkings
+  site_id: DraftKings
+  wd_version: '1'
+careers_url: https://draftkings.wd1.myworkdayjobs.com/DraftKings/
+verified: true
+discovered_from: agent
+discovered_jobs: 92
+last_verified: '2026-06-01'
+evidence_url: https://draftkings.wd1.myworkdayjobs.com/DraftKings/

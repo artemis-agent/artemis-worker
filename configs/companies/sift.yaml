@@ -1,0 +1,11 @@
+name: Sift
+slug: sift
+ats: ashby
+ats_config:
+  board_token: sift
+careers_url: https://sift.com
+verified: true
+discovered_from: curated
+discovered_jobs: 7
+last_verified: '2026-06-01'
+evidence_url: null

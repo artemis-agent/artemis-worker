@@ -1,0 +1,11 @@
+name: NBCUniversal
+slug: nbcuniversal
+ats: smartrecruiters
+ats_config:
+  company_id: my-applications
+careers_url: https://nbcunicareers.com
+verified: false
+discovered_from: fortune500
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

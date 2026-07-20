@@ -1,0 +1,11 @@
+name: Bandwidth
+slug: bandwidth
+ats: greenhouse
+ats_config:
+  board_token: bandwidth
+careers_url: https://bandwidth.com
+verified: true
+discovered_from: curated
+discovered_jobs: 32
+last_verified: '2026-06-01'
+evidence_url: null

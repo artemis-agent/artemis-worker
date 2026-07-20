@@ -1,0 +1,11 @@
+name: Adyen
+slug: adyen
+ats: greenhouse
+ats_config:
+  board_token: adyen
+careers_url: https://adyen.com
+verified: true
+discovered_from: curated
+discovered_jobs: 221
+last_verified: '2026-06-01'
+evidence_url: null

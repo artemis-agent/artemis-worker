@@ -1,0 +1,11 @@
+name: Vera Health
+slug: vera-health
+ats: ashby
+ats_config:
+  board_token: verahealth
+careers_url: https://www.vera-health.ai
+verified: true
+discovered_from: yc
+discovered_jobs: 10
+last_verified: '2026-06-01'
+evidence_url: null

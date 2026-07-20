@@ -1,0 +1,11 @@
+name: Synthetic Society
+slug: synthetic-society
+ats: ashby
+ats_config:
+  board_token: synthetic
+careers_url: https://syntheticsociety.ai/
+verified: true
+discovered_from: yc
+discovered_jobs: 2
+last_verified: '2026-06-01'
+evidence_url: null

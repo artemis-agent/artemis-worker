@@ -1,0 +1,11 @@
+name: Glide
+slug: glide
+ats: greenhouse
+ats_config:
+  board_token: glide
+careers_url: https://buildwithglide.com
+verified: true
+discovered_from: yc
+discovered_jobs: 2
+last_verified: '2026-06-01'
+evidence_url: null

@@ -1,0 +1,11 @@
+name: Blacksmith
+slug: blacksmith
+ats: ashby
+ats_config:
+  board_token: blacksmith
+careers_url: https://blacksmith.sh/
+verified: true
+discovered_from: yc
+discovered_jobs: 11
+last_verified: '2026-06-01'
+evidence_url: null

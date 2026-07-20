@@ -1,0 +1,11 @@
+name: Common Room
+slug: common-room
+ats: ashby
+ats_config:
+  board_token: commonroom
+careers_url: https://commonroom.com
+verified: true
+discovered_from: curated
+discovered_jobs: 12
+last_verified: '2026-06-01'
+evidence_url: null

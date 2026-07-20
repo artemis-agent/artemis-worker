@@ -1,0 +1,13 @@
+name: Centene
+slug: centene
+ats: workday
+ats_config:
+  tenant: centene
+  site_id: centene_external
+  wd_version: '5'
+careers_url: https://jobs.centene.com
+verified: true
+discovered_from: fortune500
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

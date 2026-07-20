@@ -1,0 +1,13 @@
+name: Boston Dynamics
+slug: boston-dynamics
+ats: workday
+ats_config:
+  tenant: bostondynamics
+  site_id: Boston_Dynamics
+  wd_version: '1'
+careers_url: https://bostondynamics.com/careers
+verified: true
+discovered_from: crunchbase
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

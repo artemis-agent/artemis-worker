@@ -1,0 +1,13 @@
+name: Workday
+slug: workday
+ats: workday
+ats_config:
+  tenant: workday
+  site_id: Workday
+  wd_version: '5'
+careers_url: https://workday.com/en-us/company/careers.html
+verified: true
+discovered_from: fortune500
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

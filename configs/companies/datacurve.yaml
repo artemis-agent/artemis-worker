@@ -1,0 +1,11 @@
+name: Datacurve
+slug: datacurve
+ats: ashby
+ats_config:
+  board_token: datacurve
+careers_url: https://datacurve.ai/
+verified: true
+discovered_from: yc
+discovered_jobs: 11
+last_verified: '2026-06-01'
+evidence_url: null

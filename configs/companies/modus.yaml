@@ -1,0 +1,11 @@
+name: Modus
+slug: modus
+ats: ashby
+ats_config:
+  board_token: modus
+careers_url: https://himodus.com
+verified: true
+discovered_from: yc
+discovered_jobs: 11
+last_verified: '2026-06-01'
+evidence_url: null

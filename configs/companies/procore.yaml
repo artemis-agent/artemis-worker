@@ -1,0 +1,13 @@
+name: Procore
+slug: procore
+ats: workday
+ats_config:
+  tenant: procore
+  site_id: Procore_External_Careers
+  wd_version: '12'
+careers_url: https://procore.wd12.myworkdayjobs.com/Procore_External_Careers
+verified: true
+discovered_from: agent
+discovered_jobs: 107
+last_verified: '2026-06-01'
+evidence_url: https://procore.wd12.myworkdayjobs.com/Procore_External_Careers

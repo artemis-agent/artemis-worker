@@ -1,0 +1,11 @@
+name: Statsig
+slug: statsig
+ats: ashby
+ats_config:
+  board_token: statsig
+careers_url: https://statsig.com
+verified: true
+discovered_from: curated
+discovered_jobs: 7
+last_verified: '2026-06-01'
+evidence_url: null

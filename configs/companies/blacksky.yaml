@@ -1,0 +1,11 @@
+name: BlackSky
+slug: blacksky
+ats: greenhouse
+ats_config:
+  board_token: blacksky
+careers_url: https://blacksky.com
+verified: true
+discovered_from: curated
+discovered_jobs: 22
+last_verified: '2026-06-01'
+evidence_url: null

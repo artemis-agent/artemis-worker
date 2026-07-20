@@ -1,0 +1,11 @@
+name: Datarails
+slug: datarails
+ats: greenhouse
+ats_config:
+  board_token: datarails
+careers_url: https://datarails.com
+verified: true
+discovered_from: curated
+discovered_jobs: 7
+last_verified: '2026-06-01'
+evidence_url: null

@@ -1,0 +1,11 @@
+name: Healthtech 1
+slug: healthtech-1
+ats: ashby
+ats_config:
+  board_token: healthtech-1
+careers_url: https://www.healthtech1.uk/
+verified: true
+discovered_from: yc
+discovered_jobs: 7
+last_verified: '2026-06-01'
+evidence_url: null

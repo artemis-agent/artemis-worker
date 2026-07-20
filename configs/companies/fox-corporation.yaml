@@ -1,0 +1,11 @@
+name: Fox Corporation
+slug: fox-corporation
+ats: greenhouse
+ats_config:
+  board_token: fox
+careers_url: https://fox.com
+verified: true
+discovered_from: fortune500
+discovered_jobs: 7
+last_verified: '2026-06-01'
+evidence_url: null

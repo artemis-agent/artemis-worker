@@ -1,0 +1,13 @@
+name: Buildertrend
+slug: buildertrend
+ats: workday
+ats_config:
+  tenant: buildertrend
+  site_id: External_Careers
+  wd_version: '108'
+careers_url: https://buildertrend.wd108.myworkdayjobs.com/en-US/External_Careers/introduceYourself
+verified: true
+discovered_from: agent
+discovered_jobs: 6
+last_verified: '2026-06-01'
+evidence_url: https://buildertrend.wd108.myworkdayjobs.com/en-US/External_Careers/introduceYourself

@@ -1,0 +1,11 @@
+name: hud
+slug: hud
+ats: ashby
+ats_config:
+  board_token: hud
+careers_url: https://www.hud.ai
+verified: true
+discovered_from: yc
+discovered_jobs: 5
+last_verified: '2026-06-01'
+evidence_url: null

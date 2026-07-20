@@ -1,0 +1,11 @@
+name: AbbVie
+slug: abbvie
+ats: smartrecruiters
+ats_config:
+  company_id: abbvie
+careers_url: https://abbvie.com
+verified: true
+discovered_from: fortune500
+discovered_jobs: 1479
+last_verified: '2026-06-01'
+evidence_url: null

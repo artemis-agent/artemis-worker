@@ -1,0 +1,11 @@
+name: Stage
+slug: stage
+ats: greenhouse
+ats_config:
+  board_token: stage
+careers_url: https://www.stagereview.app/
+verified: true
+discovered_from: yc
+discovered_jobs: 161
+last_verified: '2026-06-01'
+evidence_url: null

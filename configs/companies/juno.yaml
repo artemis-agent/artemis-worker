@@ -1,0 +1,11 @@
+name: Juno
+slug: juno
+ats: greenhouse
+ats_config:
+  board_token: juno
+careers_url: https://junocompanion.com/
+verified: true
+discovered_from: yc
+discovered_jobs: 4
+last_verified: '2026-06-01'
+evidence_url: null

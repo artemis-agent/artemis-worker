@@ -1,0 +1,11 @@
+name: Neon
+slug: neon
+ats: lever
+ats_config:
+  company: neon
+careers_url: https://neon.tech/careers
+verified: true
+discovered_from: wellfound
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

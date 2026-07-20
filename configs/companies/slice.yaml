@@ -1,0 +1,11 @@
+name: Slice
+slug: slice
+ats: greenhouse
+ats_config:
+  board_token: slice
+careers_url: https://slice.com
+verified: true
+discovered_from: curated
+discovered_jobs: 73
+last_verified: '2026-06-01'
+evidence_url: null

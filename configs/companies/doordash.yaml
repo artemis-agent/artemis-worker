@@ -1,0 +1,11 @@
+name: DoorDash
+slug: doordash
+ats: greenhouse
+ats_config:
+  board_token: doordashindia
+careers_url: https://job-boards.greenhouse.io/doordashindia?gh_src=trmcs8ot1us
+verified: true
+discovered_from: agent
+discovered_jobs: 10
+last_verified: '2026-06-01'
+evidence_url: https://job-boards.greenhouse.io/doordashindia?gh_src=trmcs8ot1us

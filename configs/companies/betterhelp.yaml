@@ -1,0 +1,11 @@
+name: BetterHelp
+slug: betterhelp
+ats: greenhouse
+ats_config:
+  board_token: betterhelp
+careers_url: https://betterhelp.com
+verified: true
+discovered_from: curated
+discovered_jobs: 257
+last_verified: '2026-06-01'
+evidence_url: null

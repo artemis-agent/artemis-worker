@@ -1,0 +1,11 @@
+name: Andromeda Surgical
+slug: andromeda-surgical
+ats: ashby
+ats_config:
+  board_token: andromeda
+careers_url: http://www.andromedasurgical.com
+verified: true
+discovered_from: yc
+discovered_jobs: 10
+last_verified: '2026-06-01'
+evidence_url: null

@@ -1,0 +1,11 @@
+name: VTS
+slug: vts
+ats: greenhouse
+ats_config:
+  board_token: vts
+careers_url: https://vts.com
+verified: true
+discovered_from: curated
+discovered_jobs: 16
+last_verified: '2026-06-01'
+evidence_url: null

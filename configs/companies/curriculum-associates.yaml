@@ -1,0 +1,13 @@
+name: Curriculum Associates
+slug: curriculum-associates
+ats: workday
+ats_config:
+  tenant: curriculumassociates
+  site_id: External
+  wd_version: '5'
+careers_url: https://curriculumassociates.wd5.myworkdayjobs.com/External
+verified: true
+discovered_from: agent
+discovered_jobs: 26
+last_verified: '2026-06-01'
+evidence_url: https://curriculumassociates.wd5.myworkdayjobs.com/External

@@ -1,0 +1,13 @@
+name: GoTo
+slug: goto
+ats: workday
+ats_config:
+  tenant: goto
+  site_id: GoToCareers
+  wd_version: '5'
+careers_url: https://goto.wd5.myworkdayjobs.com/GoToCareers
+verified: true
+discovered_from: agent
+discovered_jobs: 29
+last_verified: '2026-06-01'
+evidence_url: https://goto.wd5.myworkdayjobs.com/GoToCareers

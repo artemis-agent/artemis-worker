@@ -1,0 +1,11 @@
+name: Postscript
+slug: postscript
+ats: greenhouse
+ats_config:
+  board_token: postscript
+careers_url: https://postscript.com
+verified: true
+discovered_from: curated
+discovered_jobs: 6
+last_verified: '2026-06-01'
+evidence_url: null

@@ -1,0 +1,11 @@
+name: Mintlify
+slug: mintlify
+ats: ashby
+ats_config:
+  board_token: mintlify
+careers_url: https://mintlify.com
+verified: true
+discovered_from: curated
+discovered_jobs: 14
+last_verified: '2026-06-01'
+evidence_url: null

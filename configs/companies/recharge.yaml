@@ -1,0 +1,11 @@
+name: Recharge
+slug: recharge
+ats: ashby
+ats_config:
+  board_token: recharge
+careers_url: https://recharge.com
+verified: true
+discovered_from: curated
+discovered_jobs: 6
+last_verified: '2026-06-01'
+evidence_url: null

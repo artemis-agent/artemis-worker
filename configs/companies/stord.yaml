@@ -1,0 +1,13 @@
+name: Stord
+slug: stord
+ats: workday
+ats_config:
+  tenant: stord
+  site_id: Stord_External_Career
+  wd_version: '503'
+careers_url: https://www.stord.com/careers
+verified: true
+discovered_from: crunchbase
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

@@ -1,0 +1,11 @@
+name: burnt
+slug: burnt
+ats: greenhouse
+ats_config:
+  board_token: burnt
+careers_url: https://getburnt.ai/
+verified: true
+discovered_from: yc
+discovered_jobs: 8
+last_verified: '2026-06-01'
+evidence_url: null

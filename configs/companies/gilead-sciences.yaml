@@ -1,0 +1,13 @@
+name: Gilead Sciences
+slug: gilead-sciences
+ats: workday
+ats_config:
+  tenant: gilead
+  site_id: gileadcareers
+  wd_version: '1'
+careers_url: https://gilead.com/careers
+verified: true
+discovered_from: fortune500
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

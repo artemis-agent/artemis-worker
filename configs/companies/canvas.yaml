@@ -1,0 +1,13 @@
+name: Canvas
+slug: canvas
+ats: workday
+ats_config:
+  tenant: canvasinc
+  site_id: Canvas
+  wd_version: '108'
+careers_url: https://canvasinc.wd108.myworkdayjobs.com/Canvas/
+verified: true
+discovered_from: agent
+discovered_jobs: 58
+last_verified: '2026-06-01'
+evidence_url: https://canvasinc.wd108.myworkdayjobs.com/Canvas/

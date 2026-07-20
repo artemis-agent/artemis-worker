@@ -1,0 +1,11 @@
+name: HomeLight
+slug: homelight
+ats: greenhouse
+ats_config:
+  board_token: homelight
+careers_url: https://homelight.com
+verified: true
+discovered_from: curated
+discovered_jobs: 20
+last_verified: '2026-06-01'
+evidence_url: null

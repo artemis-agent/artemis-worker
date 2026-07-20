@@ -1,0 +1,11 @@
+name: Genius Sports
+slug: genius-sports
+ats: greenhouse
+ats_config:
+  board_token: geniussports
+careers_url: https://geniussports.com
+verified: true
+discovered_from: curated
+discovered_jobs: 28
+last_verified: '2026-06-01'
+evidence_url: null

@@ -1,0 +1,11 @@
+name: PointOne
+slug: pointone
+ats: ashby
+ats_config:
+  board_token: pointone
+careers_url: https://pointone.com/
+verified: true
+discovered_from: yc
+discovered_jobs: 12
+last_verified: '2026-06-01'
+evidence_url: null

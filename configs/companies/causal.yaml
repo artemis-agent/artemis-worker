@@ -1,0 +1,11 @@
+name: Causal
+slug: causal
+ats: ashby
+ats_config:
+  board_token: causal
+careers_url: https://causal.com
+verified: true
+discovered_from: curated
+discovered_jobs: 2
+last_verified: '2026-06-01'
+evidence_url: null

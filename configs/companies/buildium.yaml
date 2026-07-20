@@ -1,0 +1,11 @@
+name: Buildium
+slug: buildium
+ats: smartrecruiters
+ats_config:
+  company_id: buildium
+careers_url: https://buildium.com
+verified: true
+discovered_from: curated
+discovered_jobs: 1
+last_verified: '2026-06-01'
+evidence_url: null

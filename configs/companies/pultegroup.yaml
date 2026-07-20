@@ -1,0 +1,13 @@
+name: PulteGroup
+slug: pultegroup
+ats: workday
+ats_config:
+  tenant: pultegroup
+  site_id: PGI
+  wd_version: '1'
+careers_url: https://pultegroupinc.com/careers
+verified: true
+discovered_from: fortune500
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

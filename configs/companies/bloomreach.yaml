@@ -1,0 +1,11 @@
+name: Bloomreach
+slug: bloomreach
+ats: greenhouse
+ats_config:
+  board_token: bloomreach
+careers_url: https://bloomreach.com
+verified: true
+discovered_from: curated
+discovered_jobs: 81
+last_verified: '2026-06-01'
+evidence_url: null

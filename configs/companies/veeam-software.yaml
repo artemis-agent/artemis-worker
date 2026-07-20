@@ -1,0 +1,11 @@
+name: Veeam Software
+slug: veeam-software
+ats: greenhouse
+ats_config:
+  board_token: veeamsoftware
+careers_url: http://www.veeam.com
+verified: true
+discovered_from: crunchbase
+discovered_jobs: 287
+last_verified: '2026-06-01'
+evidence_url: null

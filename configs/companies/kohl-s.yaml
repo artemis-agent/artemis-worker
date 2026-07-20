@@ -1,0 +1,13 @@
+name: Kohl's
+slug: kohl-s
+ats: workday
+ats_config:
+  tenant: kohls
+  site_id: kohlscareers
+  wd_version: '1'
+careers_url: https://careers.kohls.com
+verified: true
+discovered_from: fortune500
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

@@ -1,0 +1,11 @@
+name: Cresta
+slug: cresta
+ats: greenhouse
+ats_config:
+  board_token: cresta
+careers_url: https://cresta.com
+verified: true
+discovered_from: curated
+discovered_jobs: 116
+last_verified: '2026-06-01'
+evidence_url: null

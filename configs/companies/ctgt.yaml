@@ -1,0 +1,11 @@
+name: CTGT
+slug: ctgt
+ats: ashby
+ats_config:
+  board_token: ctgt
+careers_url: https://www.ctgt.ai/
+verified: true
+discovered_from: yc
+discovered_jobs: 2
+last_verified: '2026-06-01'
+evidence_url: null

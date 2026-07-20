@@ -1,0 +1,11 @@
+name: Locus Robotics
+slug: locus-robotics
+ats: greenhouse
+ats_config:
+  board_token: locusrobotics
+careers_url: https://locusrobotics.com
+verified: true
+discovered_from: curated
+discovered_jobs: 17
+last_verified: '2026-06-01'
+evidence_url: null

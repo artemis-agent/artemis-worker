@@ -1,0 +1,13 @@
+name: Tencent Games
+slug: tencent-games
+ats: workday
+ats_config:
+  tenant: tencent
+  site_id: Tencent_Careers
+  wd_version: '1'
+careers_url: https://tencent.wd1.myworkdayjobs.com/Tencent_Careers/
+verified: true
+discovered_from: agent
+discovered_jobs: 392
+last_verified: '2026-06-01'
+evidence_url: https://tencent.wd1.myworkdayjobs.com/Tencent_Careers/

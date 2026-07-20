@@ -1,0 +1,11 @@
+name: MorphoAI
+slug: morphoai
+ats: ashby
+ats_config:
+  board_token: morpho
+careers_url: https://morpho.ai/
+verified: true
+discovered_from: yc
+discovered_jobs: 10
+last_verified: '2026-06-01'
+evidence_url: null

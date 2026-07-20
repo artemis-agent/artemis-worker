@@ -1,0 +1,11 @@
+name: W.W. Grainger
+slug: w-w-grainger
+ats: greenhouse
+ats_config:
+  board_token: ww
+careers_url: https://ww.com
+verified: true
+discovered_from: fortune500
+discovered_jobs: 75
+last_verified: '2026-06-01'
+evidence_url: null

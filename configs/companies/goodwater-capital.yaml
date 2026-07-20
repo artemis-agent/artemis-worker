@@ -1,0 +1,11 @@
+name: Goodwater Capital
+slug: goodwater-capital
+ats: lever
+ats_config:
+  company: goodwatercap
+careers_url: https://www.goodwatercap.com/careers
+verified: false
+discovered_from: crunchbase
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

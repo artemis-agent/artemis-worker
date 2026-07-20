@@ -1,0 +1,11 @@
+name: Huntress
+slug: huntress
+ats: greenhouse
+ats_config:
+  board_token: huntress
+careers_url: https://huntress.com
+verified: true
+discovered_from: curated
+discovered_jobs: 29
+last_verified: '2026-06-01'
+evidence_url: null

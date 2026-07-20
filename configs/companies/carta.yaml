@@ -1,0 +1,11 @@
+name: Carta
+slug: carta
+ats: greenhouse
+ats_config:
+  board_token: carta
+careers_url: https://carta.com
+verified: true
+discovered_from: curated
+discovered_jobs: 51
+last_verified: '2026-06-01'
+evidence_url: null

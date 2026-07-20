@@ -1,0 +1,11 @@
+name: Pilot Bookkeeping
+slug: pilot-bookkeeping
+ats: greenhouse
+ats_config:
+  board_token: pilothq
+careers_url: https://job-boards.greenhouse.io/pilothq
+verified: true
+discovered_from: agent
+discovered_jobs: 17
+last_verified: '2026-06-01'
+evidence_url: https://job-boards.greenhouse.io/pilothq

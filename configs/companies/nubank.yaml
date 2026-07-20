@@ -1,0 +1,11 @@
+name: Nubank
+slug: nubank
+ats: greenhouse
+ats_config:
+  board_token: nubank
+careers_url: https://nubank.com
+verified: true
+discovered_from: curated
+discovered_jobs: 113
+last_verified: '2026-06-01'
+evidence_url: null

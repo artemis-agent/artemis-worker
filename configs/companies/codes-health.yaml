@@ -1,0 +1,11 @@
+name: Codes Health
+slug: codes-health
+ats: ashby
+ats_config:
+  board_token: codes-health
+careers_url: https://www.codeshealth.com/
+verified: true
+discovered_from: yc
+discovered_jobs: 8
+last_verified: '2026-06-01'
+evidence_url: null

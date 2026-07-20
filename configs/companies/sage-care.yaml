@@ -1,0 +1,11 @@
+name: Sage Care
+slug: sage-care
+ats: ashby
+ats_config:
+  board_token: sagecare
+careers_url: https://sagecare.ai
+verified: true
+discovered_from: yc
+discovered_jobs: 6
+last_verified: '2026-06-01'
+evidence_url: null

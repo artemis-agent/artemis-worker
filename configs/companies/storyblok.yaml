@@ -1,0 +1,11 @@
+name: Storyblok
+slug: storyblok
+ats: greenhouse
+ats_config:
+  board_token: storyblok
+careers_url: https://storyblok.com
+verified: true
+discovered_from: curated
+discovered_jobs: 10
+last_verified: '2026-06-01'
+evidence_url: null

@@ -1,0 +1,11 @@
+name: Scale AI
+slug: scale-ai
+ats: greenhouse
+ats_config:
+  board_token: scaleai
+careers_url: https://scale.com
+verified: true
+discovered_from: wellfound
+discovered_jobs: 167
+last_verified: '2026-06-01'
+evidence_url: null

@@ -1,0 +1,11 @@
+name: Notable Health
+slug: notable-health
+ats: ashby
+ats_config:
+  board_token: notable
+careers_url: https://jobs.ashbyhq.com/notable
+verified: true
+discovered_from: agent
+discovered_jobs: 14
+last_verified: '2026-06-01'
+evidence_url: https://jobs.ashbyhq.com/notable

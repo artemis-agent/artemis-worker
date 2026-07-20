@@ -1,0 +1,11 @@
+name: Forto
+slug: forto
+ats: ashby
+ats_config:
+  board_token: forto
+careers_url: https://forto.com
+verified: true
+discovered_from: curated
+discovered_jobs: 17
+last_verified: '2026-06-01'
+evidence_url: null

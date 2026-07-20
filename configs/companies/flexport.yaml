@@ -1,0 +1,11 @@
+name: Flexport
+slug: flexport
+ats: greenhouse
+ats_config:
+  board_token: flexport
+careers_url: https://flexport.com
+verified: true
+discovered_from: curated
+discovered_jobs: 96
+last_verified: '2026-06-01'
+evidence_url: null

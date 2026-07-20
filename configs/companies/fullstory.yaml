@@ -1,0 +1,11 @@
+name: FullStory
+slug: fullstory
+ats: ashby
+ats_config:
+  board_token: fullstory
+careers_url: https://fullstory.com
+verified: true
+discovered_from: curated
+discovered_jobs: 9
+last_verified: '2026-06-01'
+evidence_url: null

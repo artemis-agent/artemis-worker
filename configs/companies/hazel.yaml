@@ -1,0 +1,11 @@
+name: Hazel
+slug: hazel
+ats: greenhouse
+ats_config:
+  board_token: hazel
+careers_url: https://hazelai.com
+verified: true
+discovered_from: yc
+discovered_jobs: 15
+last_verified: '2026-06-01'
+evidence_url: null

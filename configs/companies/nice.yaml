@@ -1,0 +1,11 @@
+name: NICE
+slug: nice
+ats: greenhouse
+ats_config:
+  board_token: nice
+careers_url: https://nice.com
+verified: true
+discovered_from: curated
+discovered_jobs: 358
+last_verified: '2026-06-01'
+evidence_url: null

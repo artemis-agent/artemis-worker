@@ -1,0 +1,11 @@
+name: Stytch
+slug: stytch
+ats: ashby
+ats_config:
+  board_token: stytch
+careers_url: https://stytch.com
+verified: true
+discovered_from: wellfound
+discovered_jobs: 5
+last_verified: '2026-06-01'
+evidence_url: null

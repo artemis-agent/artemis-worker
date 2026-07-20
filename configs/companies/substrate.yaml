@@ -1,0 +1,11 @@
+name: Substrate
+slug: substrate
+ats: ashby
+ats_config:
+  board_token: substrate
+careers_url: https://www.substrate.cc/
+verified: true
+discovered_from: yc
+discovered_jobs: 7
+last_verified: '2026-06-01'
+evidence_url: null

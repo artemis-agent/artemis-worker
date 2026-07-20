@@ -1,0 +1,11 @@
+name: Beam Therapeutics
+slug: beam-therapeutics
+ats: greenhouse
+ats_config:
+  board_token: beamtherapeutics
+careers_url: https://beamtherapeutics.com
+verified: true
+discovered_from: curated
+discovered_jobs: 32
+last_verified: '2026-06-01'
+evidence_url: null

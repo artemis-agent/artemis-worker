@@ -1,0 +1,13 @@
+name: AIG
+slug: aig
+ats: workday
+ats_config:
+  tenant: aig
+  site_id: aig
+  wd_version: '1'
+careers_url: https://aig.com/careers
+verified: true
+discovered_from: fortune500
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

@@ -1,0 +1,11 @@
+name: OpenTable
+slug: opentable
+ats: greenhouse
+ats_config:
+  board_token: opentable
+careers_url: https://opentable.com
+verified: true
+discovered_from: curated
+discovered_jobs: 51
+last_verified: '2026-06-01'
+evidence_url: null

@@ -1,0 +1,11 @@
+name: Veeva
+slug: veeva
+ats: lever
+ats_config:
+  company: veeva
+careers_url: https://veeva.com
+verified: true
+discovered_from: fortune500
+discovered_jobs: 1
+last_verified: '2026-06-01'
+evidence_url: null

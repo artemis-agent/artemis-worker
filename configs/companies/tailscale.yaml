@@ -1,0 +1,11 @@
+name: Tailscale
+slug: tailscale
+ats: greenhouse
+ats_config:
+  board_token: tailscale
+careers_url: https://tailscale.com/careers
+verified: true
+discovered_from: wellfound
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

@@ -1,0 +1,11 @@
+name: Couchbase
+slug: couchbase
+ats: greenhouse
+ats_config:
+  board_token: couchbaseinc
+careers_url: https://job-boards.greenhouse.io/couchbaseinc/
+verified: true
+discovered_from: agent
+discovered_jobs: 36
+last_verified: '2026-06-01'
+evidence_url: https://job-boards.greenhouse.io/couchbaseinc/

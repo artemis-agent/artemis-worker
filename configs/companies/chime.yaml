@@ -1,0 +1,11 @@
+name: Chime
+slug: chime
+ats: greenhouse
+ats_config:
+  board_token: chime
+careers_url: https://chime.com
+verified: true
+discovered_from: curated
+discovered_jobs: 68
+last_verified: '2026-06-01'
+evidence_url: null

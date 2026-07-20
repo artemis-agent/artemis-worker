@@ -1,0 +1,11 @@
+name: MoonPay
+slug: moonpay
+ats: lever
+ats_config:
+  company: moonpay
+careers_url: https://www.moonpay.com/careers
+verified: true
+discovered_from: crunchbase
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

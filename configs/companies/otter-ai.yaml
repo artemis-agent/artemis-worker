@@ -1,0 +1,11 @@
+name: Otter AI
+slug: otter-ai
+ats: greenhouse
+ats_config:
+  board_token: otterai
+careers_url: https://otterai.com
+verified: true
+discovered_from: curated
+discovered_jobs: 30
+last_verified: '2026-06-01'
+evidence_url: null

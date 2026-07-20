@@ -1,0 +1,11 @@
+name: Unframe
+slug: unframe
+ats: greenhouse
+ats_config:
+  board_token: unframe
+careers_url: https://www.unframe.ai
+verified: true
+discovered_from: crunchbase
+discovered_jobs: 44
+last_verified: '2026-06-01'
+evidence_url: null

@@ -1,0 +1,11 @@
+name: PrizePicks
+slug: prizepicks
+ats: greenhouse
+ats_config:
+  board_token: prizepicks
+careers_url: https://prizepicks.com
+verified: true
+discovered_from: curated
+discovered_jobs: 33
+last_verified: '2026-06-01'
+evidence_url: null

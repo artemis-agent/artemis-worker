@@ -1,0 +1,11 @@
+name: Finto
+slug: finto
+ats: ashby
+ats_config:
+  board_token: finto
+careers_url: https://www.gofinto.com/
+verified: true
+discovered_from: yc
+discovered_jobs: 7
+last_verified: '2026-06-01'
+evidence_url: null

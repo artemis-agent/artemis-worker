@@ -1,0 +1,11 @@
+name: Domino Data Lab
+slug: domino-data-lab
+ats: greenhouse
+ats_config:
+  board_token: dominodatalab
+careers_url: https://dominodatalab.com
+verified: true
+discovered_from: curated
+discovered_jobs: 12
+last_verified: '2026-06-01'
+evidence_url: null

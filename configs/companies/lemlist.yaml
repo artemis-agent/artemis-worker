@@ -1,0 +1,11 @@
+name: Lemlist
+slug: lemlist
+ats: ashby
+ats_config:
+  board_token: lemlist
+careers_url: https://lemlist.com
+verified: true
+discovered_from: curated
+discovered_jobs: 20
+last_verified: '2026-06-01'
+evidence_url: null

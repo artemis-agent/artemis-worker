@@ -1,0 +1,11 @@
+name: Unleash
+slug: unleash
+ats: smartrecruiters
+ats_config:
+  company_id: unleash
+careers_url: https://unleash.com
+verified: true
+discovered_from: curated
+discovered_jobs: 2
+last_verified: '2026-06-01'
+evidence_url: null

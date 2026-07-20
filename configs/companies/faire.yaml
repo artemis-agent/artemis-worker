@@ -1,0 +1,11 @@
+name: Faire
+slug: faire
+ats: greenhouse
+ats_config:
+  board_token: faire
+careers_url: https://faire.com
+verified: true
+discovered_from: curated
+discovered_jobs: 71
+last_verified: '2026-06-01'
+evidence_url: null

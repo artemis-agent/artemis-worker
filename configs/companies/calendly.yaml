@@ -1,0 +1,11 @@
+name: Calendly
+slug: calendly
+ats: greenhouse
+ats_config:
+  board_token: calendly
+careers_url: https://calendly.com
+verified: true
+discovered_from: curated
+discovered_jobs: 23
+last_verified: '2026-06-01'
+evidence_url: null

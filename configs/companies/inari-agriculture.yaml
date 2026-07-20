@@ -1,0 +1,13 @@
+name: Inari Agriculture
+slug: inari-agriculture
+ats: workday
+ats_config:
+  tenant: inari
+  site_id: Inari_Careers
+  wd_version: '108'
+careers_url: https://inari.wd108.myworkdayjobs.com/Inari_Careers
+verified: true
+discovered_from: agent
+discovered_jobs: 2
+last_verified: '2026-06-01'
+evidence_url: https://inari.wd108.myworkdayjobs.com/Inari_Careers

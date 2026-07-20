@@ -1,0 +1,11 @@
+name: SurveyMonkey
+slug: surveymonkey
+ats: greenhouse
+ats_config:
+  board_token: surveymonkey
+careers_url: https://surveymonkey.com
+verified: true
+discovered_from: curated
+discovered_jobs: 31
+last_verified: '2026-06-01'
+evidence_url: null

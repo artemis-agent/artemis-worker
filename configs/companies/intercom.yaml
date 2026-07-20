@@ -1,0 +1,11 @@
+name: Intercom
+slug: intercom
+ats: greenhouse
+ats_config:
+  board_token: intercom
+careers_url: https://intercom.com
+verified: true
+discovered_from: curated
+discovered_jobs: 152
+last_verified: '2026-06-01'
+evidence_url: null

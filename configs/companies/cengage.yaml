@@ -1,0 +1,13 @@
+name: Cengage
+slug: cengage
+ats: workday
+ats_config:
+  tenant: cengage
+  site_id: CengageNorthAmericaCareers
+  wd_version: '5'
+careers_url: https://cengage.wd5.myworkdayjobs.com/CengageNorthAmericaCareers
+verified: true
+discovered_from: agent
+discovered_jobs: 82
+last_verified: '2026-06-01'
+evidence_url: https://cengage.wd5.myworkdayjobs.com/CengageNorthAmericaCareers

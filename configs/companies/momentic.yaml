@@ -1,0 +1,11 @@
+name: Momentic
+slug: momentic
+ats: greenhouse
+ats_config:
+  board_token: momentic
+careers_url: https://momentic.ai
+verified: true
+discovered_from: yc
+discovered_jobs: 30
+last_verified: '2026-06-01'
+evidence_url: null

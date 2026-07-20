@@ -1,0 +1,11 @@
+name: Valor Equity Partners
+slug: valor-equity-partners
+ats: greenhouse
+ats_config:
+  board_token: valorequitypartners
+careers_url: http://www.valorep.com
+verified: true
+discovered_from: crunchbase
+discovered_jobs: 1
+last_verified: '2026-06-01'
+evidence_url: null

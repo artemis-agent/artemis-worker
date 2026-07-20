@@ -1,0 +1,11 @@
+name: Western Digital
+slug: western-digital
+ats: smartrecruiters
+ats_config:
+  company_id: westerndigital
+careers_url: https://westerndigital.com
+verified: true
+discovered_from: fortune500
+discovered_jobs: 385
+last_verified: '2026-06-01'
+evidence_url: null

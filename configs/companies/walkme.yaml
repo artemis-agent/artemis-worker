@@ -1,0 +1,11 @@
+name: WalkMe
+slug: walkme
+ats: lever
+ats_config:
+  company: walkme
+careers_url: https://walkme.com
+verified: true
+discovered_from: curated
+discovered_jobs: 1
+last_verified: '2026-06-01'
+evidence_url: null

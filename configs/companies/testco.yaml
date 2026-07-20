@@ -1,0 +1,11 @@
+name: TestCo
+slug: testco
+ats: greenhouse
+ats_config:
+  board_token: example
+careers_url: https://example.com/careers
+verified: true
+discovered_from: manual
+discovered_jobs: 0
+last_verified: '2026-05-31'
+evidence_url: null

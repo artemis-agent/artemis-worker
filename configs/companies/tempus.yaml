@@ -1,0 +1,13 @@
+name: Tempus
+slug: tempus
+ats: workday
+ats_config:
+  tenant: tempus
+  site_id: Tempus_Careers
+  wd_version: '5'
+careers_url: https://www.tempus.com/careers
+verified: true
+discovered_from: crunchbase
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

@@ -1,0 +1,13 @@
+name: Republic
+slug: republic
+ats: workday
+ats_config:
+  tenant: republic
+  site_id: Republic
+  wd_version: '5'
+careers_url: https://republic.wd5.myworkdayjobs.com/Republic
+verified: true
+discovered_from: agent
+discovered_jobs: 1485
+last_verified: '2026-06-01'
+evidence_url: https://republic.wd5.myworkdayjobs.com/Republic

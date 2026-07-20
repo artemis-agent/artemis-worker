@@ -1,0 +1,11 @@
+name: Carbon Direct
+slug: carbon-direct
+ats: greenhouse
+ats_config:
+  board_token: carbondirect
+careers_url: https://carbondirect.com
+verified: true
+discovered_from: curated
+discovered_jobs: 5
+last_verified: '2026-06-01'
+evidence_url: null

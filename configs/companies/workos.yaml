@@ -1,0 +1,11 @@
+name: WorkOS
+slug: workos
+ats: ashby
+ats_config:
+  board_token: workos
+careers_url: https://workos.com/careers
+verified: true
+discovered_from: wellfound
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

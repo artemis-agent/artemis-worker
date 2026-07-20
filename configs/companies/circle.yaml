@@ -1,0 +1,13 @@
+name: Circle
+slug: circle
+ats: workday
+ats_config:
+  tenant: circle
+  site_id: Circle
+  wd_version: '1'
+careers_url: https://circle.wd1.myworkdayjobs.com/Circle/
+verified: true
+discovered_from: agent
+discovered_jobs: 77
+last_verified: '2026-06-01'
+evidence_url: https://circle.wd1.myworkdayjobs.com/Circle/

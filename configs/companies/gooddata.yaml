@@ -1,0 +1,11 @@
+name: GoodData
+slug: gooddata
+ats: ashby
+ats_config:
+  board_token: gooddata
+careers_url: https://gooddata.com
+verified: true
+discovered_from: curated
+discovered_jobs: 4
+last_verified: '2026-06-01'
+evidence_url: null

@@ -1,0 +1,11 @@
+name: Zapier
+slug: zapier
+ats: ashby
+ats_config:
+  board_token: zapier
+careers_url: https://zapier.com
+verified: true
+discovered_from: curated
+discovered_jobs: 22
+last_verified: '2026-06-01'
+evidence_url: null

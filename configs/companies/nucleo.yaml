@@ -1,0 +1,11 @@
+name: Nucleo
+slug: nucleo
+ats: greenhouse
+ats_config:
+  board_token: nucleo
+careers_url: https://nucleoresearch.com/
+verified: true
+discovered_from: yc
+discovered_jobs: 5
+last_verified: '2026-06-01'
+evidence_url: null

@@ -1,0 +1,11 @@
+name: Iterable
+slug: iterable
+ats: greenhouse
+ats_config:
+  board_token: iterable
+careers_url: https://iterable.com
+verified: true
+discovered_from: curated
+discovered_jobs: 35
+last_verified: '2026-06-01'
+evidence_url: null

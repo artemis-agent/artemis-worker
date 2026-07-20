@@ -1,0 +1,12 @@
+name: Qlik
+slug: qlik
+ats: eightfold
+ats_config:
+  company: qlik
+  domain: qlik.com
+careers_url: https://qlik.com
+verified: true
+discovered_from: curated
+discovered_jobs: 21
+last_verified: '2026-06-01'
+evidence_url: null

@@ -1,0 +1,11 @@
+name: Parker Hannifin
+slug: parker-hannifin
+ats: ashby
+ats_config:
+  board_token: parker
+careers_url: https://parker.com/portal/site/PARKER/menuitem/careers
+verified: true
+discovered_from: fortune500
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

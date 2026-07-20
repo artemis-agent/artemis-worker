@@ -1,0 +1,11 @@
+name: Colossal Biosciences
+slug: colossal-biosciences
+ats: greenhouse
+ats_config:
+  board_token: colossalbiosciences
+careers_url: https://colossal.com
+verified: true
+discovered_from: crunchbase
+discovered_jobs: 6
+last_verified: '2026-06-01'
+evidence_url: null

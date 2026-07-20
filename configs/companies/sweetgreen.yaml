@@ -1,0 +1,11 @@
+name: Sweetgreen
+slug: sweetgreen
+ats: greenhouse
+ats_config:
+  board_token: sweetgreen
+careers_url: https://sweetgreen.com/careers
+verified: true
+discovered_from: crunchbase
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

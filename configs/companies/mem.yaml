@@ -1,0 +1,11 @@
+name: Mem
+slug: mem
+ats: ashby
+ats_config:
+  board_token: mem
+careers_url: https://mem.com
+verified: true
+discovered_from: curated
+discovered_jobs: 4
+last_verified: '2026-06-01'
+evidence_url: null

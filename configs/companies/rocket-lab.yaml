@@ -1,0 +1,11 @@
+name: Rocket Lab
+slug: rocket-lab
+ats: greenhouse
+ats_config:
+  board_token: rocketlab
+careers_url: https://rocketlabcorp.com
+verified: true
+discovered_from: crunchbase
+discovered_jobs: 308
+last_verified: '2026-06-01'
+evidence_url: null

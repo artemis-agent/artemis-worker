@@ -1,0 +1,11 @@
+name: Tamarind Bio
+slug: tamarind-bio
+ats: ashby
+ats_config:
+  board_token: tamarindbio
+careers_url: https://www.tamarind.bio
+verified: true
+discovered_from: yc
+discovered_jobs: 6
+last_verified: '2026-06-01'
+evidence_url: null

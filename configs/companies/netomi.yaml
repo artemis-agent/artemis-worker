@@ -1,0 +1,11 @@
+name: Netomi
+slug: netomi
+ats: lever
+ats_config:
+  company: netomi
+careers_url: https://www.netomi.com/
+verified: true
+discovered_from: crunchbase
+discovered_jobs: 1
+last_verified: '2026-06-01'
+evidence_url: null

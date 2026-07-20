@@ -1,0 +1,11 @@
+name: Improbable
+slug: improbable
+ats: ashby
+ats_config:
+  board_token: improbable
+careers_url: https://improbable.com
+verified: true
+discovered_from: curated
+discovered_jobs: 6
+last_verified: '2026-06-01'
+evidence_url: null

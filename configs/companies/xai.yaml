@@ -1,0 +1,11 @@
+name: xAI
+slug: xai
+ats: greenhouse
+ats_config:
+  board_token: xai
+careers_url: https://x.ai/careers
+verified: true
+discovered_from: manual
+discovered_jobs: 0
+last_verified: '2026-04-30'
+evidence_url: null

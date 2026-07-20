@@ -1,0 +1,11 @@
+name: Snowflake
+slug: snowflake
+ats: ashby
+ats_config:
+  board_token: snowflake
+careers_url: https://www.snowflake.com/careers/
+verified: true
+discovered_from: manual
+discovered_jobs: 0
+last_verified: '2026-04-28'
+evidence_url: null

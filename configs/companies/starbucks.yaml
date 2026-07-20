@@ -1,0 +1,12 @@
+name: Starbucks
+slug: starbucks
+ats: eightfold
+ats_config:
+  company: starbucks
+  domain: starbucks.com
+careers_url: https://starbucks.com/careers
+verified: true
+discovered_from: fortune500
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

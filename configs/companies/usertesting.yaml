@@ -1,0 +1,13 @@
+name: UserTesting
+slug: usertesting
+ats: workday
+ats_config:
+  tenant: usertesting
+  site_id: UserTesting
+  wd_version: '12'
+careers_url: https://usertesting.wd12.myworkdayjobs.com/UserTesting
+verified: true
+discovered_from: agent
+discovered_jobs: 6
+last_verified: '2026-06-01'
+evidence_url: https://usertesting.wd12.myworkdayjobs.com/UserTesting

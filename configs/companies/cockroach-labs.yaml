@@ -1,0 +1,11 @@
+name: Cockroach Labs
+slug: cockroach-labs
+ats: greenhouse
+ats_config:
+  board_token: cockroachlabs
+careers_url: https://cockroachlabs.com
+verified: true
+discovered_from: curated
+discovered_jobs: 33
+last_verified: '2026-06-01'
+evidence_url: null

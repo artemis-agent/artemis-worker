@@ -1,0 +1,11 @@
+name: Procurify
+slug: procurify
+ats: ashby
+ats_config:
+  board_token: procurify
+careers_url: https://procurify.com
+verified: true
+discovered_from: curated
+discovered_jobs: 9
+last_verified: '2026-06-01'
+evidence_url: null

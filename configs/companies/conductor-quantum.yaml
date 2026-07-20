@@ -1,0 +1,11 @@
+name: Conductor Quantum
+slug: conductor-quantum
+ats: ashby
+ats_config:
+  board_token: conductor
+careers_url: https://www.conductorquantum.com
+verified: true
+discovered_from: yc
+discovered_jobs: 3
+last_verified: '2026-06-01'
+evidence_url: null

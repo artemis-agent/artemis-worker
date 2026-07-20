@@ -1,0 +1,11 @@
+name: MetLife
+slug: metlife
+ats: lever
+ats_config:
+  company: metlife
+careers_url: https://metlife.com/about-us/careers
+verified: true
+discovered_from: fortune500
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

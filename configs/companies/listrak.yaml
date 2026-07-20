@@ -1,0 +1,11 @@
+name: Listrak
+slug: listrak
+ats: greenhouse
+ats_config:
+  board_token: listrak
+careers_url: https://listrak.com
+verified: true
+discovered_from: curated
+discovered_jobs: 2
+last_verified: '2026-06-01'
+evidence_url: null

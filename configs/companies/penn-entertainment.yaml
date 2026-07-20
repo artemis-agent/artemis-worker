@@ -1,0 +1,11 @@
+name: Penn Entertainment
+slug: penn-entertainment
+ats: icims
+ats_config:
+  careers_url: https://careersapply-pennentertainment.icims.com/jobs/search
+careers_url: https://careersapply-pennentertainment.icims.com/jobs/intro?hashed=-435806043&mobile=true&width=900&height=500&bga=true&needsRedirect=false&jan1offset=-480&jun1offset=-420
+verified: true
+discovered_from: agent
+discovered_jobs: 1
+last_verified: '2026-06-01'
+evidence_url: https://careersapply-pennentertainment.icims.com/jobs/intro?hashed=-435806043&mobile=true&width=900&height=500&bga=true&needsRedirect=false&jan1offset=-480&jun1offset=-420

@@ -1,0 +1,11 @@
+name: Opennote
+slug: opennote
+ats: ashby
+ats_config:
+  board_token: opennote
+careers_url: https://opennote.com
+verified: true
+discovered_from: yc
+discovered_jobs: 2
+last_verified: '2026-06-01'
+evidence_url: null

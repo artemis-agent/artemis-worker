@@ -1,0 +1,11 @@
+name: Iterative Health
+slug: iterative-health
+ats: greenhouse
+ats_config:
+  board_token: iterativehealth
+careers_url: https://iterative.health
+verified: true
+discovered_from: crunchbase
+discovered_jobs: 52
+last_verified: '2026-06-01'
+evidence_url: null

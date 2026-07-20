@@ -1,0 +1,11 @@
+name: BambooHR
+slug: bamboohr
+ats: greenhouse
+ats_config:
+  board_token: bamboohr17
+careers_url: https://job-boards.greenhouse.io/bamboohr17?error=true
+verified: true
+discovered_from: agent
+discovered_jobs: 33
+last_verified: '2026-06-01'
+evidence_url: https://job-boards.greenhouse.io/bamboohr17?error=true

@@ -1,0 +1,11 @@
+name: Pear VC
+slug: pear-vc
+ats: ashby
+ats_config:
+  board_token: pear-vc
+careers_url: http://www.pear.vc/
+verified: true
+discovered_from: crunchbase
+discovered_jobs: 91
+last_verified: '2026-06-01'
+evidence_url: null

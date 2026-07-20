@@ -1,0 +1,11 @@
+name: Pulumi
+slug: pulumi
+ats: greenhouse
+ats_config:
+  board_token: pulumicorporation
+careers_url: https://job-boards.greenhouse.io/pulumicorporation?error=true
+verified: true
+discovered_from: agent
+discovered_jobs: 8
+last_verified: '2026-06-01'
+evidence_url: https://job-boards.greenhouse.io/pulumicorporation?error=true

@@ -1,0 +1,11 @@
+name: Crypto.com
+slug: crypto-com
+ats: lever
+ats_config:
+  company: crypto
+careers_url: https://jobs.lever.co/crypto
+verified: true
+discovered_from: agent
+discovered_jobs: 1
+last_verified: '2026-06-01'
+evidence_url: https://jobs.lever.co/crypto

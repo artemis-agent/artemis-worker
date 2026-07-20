@@ -1,0 +1,11 @@
+name: PubMatic
+slug: pubmatic
+ats: greenhouse
+ats_config:
+  board_token: pubmatic
+careers_url: https://pubmatic.com
+verified: true
+discovered_from: curated
+discovered_jobs: 61
+last_verified: '2026-06-01'
+evidence_url: null

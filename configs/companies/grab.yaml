@@ -1,0 +1,11 @@
+name: Grab
+slug: grab
+ats: smartrecruiters
+ats_config:
+  company_id: grab
+careers_url: https://grab.com
+verified: true
+discovered_from: curated
+discovered_jobs: 343
+last_verified: '2026-06-01'
+evidence_url: null

@@ -1,0 +1,11 @@
+name: CD Projekt Red
+slug: cd-projekt-red
+ats: smartrecruiters
+ats_config:
+  company_id: cdprojektred
+careers_url: https://cdprojektred.com
+verified: true
+discovered_from: curated
+discovered_jobs: 52
+last_verified: '2026-06-01'
+evidence_url: null

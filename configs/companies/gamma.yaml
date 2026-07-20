@@ -1,0 +1,11 @@
+name: Gamma
+slug: gamma
+ats: ashby
+ats_config:
+  board_token: gamma
+careers_url: https://gamma.com
+verified: true
+discovered_from: curated
+discovered_jobs: 47
+last_verified: '2026-06-01'
+evidence_url: null

@@ -1,0 +1,11 @@
+name: Anthropic
+slug: anthropic
+ats: greenhouse
+ats_config:
+  board_token: anthropic
+careers_url: https://www.anthropic.com/careers
+verified: true
+discovered_from: manual
+discovered_jobs: 0
+last_verified: '2026-04-30'
+evidence_url: null

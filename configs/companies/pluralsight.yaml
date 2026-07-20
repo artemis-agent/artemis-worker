@@ -1,0 +1,13 @@
+name: Pluralsight
+slug: pluralsight
+ats: workday
+ats_config:
+  tenant: pluralsight
+  site_id: Careers
+  wd_version: '1'
+careers_url: https://pluralsight.wd1.myworkdayjobs.com/Careers
+verified: true
+discovered_from: agent
+discovered_jobs: 34
+last_verified: '2026-06-01'
+evidence_url: https://pluralsight.wd1.myworkdayjobs.com/Careers

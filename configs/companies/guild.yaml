@@ -1,0 +1,11 @@
+name: GUILD
+slug: guild
+ats: greenhouse
+ats_config:
+  board_token: guild
+careers_url: https://www.guildai.co
+verified: true
+discovered_from: yc
+discovered_jobs: 12
+last_verified: '2026-06-01'
+evidence_url: null

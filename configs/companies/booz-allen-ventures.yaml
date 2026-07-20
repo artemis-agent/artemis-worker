@@ -1,0 +1,13 @@
+name: Booz Allen Ventures
+slug: booz-allen-ventures
+ats: workday
+ats_config:
+  tenant: bah
+  site_id: BAH_Jobs
+  wd_version: '1'
+careers_url: https://www.boozallen.com/careers
+verified: true
+discovered_from: crunchbase
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

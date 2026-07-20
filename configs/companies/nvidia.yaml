@@ -1,0 +1,12 @@
+name: Nvidia
+slug: nvidia
+ats: eightfold
+ats_config:
+  company: nvidia
+  domain: nvidia.com
+careers_url: https://www.nvidia.com/en-us/about-nvidia/careers/
+verified: true
+discovered_from: manual
+discovered_jobs: 0
+last_verified: '2026-04-28'
+evidence_url: null

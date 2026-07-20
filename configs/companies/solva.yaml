@@ -1,0 +1,11 @@
+name: Solva
+slug: solva
+ats: ashby
+ats_config:
+  board_token: solva
+careers_url: https://solvatechnology.com
+verified: true
+discovered_from: yc
+discovered_jobs: 5
+last_verified: '2026-06-01'
+evidence_url: null

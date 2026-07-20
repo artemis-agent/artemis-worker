@@ -1,0 +1,11 @@
+name: Modern Health
+slug: modern-health
+ats: greenhouse
+ats_config:
+  board_token: modernhealth
+careers_url: https://modernhealth.com
+verified: true
+discovered_from: curated
+discovered_jobs: 12
+last_verified: '2026-06-01'
+evidence_url: null

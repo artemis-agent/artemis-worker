@@ -1,0 +1,12 @@
+name: Applied Materials
+slug: applied-materials
+ats: eightfold
+ats_config:
+  company: appliedmaterials
+  domain: appliedmaterials.com
+careers_url: https://appliedmaterials.com/us/en/careers.html
+verified: true
+discovered_from: fortune500
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

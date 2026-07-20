@@ -1,0 +1,11 @@
+name: New Relic
+slug: new-relic
+ats: greenhouse
+ats_config:
+  board_token: newrelic
+careers_url: https://newrelic.com
+verified: true
+discovered_from: curated
+discovered_jobs: 72
+last_verified: '2026-06-01'
+evidence_url: null

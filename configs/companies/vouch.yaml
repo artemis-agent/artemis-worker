@@ -1,0 +1,11 @@
+name: Vouch
+slug: vouch
+ats: smartrecruiters
+ats_config:
+  company_id: vouch
+careers_url: https://vouch.com
+verified: true
+discovered_from: curated
+discovered_jobs: 2
+last_verified: '2026-06-01'
+evidence_url: null

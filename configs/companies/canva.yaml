@@ -1,0 +1,11 @@
+name: Canva
+slug: canva
+ats: smartrecruiters
+ats_config:
+  company_id: canva
+careers_url: https://canva.com
+verified: true
+discovered_from: curated
+discovered_jobs: 294
+last_verified: '2026-06-01'
+evidence_url: null

@@ -1,0 +1,13 @@
+name: Topgolf Callaway
+slug: topgolf-callaway
+ats: workday
+ats_config:
+  tenant: topgolf
+  site_id: TopgolfCareers
+  wd_version: '501'
+careers_url: https://topgolf.wd501.myworkdayjobs.com/TopgolfCareers/
+verified: true
+discovered_from: agent
+discovered_jobs: 805
+last_verified: '2026-06-01'
+evidence_url: https://topgolf.wd501.myworkdayjobs.com/TopgolfCareers/

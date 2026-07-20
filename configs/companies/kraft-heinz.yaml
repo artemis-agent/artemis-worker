@@ -1,0 +1,12 @@
+name: Kraft Heinz
+slug: kraft-heinz
+ats: eightfold
+ats_config:
+  company: kraftheinz
+  domain: kraftheinz.com
+careers_url: https://kraftheinz.com
+verified: true
+discovered_from: fortune500
+discovered_jobs: 779
+last_verified: '2026-06-01'
+evidence_url: null

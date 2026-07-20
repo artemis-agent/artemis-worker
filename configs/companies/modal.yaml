@@ -1,0 +1,11 @@
+name: Modal
+slug: modal
+ats: ashby
+ats_config:
+  board_token: modal
+careers_url: https://modal.com/careers
+verified: true
+discovered_from: wellfound
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

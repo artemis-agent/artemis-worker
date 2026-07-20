@@ -1,0 +1,13 @@
+name: Verily
+slug: verily
+ats: workday
+ats_config:
+  tenant: verily
+  site_id: Verily_Careers
+  wd_version: '1'
+careers_url: https://verily.wd1.myworkdayjobs.com/Verily_Careers
+verified: true
+discovered_from: agent
+discovered_jobs: 58
+last_verified: '2026-06-01'
+evidence_url: https://verily.wd1.myworkdayjobs.com/Verily_Careers

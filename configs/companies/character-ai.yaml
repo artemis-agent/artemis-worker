@@ -1,0 +1,11 @@
+name: Character AI
+slug: character-ai
+ats: ashby
+ats_config:
+  board_token: character
+careers_url: https://jobs.ashbyhq.com/character/
+verified: true
+discovered_from: agent
+discovered_jobs: 17
+last_verified: '2026-06-01'
+evidence_url: https://jobs.ashbyhq.com/character/

@@ -1,0 +1,13 @@
+name: Sunrun
+slug: sunrun
+ats: workday
+ats_config:
+  tenant: sunrun
+  site_id: Sunrun_Careers
+  wd_version: '5'
+careers_url: https://sunrun.wd5.myworkdayjobs.com/Sunrun_Careers
+verified: true
+discovered_from: agent
+discovered_jobs: 376
+last_verified: '2026-06-01'
+evidence_url: https://sunrun.wd5.myworkdayjobs.com/Sunrun_Careers

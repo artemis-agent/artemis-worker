@@ -1,0 +1,11 @@
+name: Contentful
+slug: contentful
+ats: greenhouse
+ats_config:
+  board_token: contentful
+careers_url: https://contentful.com
+verified: true
+discovered_from: curated
+discovered_jobs: 84
+last_verified: '2026-06-01'
+evidence_url: null

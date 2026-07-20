@@ -1,0 +1,11 @@
+name: Preply
+slug: preply
+ats: ashby
+ats_config:
+  board_token: preply
+careers_url: https://preply.com
+verified: true
+discovered_from: curated
+discovered_jobs: 143
+last_verified: '2026-06-01'
+evidence_url: null

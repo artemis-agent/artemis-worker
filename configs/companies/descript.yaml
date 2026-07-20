@@ -1,0 +1,11 @@
+name: Descript
+slug: descript
+ats: greenhouse
+ats_config:
+  board_token: descript
+careers_url: https://descript.com
+verified: true
+discovered_from: curated
+discovered_jobs: 17
+last_verified: '2026-06-01'
+evidence_url: null

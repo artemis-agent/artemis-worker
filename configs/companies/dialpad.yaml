@@ -1,0 +1,11 @@
+name: Dialpad
+slug: dialpad
+ats: greenhouse
+ats_config:
+  board_token: dialpad
+careers_url: https://dialpad.com
+verified: true
+discovered_from: curated
+discovered_jobs: 78
+last_verified: '2026-06-01'
+evidence_url: null

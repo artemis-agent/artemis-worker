@@ -1,0 +1,11 @@
+name: Mistral AI
+slug: mistral-ai
+ats: lever
+ats_config:
+  company: mistral
+careers_url: https://jobs.lever.co/mistral
+verified: true
+discovered_from: agent
+discovered_jobs: 1
+last_verified: '2026-06-01'
+evidence_url: https://jobs.lever.co/mistral

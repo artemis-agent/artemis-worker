@@ -1,0 +1,11 @@
+name: Orca Security
+slug: orca-security
+ats: greenhouse
+ats_config:
+  board_token: orcasecurity
+careers_url: https://orcasecurity.com
+verified: true
+discovered_from: curated
+discovered_jobs: 16
+last_verified: '2026-06-01'
+evidence_url: null

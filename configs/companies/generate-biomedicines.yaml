@@ -1,0 +1,11 @@
+name: Generate Biomedicines
+slug: generate-biomedicines
+ats: greenhouse
+ats_config:
+  board_token: generatebiomedicines
+careers_url: https://generatebiomedicines.com
+verified: true
+discovered_from: curated
+discovered_jobs: 19
+last_verified: '2026-06-01'
+evidence_url: null

@@ -1,0 +1,13 @@
+name: Crossover Health
+slug: crossover-health
+ats: workday
+ats_config:
+  tenant: crossoverhealth
+  site_id: Careers
+  wd_version: '1'
+careers_url: https://crossoverhealth.wd1.myworkdayjobs.com/Careers
+verified: true
+discovered_from: agent
+discovered_jobs: 90
+last_verified: '2026-06-01'
+evidence_url: https://crossoverhealth.wd1.myworkdayjobs.com/Careers

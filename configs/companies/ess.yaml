@@ -1,0 +1,11 @@
+name: ESS
+slug: ess
+ats: greenhouse
+ats_config:
+  board_token: ess
+careers_url: https://ess.com
+verified: true
+discovered_from: curated
+discovered_jobs: 13
+last_verified: '2026-06-01'
+evidence_url: null

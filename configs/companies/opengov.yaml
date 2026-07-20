@@ -1,0 +1,11 @@
+name: OpenGov
+slug: opengov
+ats: ashby
+ats_config:
+  board_token: opengov
+careers_url: https://opengov.com
+verified: true
+discovered_from: curated
+discovered_jobs: 66
+last_verified: '2026-06-01'
+evidence_url: null

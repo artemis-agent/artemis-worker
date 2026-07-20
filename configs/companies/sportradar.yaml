@@ -1,0 +1,11 @@
+name: Sportradar
+slug: sportradar
+ats: smartrecruiters
+ats_config:
+  company_id: sportradar
+careers_url: http://www.sportradar.com
+verified: true
+discovered_from: crunchbase
+discovered_jobs: 42
+last_verified: '2026-06-01'
+evidence_url: null

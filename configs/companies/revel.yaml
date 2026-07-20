@@ -1,0 +1,11 @@
+name: Revel
+slug: revel
+ats: greenhouse
+ats_config:
+  board_token: revel
+careers_url: https://job-boards.greenhouse.io/revel
+verified: true
+discovered_from: agent
+discovered_jobs: 1
+last_verified: '2026-06-02'
+evidence_url: https://job-boards.greenhouse.io/revel/jobs/5622076004

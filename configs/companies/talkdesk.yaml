@@ -1,0 +1,11 @@
+name: Talkdesk
+slug: talkdesk
+ats: greenhouse
+ats_config:
+  board_token: talkdesk2
+careers_url: http://job-boards.greenhouse.io/talkdesk2
+verified: true
+discovered_from: agent
+discovered_jobs: 61
+last_verified: '2026-06-01'
+evidence_url: http://job-boards.greenhouse.io/talkdesk2

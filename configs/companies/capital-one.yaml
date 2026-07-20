@@ -1,0 +1,13 @@
+name: Capital One
+slug: capital-one
+ats: workday
+ats_config:
+  tenant: capitalone
+  site_id: Capital_One
+  wd_version: '12'
+careers_url: https://capitalone.wd12.myworkdayjobs.com/Capital_One
+verified: true
+discovered_from: agent
+discovered_jobs: 1558
+last_verified: '2026-06-01'
+evidence_url: https://capitalone.wd12.myworkdayjobs.com/Capital_One

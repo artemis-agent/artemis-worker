@@ -1,0 +1,11 @@
+name: Thinking Machines Lab
+slug: thinking-machines-lab
+ats: greenhouse
+ats_config:
+  board_token: thinkingmachines
+careers_url: https://www.thinkingmachines.ai/careers
+verified: true
+discovered_from: crunchbase
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

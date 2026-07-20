@@ -1,0 +1,11 @@
+name: Cerebras Systems
+slug: cerebras-systems
+ats: greenhouse
+ats_config:
+  board_token: cerebrassystems
+careers_url: https://cerebras.ai
+verified: true
+discovered_from: crunchbase
+discovered_jobs: 93
+last_verified: '2026-06-01'
+evidence_url: null

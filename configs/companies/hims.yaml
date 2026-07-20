@@ -1,0 +1,11 @@
+name: Hims
+slug: hims
+ats: ashby
+ats_config:
+  board_token: hims-and-hers
+careers_url: https://jobs.ashbyhq.com/hims-and-hers
+verified: true
+discovered_from: agent
+discovered_jobs: 62
+last_verified: '2026-06-01'
+evidence_url: https://jobs.ashbyhq.com/hims-and-hers

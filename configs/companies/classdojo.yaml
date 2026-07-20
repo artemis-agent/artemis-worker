@@ -1,0 +1,11 @@
+name: ClassDojo
+slug: classdojo
+ats: ashby
+ats_config:
+  board_token: classdojo
+careers_url: https://classdojo.com
+verified: true
+discovered_from: curated
+discovered_jobs: 20
+last_verified: '2026-06-01'
+evidence_url: null

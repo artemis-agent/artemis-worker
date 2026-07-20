@@ -1,0 +1,11 @@
+name: Niantic
+slug: niantic
+ats: ashby
+ats_config:
+  board_token: niantic-spatial
+careers_url: https://jobs.ashbyhq.com/niantic-spatial
+verified: true
+discovered_from: agent
+discovered_jobs: 6
+last_verified: '2026-06-01'
+evidence_url: https://jobs.ashbyhq.com/niantic-spatial

@@ -1,0 +1,11 @@
+name: Newton
+slug: newton
+ats: greenhouse
+ats_config:
+  board_token: newton
+careers_url: https://joinnewton.com
+verified: true
+discovered_from: yc
+discovered_jobs: 2
+last_verified: '2026-06-01'
+evidence_url: null

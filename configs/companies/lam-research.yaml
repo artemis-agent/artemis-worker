@@ -1,0 +1,12 @@
+name: Lam Research
+slug: lam-research
+ats: eightfold
+ats_config:
+  company: lamresearch
+  domain: lamresearch.com
+careers_url: https://lamresearch.com/careers
+verified: true
+discovered_from: fortune500
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

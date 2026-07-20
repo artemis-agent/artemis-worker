@@ -1,0 +1,11 @@
+name: K2 Space
+slug: k2-space
+ats: greenhouse
+ats_config:
+  board_token: k2spacecorporation
+careers_url: https://job-boards.greenhouse.io/k2spacecorporation
+verified: true
+discovered_from: agent
+discovered_jobs: 152
+last_verified: '2026-06-01'
+evidence_url: https://job-boards.greenhouse.io/k2spacecorporation

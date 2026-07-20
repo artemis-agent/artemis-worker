@@ -1,0 +1,11 @@
+name: Fernstone
+slug: fernstone
+ats: ashby
+ats_config:
+  board_token: fernstone
+careers_url: https://www.fernstone.com
+verified: true
+discovered_from: yc
+discovered_jobs: 1
+last_verified: '2026-06-01'
+evidence_url: null

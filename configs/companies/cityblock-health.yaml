@@ -1,0 +1,13 @@
+name: Cityblock Health
+slug: cityblock-health
+ats: workday
+ats_config:
+  tenant: cityblockhealth
+  site_id: CityblockExternalCareerSite
+  wd_version: '1'
+careers_url: https://cityblockhealth.wd1.myworkdayjobs.com/CityblockExternalCareerSite
+verified: true
+discovered_from: agent
+discovered_jobs: 32
+last_verified: '2026-06-01'
+evidence_url: https://cityblockhealth.wd1.myworkdayjobs.com/CityblockExternalCareerSite

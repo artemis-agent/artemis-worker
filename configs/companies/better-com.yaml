@@ -1,0 +1,11 @@
+name: Better.com
+slug: better-com
+ats: ashby
+ats_config:
+  board_token: better-mortgage
+careers_url: https://jobs.ashbyhq.com/better-mortgage
+verified: true
+discovered_from: agent
+discovered_jobs: 22
+last_verified: '2026-06-01'
+evidence_url: https://jobs.ashbyhq.com/better-mortgage

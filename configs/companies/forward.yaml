@@ -1,0 +1,11 @@
+name: Forward
+slug: forward
+ats: greenhouse
+ats_config:
+  board_token: forward
+careers_url: https://forward.com
+verified: true
+discovered_from: curated
+discovered_jobs: 7
+last_verified: '2026-06-01'
+evidence_url: null

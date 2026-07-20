@@ -1,0 +1,11 @@
+name: Joor
+slug: joor
+ats: ashby
+ats_config:
+  board_token: joor
+careers_url: https://joor.com
+verified: true
+discovered_from: curated
+discovered_jobs: 2
+last_verified: '2026-06-01'
+evidence_url: null

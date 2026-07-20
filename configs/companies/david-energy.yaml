@@ -1,0 +1,11 @@
+name: David Energy
+slug: david-energy
+ats: ashby
+ats_config:
+  board_token: davidenergy
+careers_url: https://davidenergy.com
+verified: true
+discovered_from: curated
+discovered_jobs: 3
+last_verified: '2026-06-01'
+evidence_url: null

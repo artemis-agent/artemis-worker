@@ -1,0 +1,13 @@
+name: Element
+slug: element
+ats: workday
+ats_config:
+  tenant: elementfleet
+  site_id: External_Career_Site
+  wd_version: '3'
+careers_url: https://elementfleet.wd3.myworkdayjobs.com/External_Career_Site
+verified: true
+discovered_from: agent
+discovered_jobs: 50
+last_verified: '2026-06-01'
+evidence_url: https://elementfleet.wd3.myworkdayjobs.com/External_Career_Site

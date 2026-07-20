@@ -1,0 +1,11 @@
+name: Speak
+slug: speak
+ats: ashby
+ats_config:
+  board_token: speak
+careers_url: https://speak.com
+verified: true
+discovered_from: curated
+discovered_jobs: 40
+last_verified: '2026-06-01'
+evidence_url: null

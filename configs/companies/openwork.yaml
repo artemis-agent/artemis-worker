@@ -1,0 +1,11 @@
+name: OpenWork
+slug: openwork
+ats: greenhouse
+ats_config:
+  board_token: openwork
+careers_url: https://openworklabs.com
+verified: true
+discovered_from: yc
+discovered_jobs: 9
+last_verified: '2026-06-01'
+evidence_url: null

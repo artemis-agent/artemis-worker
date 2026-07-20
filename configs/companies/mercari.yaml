@@ -1,0 +1,11 @@
+name: Mercari
+slug: mercari
+ats: greenhouse
+ats_config:
+  board_token: mercari
+careers_url: https://mercari.com
+verified: true
+discovered_from: curated
+discovered_jobs: 3
+last_verified: '2026-06-01'
+evidence_url: null

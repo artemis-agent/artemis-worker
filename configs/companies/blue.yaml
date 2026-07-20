@@ -1,0 +1,11 @@
+name: Blue
+slug: blue
+ats: lever
+ats_config:
+  company: blue
+careers_url: https://heyblue.com/
+verified: true
+discovered_from: yc
+discovered_jobs: 1
+last_verified: '2026-06-01'
+evidence_url: null

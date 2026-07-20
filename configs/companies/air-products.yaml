@@ -1,0 +1,13 @@
+name: Air Products
+slug: air-products
+ats: workday
+ats_config:
+  tenant: airproducts
+  site_id: AP0001
+  wd_version: '5'
+careers_url: https://airproducts.com/careers
+verified: true
+discovered_from: fortune500
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

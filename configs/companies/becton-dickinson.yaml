@@ -1,0 +1,13 @@
+name: Becton Dickinson
+slug: becton-dickinson
+ats: workday
+ats_config:
+  tenant: bdx
+  site_id: EXTERNAL_CAREER_SITE_USA
+  wd_version: '1'
+careers_url: https://jobs.bd.com
+verified: true
+discovered_from: fortune500
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

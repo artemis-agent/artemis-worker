@@ -1,0 +1,11 @@
+name: Read AI
+slug: read-ai
+ats: ashby
+ats_config:
+  board_token: read-ai
+careers_url: https://read-ai.com
+verified: true
+discovered_from: curated
+discovered_jobs: 14
+last_verified: '2026-06-01'
+evidence_url: null

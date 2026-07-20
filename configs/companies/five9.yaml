@@ -1,0 +1,11 @@
+name: Five9
+slug: five9
+ats: greenhouse
+ats_config:
+  board_token: five9
+careers_url: https://five9.com
+verified: true
+discovered_from: curated
+discovered_jobs: 167
+last_verified: '2026-06-01'
+evidence_url: null

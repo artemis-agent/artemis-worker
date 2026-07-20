@@ -1,0 +1,11 @@
+name: Lucid Software
+slug: lucid-software
+ats: greenhouse
+ats_config:
+  board_token: lucidsoftware
+careers_url: https://lucidsoftware.com
+verified: true
+discovered_from: curated
+discovered_jobs: 36
+last_verified: '2026-06-01'
+evidence_url: null

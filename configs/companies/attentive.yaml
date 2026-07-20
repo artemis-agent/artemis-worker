@@ -1,0 +1,11 @@
+name: Attentive
+slug: attentive
+ats: greenhouse
+ats_config:
+  board_token: attentive
+careers_url: https://attentive.com
+verified: true
+discovered_from: curated
+discovered_jobs: 54
+last_verified: '2026-06-01'
+evidence_url: null

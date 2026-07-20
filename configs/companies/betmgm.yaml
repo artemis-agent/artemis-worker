@@ -1,0 +1,13 @@
+name: BetMGM
+slug: betmgm
+ats: workday
+ats_config:
+  tenant: betmgminc
+  site_id: BetMGM
+  wd_version: '5'
+careers_url: https://betmgminc.wd5.myworkdayjobs.com/BetMGM
+verified: true
+discovered_from: agent
+discovered_jobs: 23
+last_verified: '2026-06-01'
+evidence_url: https://betmgminc.wd5.myworkdayjobs.com/BetMGM

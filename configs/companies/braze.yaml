@@ -1,0 +1,11 @@
+name: Braze
+slug: braze
+ats: greenhouse
+ats_config:
+  board_token: braze
+careers_url: https://braze.com
+verified: true
+discovered_from: curated
+discovered_jobs: 197
+last_verified: '2026-06-01'
+evidence_url: null

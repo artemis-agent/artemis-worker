@@ -1,0 +1,11 @@
+name: Pinecone
+slug: pinecone
+ats: ashby
+ats_config:
+  board_token: pinecone
+careers_url: https://pinecone.io/careers
+verified: true
+discovered_from: wellfound
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

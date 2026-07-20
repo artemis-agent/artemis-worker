@@ -1,0 +1,11 @@
+name: Flai
+slug: flai
+ats: ashby
+ats_config:
+  board_token: flai
+careers_url: https://www.useflai.com/
+verified: true
+discovered_from: yc
+discovered_jobs: 5
+last_verified: '2026-06-01'
+evidence_url: null

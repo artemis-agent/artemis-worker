@@ -1,0 +1,11 @@
+name: Eve
+slug: eve
+ats: greenhouse
+ats_config:
+  board_token: eve
+careers_url: https://eve.com
+verified: true
+discovered_from: curated
+discovered_jobs: 35
+last_verified: '2026-06-01'
+evidence_url: null

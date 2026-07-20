@@ -1,0 +1,11 @@
+name: Archer Aviation
+slug: archer-aviation
+ats: greenhouse
+ats_config:
+  board_token: archer56
+careers_url: https://job-boards.greenhouse.io/archer56
+verified: true
+discovered_from: agent
+discovered_jobs: 187
+last_verified: '2026-06-01'
+evidence_url: https://job-boards.greenhouse.io/archer56

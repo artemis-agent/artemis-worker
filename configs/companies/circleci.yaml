@@ -1,0 +1,11 @@
+name: CircleCI
+slug: circleci
+ats: greenhouse
+ats_config:
+  board_token: circleci
+careers_url: https://circleci.com
+verified: true
+discovered_from: curated
+discovered_jobs: 10
+last_verified: '2026-06-01'
+evidence_url: null

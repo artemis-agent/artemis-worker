@@ -1,0 +1,13 @@
+name: IQVIA
+slug: iqvia
+ats: workday
+ats_config:
+  tenant: iqvia
+  site_id: IQVIA
+  wd_version: '1'
+careers_url: https://iqvia.wd1.myworkdayjobs.com/IQVIA/
+verified: true
+discovered_from: agent
+discovered_jobs: 2000
+last_verified: '2026-06-01'
+evidence_url: https://iqvia.wd1.myworkdayjobs.com/IQVIA/

@@ -1,0 +1,12 @@
+name: Schlumberger
+slug: schlumberger
+ats: eightfold
+ats_config:
+  company: slb
+  domain: slb.com
+careers_url: https://careers.slb.com
+verified: true
+discovered_from: fortune500
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

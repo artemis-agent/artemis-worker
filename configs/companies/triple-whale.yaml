@@ -1,0 +1,11 @@
+name: Triple Whale
+slug: triple-whale
+ats: greenhouse
+ats_config:
+  board_token: triplewhale
+careers_url: https://triplewhale.com
+verified: true
+discovered_from: curated
+discovered_jobs: 15
+last_verified: '2026-06-01'
+evidence_url: null

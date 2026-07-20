@@ -1,0 +1,11 @@
+name: Bubble
+slug: bubble
+ats: ashby
+ats_config:
+  board_token: bubble
+careers_url: https://bubble.com
+verified: true
+discovered_from: curated
+discovered_jobs: 16
+last_verified: '2026-06-01'
+evidence_url: null

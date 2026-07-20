@@ -1,0 +1,11 @@
+name: Prometheus
+slug: prometheus
+ats: ashby
+ats_config:
+  board_token: prometheus
+careers_url: https://prometheus.com
+verified: true
+discovered_from: curated
+discovered_jobs: 2
+last_verified: '2026-06-01'
+evidence_url: null

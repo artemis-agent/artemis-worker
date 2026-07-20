@@ -1,0 +1,11 @@
+name: Pinterest
+slug: pinterest
+ats: greenhouse
+ats_config:
+  board_token: pinterest
+careers_url: https://careers.pinterest.com
+verified: false
+discovered_from: fortune500
+discovered_jobs: 0
+last_verified: '2026-06-01'
+evidence_url: null

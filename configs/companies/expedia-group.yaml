@@ -1,0 +1,13 @@
+name: Expedia Group
+slug: expedia-group
+ats: workday
+ats_config:
+  tenant: expedia
+  site_id: search
+  wd_version: '108'
+careers_url: https://expedia.wd108.myworkdayjobs.com/search
+verified: true
+discovered_from: agent
+discovered_jobs: 156
+last_verified: '2026-06-01'
+evidence_url: https://expedia.wd108.myworkdayjobs.com/search

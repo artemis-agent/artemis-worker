@@ -1,0 +1,11 @@
+name: Tide
+slug: tide
+ats: greenhouse
+ats_config:
+  board_token: tide
+careers_url: https://tide.com
+verified: true
+discovered_from: curated
+discovered_jobs: 127
+last_verified: '2026-06-01'
+evidence_url: null
