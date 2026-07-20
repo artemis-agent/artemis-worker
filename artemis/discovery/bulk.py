@@ -67,11 +67,13 @@ async def gather_sources(use_sources: set[str], limit_per: int) -> list[dict]:
 
     if "fortune500" in use_sources:
         for c in FORTUNE_500_COMPANIES:
-            all_companies.append({
-                "name": c["name"],
-                "careers_url": f"https://{c['careers_hint']}",
-                "source": "fortune500",
-            })
+            all_companies.append(
+                {
+                    "name": c["name"],
+                    "careers_url": f"https://{c['careers_hint']}",
+                    "source": "fortune500",
+                }
+            )
         logger.info(f"loaded {len(FORTUNE_500_COMPANIES)} from fortune500")
 
     if "yc" in use_sources:
@@ -80,11 +82,13 @@ async def gather_sources(use_sources: set[str], limit_per: int) -> list[dict]:
             for c in yc:
                 hint = website_to_careers_hint(c.get("website"))
                 if hint:
-                    all_companies.append({
-                        "name": c["name"],
-                        "careers_url": f"https://{hint}",
-                        "source": "yc",
-                    })
+                    all_companies.append(
+                        {
+                            "name": c["name"],
+                            "careers_url": f"https://{hint}",
+                            "source": "yc",
+                        }
+                    )
             logger.info(f"loaded {len(yc)} from yc")
         except Exception as e:
             logger.error(f"YC source failed: {e}")
@@ -95,11 +99,13 @@ async def gather_sources(use_sources: set[str], limit_per: int) -> list[dict]:
             for c in cb:
                 hint = website_to_careers_hint(c.get("website"))
                 if hint:
-                    all_companies.append({
-                        "name": c["name"],
-                        "careers_url": f"https://{hint}",
-                        "source": "crunchbase",
-                    })
+                    all_companies.append(
+                        {
+                            "name": c["name"],
+                            "careers_url": f"https://{hint}",
+                            "source": "crunchbase",
+                        }
+                    )
             logger.info(f"loaded {len(cb)} from crunchbase")
         except Exception as e:
             logger.error(f"Crunchbase source failed: {e}")
@@ -110,11 +116,13 @@ async def gather_sources(use_sources: set[str], limit_per: int) -> list[dict]:
             for c in wf:
                 hint = website_to_careers_hint(c.get("website"))
                 if hint:
-                    all_companies.append({
-                        "name": c["name"],
-                        "careers_url": f"https://{hint}",
-                        "source": "wellfound",
-                    })
+                    all_companies.append(
+                        {
+                            "name": c["name"],
+                            "careers_url": f"https://{hint}",
+                            "source": "wellfound",
+                        }
+                    )
             logger.info(f"loaded {len(wf)} from wellfound")
         except Exception as e:
             logger.error(f"Wellfound source failed: {e}")
@@ -154,7 +162,8 @@ async def discover_one(
         try:
             # Hard 45s cap per company so a single slow site can't hang the whole batch
             detection = await asyncio.wait_for(
-                detect_ats(company["careers_url"]), timeout=45,
+                detect_ats(company["careers_url"]),
+                timeout=45,
             )
             result["ats"] = detection.ats_type
             result["details"] = detection.details
@@ -170,6 +179,7 @@ async def discover_one(
             if not skip_test_scrape:
                 try:
                     from artemis.scrapers.registry import get_scraper
+
                     scraper = get_scraper(detection.ats_type, detection.config)
                     async with scraper:
                         scraped = await asyncio.wait_for(
@@ -214,24 +224,24 @@ async def discover_one(
 
 async def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--sources", default="fortune500,yc,crunchbase,wellfound",
-                        help="comma-separated list of sources")
-    parser.add_argument("--limit-per-source", type=int, default=500,
-                        help="max companies pulled per dynamic source")
-    parser.add_argument("--concurrency", type=int, default=5,
-                        help="parallel detections (each makes 3-5 HTTP calls)")
-    parser.add_argument("--skip-existing", action="store_true", default=True,
-                        help="skip slugs that already have a YAML")
-    parser.add_argument("--skip-test-scrape", action="store_true",
-                        help="skip the test-scrape step (faster, less reliable)")
+    parser.add_argument(
+        "--sources", default="fortune500,yc,crunchbase,wellfound", help="comma-separated list of sources"
+    )
+    parser.add_argument("--limit-per-source", type=int, default=500, help="max companies pulled per dynamic source")
+    parser.add_argument("--concurrency", type=int, default=5, help="parallel detections (each makes 3-5 HTTP calls)")
+    parser.add_argument(
+        "--skip-existing", action="store_true", default=True, help="skip slugs that already have a YAML"
+    )
+    parser.add_argument(
+        "--skip-test-scrape", action="store_true", help="skip the test-scrape step (faster, less reliable)"
+    )
     parser.add_argument("--summary-path", default="/tmp/bulk_discovery_summary.json")
-    parser.add_argument("--max", type=int, default=10000,
-                        help="hard cap on total companies to process")
+    parser.add_argument("--max", type=int, default=10000, help="hard cap on total companies to process")
     args = parser.parse_args()
 
     use_sources = set(s.strip() for s in args.sources.split(",") if s.strip())
     companies = await gather_sources(use_sources, args.limit_per_source)
-    companies = companies[:args.max]
+    companies = companies[: args.max]
 
     configs_dir = pathlib.Path(settings.configs_dir)
     configs_dir.mkdir(parents=True, exist_ok=True)
@@ -240,8 +250,7 @@ async def main():
         existing = existing_slugs()
         before = len(companies)
         companies = [c for c in companies if c["slug"] not in existing]
-        logger.info(f"Skipping {before - len(companies)} already-known slugs, "
-                    f"processing {len(companies)}")
+        logger.info(f"Skipping {before - len(companies)} already-known slugs, processing {len(companies)}")
 
     if not companies:
         logger.info("Nothing to do.")
@@ -260,9 +269,11 @@ async def main():
             ok = sum(1 for x in results if x["status"] in ("ok", "ok_unverified"))
             elapsed = time.time() - started
             rate = n / elapsed if elapsed > 0 else 0
-            logger.info(f"  Progress: {n}/{len(companies)} "
-                        f"({ok} ok, {n - ok} failed)  "
-                        f"rate={rate:.1f}/s  elapsed={elapsed:.0f}s")
+            logger.info(
+                f"  Progress: {n}/{len(companies)} "
+                f"({ok} ok, {n - ok} failed)  "
+                f"rate={rate:.1f}/s  elapsed={elapsed:.0f}s"
+            )
         return r
 
     await asyncio.gather(*(wrapped(c) for c in companies))
@@ -283,7 +294,7 @@ async def main():
             by_source[src]["ok"] += 1
 
     print(f"\n{'═' * 70}")
-    print(f"  BULK DISCOVERY RESULTS — {len(results)} companies, {time.time()-started:.0f}s")
+    print(f"  BULK DISCOVERY RESULTS — {len(results)} companies, {time.time() - started:.0f}s")
     print(f"{'═' * 70}")
     print("\nBy status:")
     for s, n in sorted(by_status.items(), key=lambda x: -x[1]):
@@ -293,7 +304,7 @@ async def main():
         print(f"  {ats:<20} {n}")
     print("\nBy source:")
     for s, d in by_source.items():
-        pct = 100 * d['ok'] / d['total'] if d['total'] else 0
+        pct = 100 * d["ok"] / d["total"] if d["total"] else 0
         print(f"  {s:<15} {d['ok']:>4}/{d['total']:<4} ({pct:.0f}% success)")
 
     with open(args.summary_path, "w") as f:
@@ -302,6 +313,7 @@ async def main():
 
 
 # ── AI-powered agent variant (search-grounded discovery) ─────────────────
+
 
 async def bulk_discover_via_agent(
     names: list[str],
@@ -335,22 +347,26 @@ async def bulk_discover_via_agent(
     done = 0
 
     async with httpx.AsyncClient(
-        headers={"User-Agent": UA}, follow_redirects=True, timeout=15.0,
+        headers={"User-Agent": UA},
+        follow_redirects=True,
+        timeout=15.0,
     ) as client:
+
         async def _one(name: str):
             nonlocal done
             async with sem:
                 r = await discover_company(
-                    name, searcher=searcher, http_client=client, dry_run=dry_run,
+                    name,
+                    searcher=searcher,
+                    http_client=client,
+                    dry_run=dry_run,
                 )
                 done += 1
                 if done % 10 == 0:
                     elapsed = time.time() - started
                     rate = done / elapsed if elapsed > 0 else 0
                     hits = sum(1 for x in results if x.status == "discovered")
-                    logger.info(
-                        f"agent-bulk: {done}/{len(names)} ({hits} hits) rate={rate:.1f}/s"
-                    )
+                    logger.info(f"agent-bulk: {done}/{len(names)} ({hits} hits) rate={rate:.1f}/s")
                 return r
 
         results = await asyncio.gather(*(_one(n) for n in names))
@@ -370,8 +386,11 @@ async def bulk_discover_via_agent(
         "by_ats": {},
         "results": [
             {
-                "name": r.name, "slug": r.slug, "status": r.status,
-                "ats": r.ats, "jobs": r.discovered_jobs,
+                "name": r.name,
+                "slug": r.slug,
+                "status": r.status,
+                "ats": r.ats,
+                "jobs": r.discovered_jobs,
                 "evidence_url": r.evidence_url,
                 "llm_calls": r.llm_calls,
                 "elapsed_sec": round(r.elapsed_sec, 2),
@@ -390,8 +409,7 @@ async def bulk_discover_via_agent(
         logger.warning(f"agent-bulk: failed to write summary: {e}")
 
     logger.info(
-        f"agent-bulk COMPLETE: {len(hits)}/{len(names)} hits "
-        f"in {elapsed:.0f}s (cost ~${summary['est_cost_usd']})"
+        f"agent-bulk COMPLETE: {len(hits)}/{len(names)} hits in {elapsed:.0f}s (cost ~${summary['est_cost_usd']})"
     )
     return summary
 

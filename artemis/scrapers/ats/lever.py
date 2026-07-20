@@ -53,6 +53,7 @@ class LeverScraper(BaseScraper):
                 created_at = item.get("createdAt")
                 if created_at:
                     from datetime import datetime
+
                     try:
                         date_posted = datetime.fromtimestamp(created_at / 1000)
                     except (ValueError, TypeError, OSError):
@@ -68,22 +69,24 @@ class LeverScraper(BaseScraper):
 
                 categories = item.get("categories", {})
 
-                jobs.append(ScrapedJob(
-                    external_id=item.get("id", ""),
-                    title=title,
-                    url=item.get("hostedUrl", ""),
-                    location=location,
-                    description="\n".join(description_parts),
-                    date_posted=date_posted,
-                    source="lever",
-                    metadata={
-                        "department": categories.get("department", ""),
-                        "team": categories.get("team", ""),
-                        "commitment": categories.get("commitment", ""),
-                        "workplace_type": categories.get("workplaceType", ""),
-                        "all_locations": categories.get("allLocations", []),
-                    },
-                ))
+                jobs.append(
+                    ScrapedJob(
+                        external_id=item.get("id", ""),
+                        title=title,
+                        url=item.get("hostedUrl", ""),
+                        location=location,
+                        description="\n".join(description_parts),
+                        date_posted=date_posted,
+                        source="lever",
+                        metadata={
+                            "department": categories.get("department", ""),
+                            "team": categories.get("team", ""),
+                            "commitment": categories.get("commitment", ""),
+                            "workplace_type": categories.get("workplaceType", ""),
+                            "all_locations": categories.get("allLocations", []),
+                        },
+                    )
+                )
 
             if len(data) < page_size:
                 break  # last page
@@ -113,12 +116,14 @@ class LeverScraper(BaseScraper):
             if query and query.lower() not in title.lower():
                 continue
             seen.add(job_id)
-            jobs.append(ScrapedJob(
-                external_id=job_id,
-                title=title,
-                url=job_url,
-                source="lever",
-            ))
+            jobs.append(
+                ScrapedJob(
+                    external_id=job_id,
+                    title=title,
+                    url=job_url,
+                    source="lever",
+                )
+            )
             if len(jobs) >= limit:
                 break
         return jobs

@@ -20,6 +20,7 @@ pytestmark = pytest.mark.e2e
 
 # ── Greenhouse (Cloudflare) ──────────────────────────────────────────────
 
+
 class TestGreenhouse:
     CONFIG = {"board_token": "cloudflare"}
 
@@ -59,6 +60,7 @@ class TestGreenhouse:
 
 # ── Lever (Spotify) ─────────────────────────────────────────────────────
 
+
 class TestLever:
     CONFIG = {"company": "spotify"}
 
@@ -94,6 +96,7 @@ class TestLever:
 
 # ── Ashby (Snowflake) ───────────────────────────────────────────────────
 
+
 class TestAshby:
     CONFIG = {"board_token": "snowflake"}
 
@@ -125,6 +128,7 @@ class TestAshby:
 
 
 # ── Workday (Target) ────────────────────────────────────────────────────
+
 
 class TestWorkday:
     CONFIG = {"tenant": "target", "site_id": "targetcareers", "wd_version": "5"}
@@ -159,6 +163,7 @@ class TestWorkday:
 
 # ── Eightfold (Nvidia) ──────────────────────────────────────────────────
 
+
 class TestEightfold:
     CONFIG = {"company": "nvidia", "domain": "nvidia.com"}
 
@@ -183,6 +188,7 @@ class TestEightfold:
 
 
 # ── SmartRecruiters (Bosch) ──────────────────────────────────────────────
+
 
 class TestSmartRecruiters:
     CONFIG = {"company_id": "BoschGroup"}
@@ -209,6 +215,7 @@ class TestSmartRecruiters:
 
 # ── iCIMS ────────────────────────────────────────────────────────────────
 
+
 class TestICIMS:
     @pytest.mark.asyncio
     async def test_no_config_raises(self):
@@ -226,6 +233,7 @@ class TestICIMS:
 
 
 # ── Generic / Custom (Apple) ────────────────────────────────────────────
+
 
 class TestGeneric:
     CONFIG = {"careers_url": "https://www.apple.com/careers/us/"}

@@ -48,15 +48,17 @@ class WorkdayScraper(BaseScraper):
                 external_path = item.get("externalPath", "")
                 bullet_fields = item.get("bulletFields", [])
 
-                jobs.append(ScrapedJob(
-                    external_id=bullet_fields[0] if bullet_fields else external_path,
-                    title=item.get("title", ""),
-                    url=f"{job_base_url}{external_path}",
-                    location=item.get("locationsText", ""),
-                    description=bullet_fields[0] if bullet_fields else "",
-                    date_posted=None,
-                    source="workday",
-                ))
+                jobs.append(
+                    ScrapedJob(
+                        external_id=bullet_fields[0] if bullet_fields else external_path,
+                        title=item.get("title", ""),
+                        url=f"{job_base_url}{external_path}",
+                        location=item.get("locationsText", ""),
+                        description=bullet_fields[0] if bullet_fields else "",
+                        date_posted=None,
+                        source="workday",
+                    )
+                )
 
             offset += len(items)
             total = data.get("total", 0)

@@ -48,6 +48,7 @@ def extract_skills_from_text(text: str) -> list[str]:
 
     return list(found.keys())
 
+
 # Seniority detection from title
 SENIORITY_PATTERNS = [
     (r"\b(intern(ship)?)\b", "intern"),
@@ -64,7 +65,24 @@ SENIORITY_PATTERNS = [
 
 # Department detection from title/department field
 DEPARTMENT_MAP = {
-    "engineering": ["engineer", "developer", "software", "sre", "devops", "infrastructure", "platform", "backend", "frontend", "fullstack", "full-stack", "mobile", "embedded", "firmware", "qa", "quality"],
+    "engineering": [
+        "engineer",
+        "developer",
+        "software",
+        "sre",
+        "devops",
+        "infrastructure",
+        "platform",
+        "backend",
+        "frontend",
+        "fullstack",
+        "full-stack",
+        "mobile",
+        "embedded",
+        "firmware",
+        "qa",
+        "quality",
+    ],
     "product": ["product manager", "product owner", "product lead", "product director"],
     "design": ["designer", "ux", "ui", "creative", "brand"],
     "data": ["data scientist", "data engineer", "data analyst", "analytics", "machine learning", "ml ", "ai "],
@@ -237,8 +255,9 @@ def detect_visa_sponsorship(text: str) -> bool | None:
     return None
 
 
-def normalize_job_rules(title: str, location: str = "", description: str = "",
-                        ats_metadata: dict | None = None) -> dict:
+def normalize_job_rules(
+    title: str, location: str = "", description: str = "", ats_metadata: dict | None = None
+) -> dict:
     """
     Rule-based normalization. No LLM needed.
     Returns the same metadata format as the LLM normalizer.
@@ -252,9 +271,7 @@ def normalize_job_rules(title: str, location: str = "", description: str = "",
         is_remote=meta.get("is_remote"),
         workplace_type=meta.get("workplace_type", ""),
     )
-    employment_type = normalize_employment_type(
-        meta.get("employment_type", "") or meta.get("commitment", "")
-    )
+    employment_type = normalize_employment_type(meta.get("employment_type", "") or meta.get("commitment", ""))
 
     skills = extract_skills_from_text(f"{title} {description[:3000]}")
 

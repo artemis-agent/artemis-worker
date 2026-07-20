@@ -63,7 +63,9 @@ async def main():
     print(f"  crunchbase fetch  : {fetch_s:.1f}s")
     print(f"  hunt (end-to-end) : {hunt_s:.1f}s")
     yaml_written = result.status == "discovered"
-    print(f"  YAML written      : {yaml_written}  ({'configs/companies/' + result.slug + '.yaml' if yaml_written else '-'})")
+    print(
+        f"  YAML written      : {yaml_written}  ({'configs/companies/' + result.slug + '.yaml' if yaml_written else '-'})"
+    )
 
 
 if __name__ == "__main__":

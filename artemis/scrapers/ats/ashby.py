@@ -36,6 +36,7 @@ class AshbyScraper(BaseScraper):
             published = item.get("publishedAt")
             if published:
                 from dateutil.parser import parse as parse_date
+
                 try:
                     date_posted = parse_date(published)
                 except (ValueError, TypeError):
@@ -44,22 +45,23 @@ class AshbyScraper(BaseScraper):
             # Use descriptionPlain (lighter) over descriptionHtml when available
             description = item.get("descriptionPlain") or item.get("descriptionHtml", "")
 
-            jobs.append(ScrapedJob(
-                external_id=str(item.get("id", "")),
-                title=title,
-                url=item.get("jobUrl", ""),
-                location=", ".join(locations),
-                description=description[:2000] if description else "",
-                date_posted=date_posted,
-                source="ashby",
-                metadata={
-                    "department": item.get("department", ""),
-                    "team": item.get("team", ""),
-                    "employment_type": item.get("employmentType", ""),
-                    "is_remote": item.get("isRemote", False),
-                    "compensation": item.get("compensationTierSummary", ""),
-                },
-            ))
-
+            jobs.append(
+                ScrapedJob(
+                    external_id=str(item.get("id", "")),
+                    title=title,
+                    url=item.get("jobUrl", ""),
+                    location=", ".join(locations),
+                    description=description[:2000] if description else "",
+                    date_posted=date_posted,
+                    source="ashby",
+                    metadata={
+                        "department": item.get("department", ""),
+                        "team": item.get("team", ""),
+                        "employment_type": item.get("employmentType", ""),
+                        "is_remote": item.get("isRemote", False),
+                        "compensation": item.get("compensationTierSummary", ""),
+                    },
+                )
+            )
 
         return jobs

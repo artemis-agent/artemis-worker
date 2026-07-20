@@ -83,9 +83,7 @@ class AIClientPool:
             if not ep.is_available(now):
                 wait = ep.throttled_until - now
                 if wait > 0:
-                    logger.warning(
-                        f"all endpoints throttled; waiting {wait:.1f}s on {ep.name}"
-                    )
+                    logger.warning(f"all endpoints throttled; waiting {wait:.1f}s on {ep.name}")
                     await asyncio.sleep(min(wait, 60))
 
             try:
@@ -129,9 +127,7 @@ class _ChatCompletions:
         self._pool = pool
 
     async def create(self, **kwargs):
-        return await self._pool._call_with_failover(
-            "chat.completions", "chat.completions.create", **kwargs
-        )
+        return await self._pool._call_with_failover("chat.completions", "chat.completions.create", **kwargs)
 
 
 class _EmbeddingsNamespace:
@@ -141,9 +137,7 @@ class _EmbeddingsNamespace:
         self._pool = pool
 
     async def create(self, **kwargs):
-        return await self._pool._call_with_failover(
-            "embeddings", "embeddings.create", **kwargs
-        )
+        return await self._pool._call_with_failover("embeddings", "embeddings.create", **kwargs)
 
 
 def _parse_retry_after(err: RateLimitError) -> float:
@@ -151,9 +145,7 @@ def _parse_retry_after(err: RateLimitError) -> float:
     try:
         response = getattr(err, "response", None)
         if response is not None and getattr(response, "headers", None):
-            retry_after = response.headers.get("retry-after") or response.headers.get(
-                "Retry-After"
-            )
+            retry_after = response.headers.get("retry-after") or response.headers.get("Retry-After")
             if retry_after:
                 return float(retry_after)
     except Exception:
@@ -204,8 +196,7 @@ def get_ai_client() -> AIClientPool:
 
     if not endpoints:
         raise RuntimeError(
-            "No Azure OpenAI endpoints configured. Set ARTEMIS_AZURE_OPENAI_API_KEY "
-            "and ARTEMIS_AZURE_OPENAI_ENDPOINT."
+            "No Azure OpenAI endpoints configured. Set ARTEMIS_AZURE_OPENAI_API_KEY and ARTEMIS_AZURE_OPENAI_ENDPOINT."
         )
 
     logger.info(f"AI client pool initialized with {len(endpoints)} endpoint(s)")

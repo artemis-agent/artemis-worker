@@ -21,13 +21,16 @@ async def trigger_scrape(request: Request) -> JSONResponse:
         return JSONResponse({"error": "company_id required"}, status_code=400)
 
     from artemis.workers.scrape import scrape_company_task
+
     result = scrape_company_task.apply_async(args=[company_id], kwargs={"query": query, "limit": limit}, queue="scrape")
 
-    return JSONResponse({
-        "status": "queued",
-        "job_id": result.id,
-        "company_id": company_id,
-    })
+    return JSONResponse(
+        {
+            "status": "queued",
+            "job_id": result.id,
+            "company_id": company_id,
+        }
+    )
 
 
 async def embed_text(request: Request) -> JSONResponse:
@@ -51,6 +54,7 @@ async def embed_text(request: Request) -> JSONResponse:
 
 async def trigger_monitor(request: Request) -> JSONResponse:
     from artemis.workers.monitor import monitor_check_task
+
     result = monitor_check_task.apply_async(queue="monitor")
     return JSONResponse({"status": "queued", "job_id": result.id})
 
@@ -66,10 +70,12 @@ async def hunt_company(request: Request) -> JSONResponse:
 
     if body.get("async", False):
         from artemis.workers.scrape import hunt_company_task
+
         result = hunt_company_task.apply_async(args=[company_name, careers_url], queue="scrape")
         return JSONResponse({"status": "queued", "job_id": result.id})
 
     from artemis.services.hunt import hunt_company as _hunt
+
     result = await _hunt(company_name, careers_url=careers_url)
     return JSONResponse(result)
 
@@ -81,6 +87,7 @@ async def trigger_discovery(request: Request) -> JSONResponse:
     max_companies = body.get("max_companies", 50)
 
     from artemis.workers.scrape import discovery_agent_task
+
     result = discovery_agent_task.apply_async(args=[sources, max_companies], queue="scrape")
 
     return JSONResponse({"status": "queued", "job_id": result.id})

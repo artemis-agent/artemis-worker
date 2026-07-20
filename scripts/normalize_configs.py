@@ -43,8 +43,13 @@ CANONICAL_ORDER = [
 ]
 
 VALID_ATS = {
-    "greenhouse", "lever", "ashby", "workday",
-    "smartrecruiters", "eightfold", "icims",
+    "greenhouse",
+    "lever",
+    "ashby",
+    "workday",
+    "smartrecruiters",
+    "eightfold",
+    "icims",
 }
 
 
@@ -136,10 +141,8 @@ def _ordered_dump(d: dict) -> str:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--dry-run", action="store_true",
-                        help="Report changes but do not write files.")
-    parser.add_argument("--dir", default=str(CONFIG_DIR),
-                        help="Config directory (default: configs/companies)")
+    parser.add_argument("--dry-run", action="store_true", help="Report changes but do not write files.")
+    parser.add_argument("--dir", default=str(CONFIG_DIR), help="Config directory (default: configs/companies)")
     args = parser.parse_args()
 
     base = pathlib.Path(args.dir)

@@ -17,6 +17,7 @@ async def main():
     import pathlib
     import re
     from artemis.core.config import settings
+
     slug = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
     p = pathlib.Path(settings.configs_dir) / f"{slug}.yaml"
     if p.exists():

@@ -31,6 +31,7 @@ class GreenhouseScraper(BaseScraper):
             updated_at = item.get("updated_at")
             if updated_at:
                 from dateutil.parser import parse as parse_date
+
                 try:
                     date_posted = parse_date(updated_at)
                 except (ValueError, TypeError):
@@ -40,20 +41,21 @@ class GreenhouseScraper(BaseScraper):
             departments = [d.get("name", "") for d in item.get("departments", [])]
             offices = [o.get("name", "") for o in item.get("offices", [])]
 
-            jobs.append(ScrapedJob(
-                external_id=str(item.get("id", "")),
-                title=title,
-                url=job_url,
-                location=location,
-                description=content,
-                date_posted=date_posted,
-                source="greenhouse",
-                metadata={
-                    "department": departments[0] if departments else "",
-                    "offices": offices,
-                    "employment_type": item.get("employment_type", ""),
-                },
-            ))
-
+            jobs.append(
+                ScrapedJob(
+                    external_id=str(item.get("id", "")),
+                    title=title,
+                    url=job_url,
+                    location=location,
+                    description=content,
+                    date_posted=date_posted,
+                    source="greenhouse",
+                    metadata={
+                        "department": departments[0] if departments else "",
+                        "offices": offices,
+                        "employment_type": item.get("employment_type", ""),
+                    },
+                )
+            )
 
         return jobs

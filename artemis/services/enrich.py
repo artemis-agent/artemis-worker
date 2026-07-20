@@ -30,6 +30,7 @@ LAST_FLUSH_KEY = "artemis:enrich_last_flush"
 
 # ── Queue management ──────────────────────────────────────────────────────
 
+
 async def enqueue_jobs(job_ids: list[UUID]) -> int:
     """Push job IDs onto the enrichment queue. Triggers flush if threshold hit."""
     if not job_ids:
@@ -42,6 +43,7 @@ async def enqueue_jobs(job_ids: list[UUID]) -> int:
     if depth >= settings.enrich_batch_threshold:
         try:
             from artemis.workers.enrich import enrich_flush_task
+
             enrich_flush_task.apply_async(queue="enrich")
             logger.info(f"auto-triggered enrich flush (queue depth: {depth})")
         except Exception as e:
@@ -82,6 +84,7 @@ async def drain_queue(max_items: int = 500) -> list[str]:
 
 # ── Embedding text composition ────────────────────────────────────────────
 
+
 def compose_embedding_text(metadata: dict, description: str | None = None) -> str:
     """Build rich embedding input from normalized job metadata + description.
 
@@ -110,7 +113,9 @@ def compose_embedding_text(metadata: dict, description: str | None = None) -> st
     loc_parts = []
     loc = metadata.get("normalized_location", {})
     if isinstance(loc, dict):
-        loc_str = ", ".join(p for p in [loc.get("city", ""), loc.get("state", ""), loc.get("country", "")] if p and isinstance(p, str))
+        loc_str = ", ".join(
+            p for p in [loc.get("city", ""), loc.get("state", ""), loc.get("country", "")] if p and isinstance(p, str)
+        )
     elif isinstance(loc, str):
         loc_str = loc
     else:
@@ -137,6 +142,7 @@ def compose_embedding_text(metadata: dict, description: str | None = None) -> st
 
 # ── Core enrichment steps ─────────────────────────────────────────────────
 
+
 async def normalize_batch(jobs: list[Job], session) -> list[Job]:
     """Normalize a batch of jobs via LLM. Updates DB in-place."""
     unnormalized = [j for j in jobs if j.normalized_at is None]
@@ -147,10 +153,9 @@ async def normalize_batch(jobs: list[Job], session) -> list[Job]:
     normalized = []
 
     for i in range(0, len(unnormalized), 20):
-        batch = unnormalized[i:i + 20]
+        batch = unnormalized[i : i + 20]
         input_data = [
-            {"title": j.title, "location": j.location or "", "description": (j.description or "")[:1000]}
-            for j in batch
+            {"title": j.title, "location": j.location or "", "description": (j.description or "")[:1000]} for j in batch
         ]
 
         for attempt in range(MAX_RETRIES):
@@ -172,8 +177,11 @@ async def normalize_batch(jobs: list[Job], session) -> list[Job]:
 
                 for job, meta in zip(batch, items):
                     await session.execute(
-                        update(Job).where(Job.id == job.id).values(
-                            metadata_=meta, normalized_at=datetime.now(timezone.utc),
+                        update(Job)
+                        .where(Job.id == job.id)
+                        .values(
+                            metadata_=meta,
+                            normalized_at=datetime.now(timezone.utc),
                         )
                     )
                     job.metadata_ = meta
@@ -189,7 +197,7 @@ async def normalize_batch(jobs: list[Job], session) -> list[Job]:
             except Exception as e:
                 logger.warning(f"normalize API error (attempt {attempt + 1}): {e}")
                 if attempt < MAX_RETRIES - 1:
-                    await asyncio.sleep(2 ** attempt)
+                    await asyncio.sleep(2**attempt)
                 else:
                     logger.error(f"normalize batch failed: {e}")
 
@@ -207,18 +215,22 @@ async def embed_batch(jobs: list[Job], session) -> int:
     total = 0
 
     for i in range(0, len(embeddable), 100):
-        batch = embeddable[i:i + 100]
+        batch = embeddable[i : i + 100]
         texts = [compose_embedding_text(j.metadata_ or {}, j.description) for j in batch]
 
         for attempt in range(MAX_RETRIES):
             try:
                 response = await client.embeddings.create(
-                    model=settings.embedding_model, input=texts,
+                    model=settings.embedding_model,
+                    input=texts,
                 )
                 for job, emb_data in zip(batch, response.data):
                     await session.execute(
-                        update(Job).where(Job.id == job.id).values(
-                            embedding=emb_data.embedding, embedded_at=datetime.now(timezone.utc),
+                        update(Job)
+                        .where(Job.id == job.id)
+                        .values(
+                            embedding=emb_data.embedding,
+                            embedded_at=datetime.now(timezone.utc),
                         )
                     )
                     total += 1
@@ -227,7 +239,7 @@ async def embed_batch(jobs: list[Job], session) -> int:
             except Exception as e:
                 logger.warning(f"embed API error (attempt {attempt + 1}): {e}")
                 if attempt < MAX_RETRIES - 1:
-                    await asyncio.sleep(2 ** attempt)
+                    await asyncio.sleep(2**attempt)
                 else:
                     logger.error(f"embed batch failed: {e}")
 
@@ -245,7 +257,7 @@ async def summarize_batch(jobs: list[Job], session) -> int:
     total = 0
 
     for i in range(0, len(need_summary), 20):
-        batch = need_summary[i:i + 20]
+        batch = need_summary[i : i + 20]
         input_texts = []
         for j in batch:
             input_texts.append(f"Title: {j.title}\nDescription: {(j.description or '')[:800]}")
@@ -278,7 +290,9 @@ async def summarize_batch(jobs: list[Job], session) -> int:
                 for job, summary in zip(batch, summaries):
                     if summary and isinstance(summary, str):
                         await session.execute(
-                            update(Job).where(Job.id == job.id).values(
+                            update(Job)
+                            .where(Job.id == job.id)
+                            .values(
                                 short_summary=summary[:200],
                             )
                         )
@@ -292,7 +306,7 @@ async def summarize_batch(jobs: list[Job], session) -> int:
             except Exception as e:
                 logger.warning(f"summarize API error (attempt {attempt + 1}): {e}")
                 if attempt < MAX_RETRIES - 1:
-                    await asyncio.sleep(2 ** attempt)
+                    await asyncio.sleep(2**attempt)
                 else:
                     logger.error(f"summarize batch failed: {e}")
 
@@ -301,6 +315,7 @@ async def summarize_batch(jobs: list[Job], session) -> int:
 
 
 # ── Public API ────────────────────────────────────────────────────────────
+
 
 async def enrich_jobs(job_ids: list[str]) -> dict:
     """Full enrichment pipeline: normalize → embed. Returns stats."""

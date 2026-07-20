@@ -4,7 +4,6 @@ import click
 from sqlalchemy import select, text
 
 
-
 @click.group()
 def cli():
     """Artemis - AI-powered job scraping engine"""
@@ -15,6 +14,7 @@ def cli():
 def serve_internal():
     """Run the internal API server (for Go API to call)."""
     from artemis.internal_api import run_internal_api
+
     run_internal_api()
 
 
@@ -24,6 +24,7 @@ def serve_internal():
 @click.option("-l", "--limit", default=50, help="Max jobs to fetch")
 def scrape(slug: str, query: str, limit: int):
     """Scrape jobs for a specific company by slug."""
+
     async def _run():
         from artemis.core.database import async_session
         from artemis.core.models import Company
@@ -48,8 +49,10 @@ def scrape(slug: str, query: str, limit: int):
 @click.option("-l", "--limit", default=50, help="Max jobs per company")
 def scrape_all(query: str, limit: int):
     """Scrape jobs for all active companies."""
+
     async def _run():
         from artemis.services.scrape import scrape_all as _scrape_all
+
         results = await _scrape_all(query=query, limit=limit)
         total = sum(r.get("jobs_new", 0) for r in results)
         click.echo(f"Scraped {len(results)} companies, {total} new jobs")
@@ -60,9 +63,11 @@ def scrape_all(query: str, limit: int):
 @cli.command("init-db")
 def init_db():
     """Create all database tables from SQLAlchemy models."""
+
     async def _init():
         from artemis.core.database import engine
         from artemis.core.models import Base
+
         async with engine.begin() as conn:
             await conn.execute(text("CREATE EXTENSION IF NOT EXISTS vector"))
             await conn.run_sync(Base.metadata.create_all)
@@ -96,8 +101,10 @@ def init_db():
 @cli.command("sync-configs")
 def sync_configs():
     """Load company YAML configs into the database."""
+
     async def _sync():
         from artemis.core.config_loader import sync_configs_to_db
+
         count = await sync_configs_to_db()
         click.echo(f"Synced {count} company configs to database")
 
@@ -105,14 +112,16 @@ def sync_configs():
 
 
 @cli.command("enrich-cb")
-@click.option("--slug", default=None,
-              help="Enrich a single company by slug. Omit to backfill many.")
-@click.option("--limit", type=int, default=50,
-              help="Max companies to enrich in this run (batch mode).")
-@click.option("--force/--no-force", default=False,
-              help="Re-fetch even when crunchbase_synced_at is set.")
-@click.option("--sleep", "sleep_between", type=float, default=3.0,
-              help="Seconds between calls (default 3s — fits within CB throttle).")
+@click.option("--slug", default=None, help="Enrich a single company by slug. Omit to backfill many.")
+@click.option("--limit", type=int, default=50, help="Max companies to enrich in this run (batch mode).")
+@click.option("--force/--no-force", default=False, help="Re-fetch even when crunchbase_synced_at is set.")
+@click.option(
+    "--sleep",
+    "sleep_between",
+    type=float,
+    default=3.0,
+    help="Seconds between calls (default 3s — fits within CB throttle).",
+)
 def enrich_cb(slug: str | None, limit: int, force: bool, sleep_between: float):
     """Populate Crunchbase fields (website, logo, socials, description)
     on the companies table.
@@ -122,15 +131,20 @@ def enrich_cb(slug: str | None, limit: int, force: bool, sleep_between: float):
       artemis enrich-cb --limit 30
       artemis enrich-cb --slug stripe --force
     """
+
     async def _run():
         if slug:
             from artemis.services.hunt import enrich_company_from_crunchbase
+
             result = await enrich_company_from_crunchbase(slug, force=force)
             click.echo(result)
         else:
             from artemis.services.hunt import bulk_enrich_companies_from_crunchbase
+
             result = await bulk_enrich_companies_from_crunchbase(
-                limit=limit, force=force, sleep_between=sleep_between,
+                limit=limit,
+                force=force,
+                sleep_between=sleep_between,
             )
             click.echo(result)
 
@@ -141,15 +155,14 @@ def enrich_cb(slug: str | None, limit: int, force: bool, sleep_between: float):
 @click.option("--slug", default=None, help="Company slug to enrich")
 def enrich(slug: str | None):
     """Run enrichment workflow (normalize + embed) on unenriched jobs."""
+
     async def _run():
         from artemis.core.database import async_session
         from artemis.core.models import Job, Company
         from artemis.services.enrich import enrich_jobs
 
         async with async_session() as session:
-            query = select(Job.id).where(
-                (Job.normalized_at.is_(None)) | (Job.embedding.is_(None))
-            )
+            query = select(Job.id).where((Job.normalized_at.is_(None)) | (Job.embedding.is_(None)))
             if slug:
                 co = await session.execute(select(Company.id).where(Company.slug == slug))
                 company_id = co.scalar_one_or_none()
@@ -175,13 +188,17 @@ def enrich(slug: str | None):
 @cli.command()
 def flush():
     """Force-flush the enrichment queue."""
+
     async def _run():
         from artemis.services.enrich import flush_enrichment_queue
+
         result = await flush_enrichment_queue()
         if result["drained"] == 0:
             click.echo("Queue empty, nothing to flush")
         else:
-            click.echo(f"Flushed {result['drained']} jobs: normalized={result['normalized']}, embedded={result['embedded']}")
+            click.echo(
+                f"Flushed {result['drained']} jobs: normalized={result['normalized']}, embedded={result['embedded']}"
+            )
 
     asyncio.run(_run())
 
@@ -190,8 +207,10 @@ def flush():
 @click.argument("careers_url")
 def detect(careers_url: str):
     """Detect ATS type for a careers URL."""
+
     async def _run():
         from artemis.discovery.detector import detect_ats
+
         result = await detect_ats(careers_url)
         click.echo(f"ATS: {result.ats_type}")
         click.echo(f"Confidence: {result.confidence:.2f}")
@@ -205,8 +224,10 @@ def detect(careers_url: str):
 @click.option("--url", default=None, help="Careers URL override (auto-searches if omitted)")
 def hunt(company_name: str, url: str | None):
     """Hunt a company: find careers page, detect ATS, create config."""
+
     async def _run():
         from artemis.services.hunt import hunt_company
+
         click.echo(f"Hunting {company_name}...")
         result = await hunt_company(company_name, careers_url=url)
         status = result.get("status", "unknown")
@@ -231,14 +252,17 @@ def hunt(company_name: str, url: str | None):
 @click.option("--agent", is_flag=True, help="Run autonomous discovery agent (all sources + AI expansion)")
 def discover(source: str, limit: int, agent: bool):
     """Discover and onboard companies from various sources."""
+
     async def _run():
         if agent:
             from artemis.services.hunt import run_discovery_agent
+
             click.echo("Running autonomous discovery agent...")
             result = await run_discovery_agent(max_companies=limit)
             click.echo(f"Discovered {result['total_discovered']} companies, {result['total_failed']} failed")
         else:
             from artemis.services.hunt import hunt_from_source
+
             click.echo(f"Discovering from {source} (limit={limit})...")
             result = await hunt_from_source(source, limit=limit)
             click.echo(f"Discovered {result['discovered']} companies, {result['failed']} failed")
@@ -251,6 +275,7 @@ def discover(source: str, limit: int, agent: bool):
 @click.option("-l", "--limit", default=100, help="Max jobs to check")
 def monitor(slug: str | None, limit: int):
     """Check active jobs for liveness (one-shot debug)."""
+
     async def _run():
         from artemis.services.monitor import check_active_jobs
 
@@ -271,6 +296,7 @@ def monitor(slug: str | None, limit: int):
 @click.option("--info", "show_info", is_flag=True, help="Show stream info only")
 def events(group: str, follow: bool, show_info: bool):
     """Consume job change events from Redis Stream."""
+
     async def _run():
         from artemis.monitor.events import consume_events, ack_events, stream_info
 
@@ -288,7 +314,9 @@ def events(group: str, follow: bool, show_info: bool):
             if batch:
                 ids = []
                 for msg_id, data in batch:
-                    click.echo(f"  [{msg_id}] {data.get('new_status', '?'):8s} | {data.get('company', '?')} | {data.get('url', '?')}")
+                    click.echo(
+                        f"  [{msg_id}] {data.get('new_status', '?'):8s} | {data.get('company', '?')} | {data.get('url', '?')}"
+                    )
                     ids.append(msg_id)
                 await ack_events(group, ids)
                 click.echo(f"  (ack'd {len(ids)} events)")

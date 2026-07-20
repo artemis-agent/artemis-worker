@@ -7,8 +7,15 @@ from artemis.discovery.agent import discover_company
 
 async def main():
     targets = [
-        "Costco", "Walgreens", "Target", "Home Depot", "Kroger",
-        "Delta Air Lines", "JPMorgan Chase", "Capital One", "American Airlines",
+        "Costco",
+        "Walgreens",
+        "Target",
+        "Home Depot",
+        "Kroger",
+        "Delta Air Lines",
+        "JPMorgan Chase",
+        "Capital One",
+        "American Airlines",
     ]
     for name in targets:
         r = await discover_company(name, dry_run=True)

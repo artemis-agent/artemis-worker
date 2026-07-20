@@ -9,9 +9,7 @@ from artemis.core.config import settings
 # so cached connections from a previous loop fail with
 # "another operation is in progress" when reused by a later task.
 # Use NullPool inside Celery to make each session create a fresh connection.
-_in_celery = bool(os.environ.get("CELERY_WORKER")) or any(
-    "celery" in arg.lower() for arg in os.sys.argv
-)
+_in_celery = bool(os.environ.get("CELERY_WORKER")) or any("celery" in arg.lower() for arg in os.sys.argv)
 
 _engine_kwargs: dict = {"echo": False}
 if _in_celery:

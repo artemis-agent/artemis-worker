@@ -184,9 +184,7 @@ class Resume(Base):
 
     user = relationship("User", back_populates="resumes")
 
-    __table_args__ = (
-        Index("ix_resumes_user_id", "user_id"),
-    )
+    __table_args__ = (Index("ix_resumes_user_id", "user_id"),)
 
 
 class UserSkill(Base):
@@ -200,6 +198,4 @@ class UserSkill(Base):
 
     user = relationship("User", back_populates="skills")
 
-    __table_args__ = (
-        Index("ix_user_skills_user_id", "user_id"),
-    )
+    __table_args__ = (Index("ix_user_skills_user_id", "user_id"),)

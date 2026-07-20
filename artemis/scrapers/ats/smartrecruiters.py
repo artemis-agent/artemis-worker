@@ -38,6 +38,7 @@ class SmartRecruitersScraper(BaseScraper):
                 released = item.get("releasedDate")
                 if released:
                     from dateutil.parser import parse as parse_date
+
                     try:
                         date_posted = parse_date(released)
                     except (ValueError, TypeError):
@@ -45,20 +46,22 @@ class SmartRecruitersScraper(BaseScraper):
 
                 job_url = f"https://jobs.smartrecruiters.com/{company_id}/{ref}" if ref else ""
 
-                jobs.append(ScrapedJob(
-                    external_id=item.get("id", ref),
-                    title=title,
-                    url=job_url,
-                    location=loc_str,
-                    description=item.get("name", ""),
-                    date_posted=date_posted,
-                    source="smartrecruiters",
-                    metadata={
-                        "department": item.get("department", {}).get("label", ""),
-                        "employment_type": item.get("typeOfEmployment", {}).get("label", ""),
-                        "experience_level": item.get("experienceLevel", {}).get("label", ""),
-                    },
-                ))
+                jobs.append(
+                    ScrapedJob(
+                        external_id=item.get("id", ref),
+                        title=title,
+                        url=job_url,
+                        location=loc_str,
+                        description=item.get("name", ""),
+                        date_posted=date_posted,
+                        source="smartrecruiters",
+                        metadata={
+                            "department": item.get("department", {}).get("label", ""),
+                            "employment_type": item.get("typeOfEmployment", {}).get("label", ""),
+                            "experience_level": item.get("experienceLevel", {}).get("label", ""),
+                        },
+                    )
+                )
 
             offset += len(items)
             total = data.get("totalFound", 0)

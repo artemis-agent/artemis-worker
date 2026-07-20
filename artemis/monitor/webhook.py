@@ -52,11 +52,14 @@ async def _post_webhook(
     webhook_secret: str = "",
 ) -> bool:
     """POST batch of changes to webhook URL with HMAC signing and retry."""
-    payload = json.dumps({
-        "event": "job_status_changed",
-        "timestamp": datetime.now(timezone.utc).isoformat(),
-        "changes": changes,
-    }, default=str)
+    payload = json.dumps(
+        {
+            "event": "job_status_changed",
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "changes": changes,
+        },
+        default=str,
+    )
 
     headers = {"Content-Type": "application/json"}
     if webhook_secret:
@@ -80,7 +83,7 @@ async def _post_webhook(
             logger.warning(f"webhook failed attempt {attempt + 1}/{max_retries}: {e}")
 
         if attempt < max_retries - 1:
-            await asyncio.sleep(2 ** attempt)
+            await asyncio.sleep(2**attempt)
 
     logger.error(f"webhook delivery failed after {max_retries} attempts")
     return False

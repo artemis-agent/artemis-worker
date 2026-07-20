@@ -8,9 +8,14 @@ class TestRegistry:
     def test_all_ats_types_registered(self):
         registered = list_scrapers()
         expected = {
-            ATSType.greenhouse, ATSType.lever, ATSType.ashby,
-            ATSType.workday, ATSType.eightfold, ATSType.icims,
-            ATSType.smartrecruiters, ATSType.custom,
+            ATSType.greenhouse,
+            ATSType.lever,
+            ATSType.ashby,
+            ATSType.workday,
+            ATSType.eightfold,
+            ATSType.icims,
+            ATSType.smartrecruiters,
+            ATSType.custom,
         }
         assert expected.issubset(set(registered.keys()))
 

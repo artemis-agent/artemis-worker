@@ -1,4 +1,3 @@
-
 import yaml
 from github import Auth, Github
 
@@ -54,10 +53,10 @@ async def create_company_pr(
 
     # Build PR description
     sample_titles = "\n".join(f"- {j.get('title', 'N/A')}" for j in sample_jobs[:5])
-    body = f"""## Auto-discovered company: {config_data.get('name', slug)}
+    body = f"""## Auto-discovered company: {config_data.get("name", slug)}
 
-**ATS Type:** `{config_data.get('ats', 'unknown')}`
-**Careers URL:** {config_data.get('careers_url', 'N/A')}
+**ATS Type:** `{config_data.get("ats", "unknown")}`
+**Careers URL:** {config_data.get("careers_url", "N/A")}
 **Detection:** {detection_details}
 **Sample Jobs Found:** {len(sample_jobs)}
 

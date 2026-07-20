@@ -22,13 +22,16 @@ async def parse_resume(request: Request) -> JSONResponse:
         return JSONResponse({"error": "user_id, resume_id, s3_key required"}, status_code=400)
 
     from artemis.workers.enrich import resume_parse_task
+
     result = resume_parse_task.apply_async(args=[user_id, resume_id, s3_key], queue="enrich")
 
-    return JSONResponse({
-        "status": "queued",
-        "job_id": result.id,
-        "resume_id": resume_id,
-    })
+    return JSONResponse(
+        {
+            "status": "queued",
+            "job_id": result.id,
+            "resume_id": resume_id,
+        }
+    )
 
 
 async def parse_progress(request: Request) -> JSONResponse:
@@ -38,6 +41,7 @@ async def parse_progress(request: Request) -> JSONResponse:
         return JSONResponse({"error": "resume_id required"}, status_code=400)
 
     from artemis.services.user import get_parse_progress
+
     progress = await get_parse_progress(resume_id)
     if not progress:
         return JSONResponse({"stage": "Waiting...", "percent": 0})
@@ -58,11 +62,13 @@ async def recommend_jobs(request: Request) -> JSONResponse:
 
     recs = await get_recommendations(user_id, limit=limit, skip_cache=skip_cache)
 
-    return JSONResponse({
-        "recommendations": recs,
-        "total": len(recs),
-        "cached": not skip_cache,
-    })
+    return JSONResponse(
+        {
+            "recommendations": recs,
+            "total": len(recs),
+            "cached": not skip_cache,
+        }
+    )
 
 
 async def embed_user(request: Request) -> JSONResponse:
@@ -94,17 +100,12 @@ async def embed_user(request: Request) -> JSONResponse:
 
         # Load latest resume (may be None if user hasn't uploaded one)
         resume_res = await session.execute(
-            select(Resume)
-            .where(Resume.user_id == uid)
-            .order_by(Resume.uploaded_at.desc())
-            .limit(1)
+            select(Resume).where(Resume.user_id == uid).order_by(Resume.uploaded_at.desc()).limit(1)
         )
         resume = resume_res.scalar_one_or_none()
 
         # Load skills from user_skills table
-        skills_res = await session.execute(
-            select(UserSkill.skill).where(UserSkill.user_id == uid)
-        )
+        skills_res = await session.execute(select(UserSkill.skill).where(UserSkill.user_id == uid))
         user_skills = [r.skill for r in skills_res.all()]
 
         # Build merged profile dict — resume data first, then overlay user table fields

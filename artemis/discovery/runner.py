@@ -25,7 +25,7 @@ async def run_discovery(source: str = "fortune500", limit: int = 10) -> dict:
     existing = _get_existing_slugs()
     results = {"discovered": 0, "already_known": 0, "failed": 0, "prs": []}
 
-    for company in companies[:limit + len(existing)]:
+    for company in companies[: limit + len(existing)]:
         if results["discovered"] >= limit:
             break
 
@@ -49,13 +49,11 @@ async def run_discovery(source: str = "fortune500", limit: int = 10) -> dict:
             sample_jobs = []
             try:
                 from artemis.scrapers.registry import get_scraper
+
                 scraper = get_scraper(detection.ats_type, detection.config)
                 async with scraper:
                     scraped = await scraper.scrape(query="", limit=5)
-                    sample_jobs = [
-                        {"title": j.title, "url": j.url, "location": j.location}
-                        for j in scraped
-                    ]
+                    sample_jobs = [{"title": j.title, "url": j.url, "location": j.location} for j in scraped]
             except Exception as e:
                 print(f"  Test scrape failed: {e}")
 

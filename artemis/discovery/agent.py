@@ -53,29 +53,58 @@ UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chr
 # Each pattern, when matched, produces an `_AtsCandidate`. Order matters:
 # we try more-specific patterns first.
 _PATTERNS: list[tuple[str, re.Pattern[str]]] = [
-    ("greenhouse", re.compile(r"https?://boards(?:\.eu)?\.greenhouse\.io/(?:embed/job_board\?for=)?([a-z0-9_-]+)", re.I)),
+    (
+        "greenhouse",
+        re.compile(r"https?://boards(?:\.eu)?\.greenhouse\.io/(?:embed/job_board\?for=)?([a-z0-9_-]+)", re.I),
+    ),
     ("greenhouse", re.compile(r"https?://job-boards(?:\.eu)?\.greenhouse\.io/([a-z0-9_-]+)", re.I)),
-    ("lever",      re.compile(r"https?://jobs\.(?:eu\.)?lever\.co/([a-z0-9_-]+)", re.I)),
-    ("ashby",      re.compile(r"https?://jobs\.ashbyhq\.com/([a-z0-9_-]+)", re.I)),
-    ("ashby",      re.compile(r"https?://([a-z0-9_-]+)\.ashbyhq\.com", re.I)),
+    ("lever", re.compile(r"https?://jobs\.(?:eu\.)?lever\.co/([a-z0-9_-]+)", re.I)),
+    ("ashby", re.compile(r"https?://jobs\.ashbyhq\.com/([a-z0-9_-]+)", re.I)),
+    ("ashby", re.compile(r"https?://([a-z0-9_-]+)\.ashbyhq\.com", re.I)),
     # Workday: optional 2-3-letter language prefix (e.g. `en-US/`, `wt-WT/`)
     # but NOT a deeper site path (which would eat the real site_id).
-    ("workday",    re.compile(r"https?://([a-z0-9_-]+)\.wd(\d)\.myworkdayjobs\.com/(?:[a-z]{2,3}(?:-[A-Z]{2,4})?/)?([A-Za-z0-9_]+)", re.I)),
-    ("workday",    re.compile(r"https?://([a-z0-9_-]+)\.myworkdayjobs\.com/(?:[a-z]{2,3}(?:-[A-Z]{2,4})?/)?([A-Za-z0-9_]+)", re.I)),
+    (
+        "workday",
+        re.compile(
+            r"https?://([a-z0-9_-]+)\.wd(\d)\.myworkdayjobs\.com/(?:[a-z]{2,3}(?:-[A-Z]{2,4})?/)?([A-Za-z0-9_]+)", re.I
+        ),
+    ),
+    (
+        "workday",
+        re.compile(r"https?://([a-z0-9_-]+)\.myworkdayjobs\.com/(?:[a-z]{2,3}(?:-[A-Z]{2,4})?/)?([A-Za-z0-9_]+)", re.I),
+    ),
     ("smartrecruiters", re.compile(r"https?://(?:jobs|careers)\.smartrecruiters\.com/([A-Za-z0-9_.-]+)", re.I)),
-    ("eightfold",  re.compile(r"https?://([a-z0-9_-]+)\.eightfold\.ai", re.I)),
-    ("icims",      re.compile(r"https?://(careers-[a-z0-9_-]+)\.icims\.com", re.I)),
-    ("icims",      re.compile(r"https?://([a-z0-9_-]+)\.icims\.com", re.I)),
+    ("eightfold", re.compile(r"https?://([a-z0-9_-]+)\.eightfold\.ai", re.I)),
+    ("icims", re.compile(r"https?://(careers-[a-z0-9_-]+)\.icims\.com", re.I)),
+    ("icims", re.compile(r"https?://([a-z0-9_-]+)\.icims\.com", re.I)),
 ]
 
 # Aggregator / noise domains we never want to extract from.
 _NOISE_HOSTS = {
-    "linkedin.com", "indeed.com", "glassdoor.com", "ziprecruiter.com",
-    "monster.com", "simplyhired.com", "wellfound.com", "angel.co",
-    "builtin.com", "themuse.com", "y-combinator.com", "ycombinator.com",
-    "crunchbase.com", "techcrunch.com", "wikipedia.org", "wikimedia.org",
-    "facebook.com", "twitter.com", "x.com", "youtube.com", "instagram.com",
-    "google.com", "bing.com", "duckduckgo.com",
+    "linkedin.com",
+    "indeed.com",
+    "glassdoor.com",
+    "ziprecruiter.com",
+    "monster.com",
+    "simplyhired.com",
+    "wellfound.com",
+    "angel.co",
+    "builtin.com",
+    "themuse.com",
+    "y-combinator.com",
+    "ycombinator.com",
+    "crunchbase.com",
+    "techcrunch.com",
+    "wikipedia.org",
+    "wikimedia.org",
+    "facebook.com",
+    "twitter.com",
+    "x.com",
+    "youtube.com",
+    "instagram.com",
+    "google.com",
+    "bing.com",
+    "duckduckgo.com",
 }
 
 # Regexes for extracting ATS URLs out of arbitrary HTML response bodies.
@@ -114,6 +143,7 @@ class _AtsCandidate:
 class DiscoveryResult:
     """Outcome of `discover_company`. `status` is one of:
     `discovered` | `unverified` | `not_found` | `already_known` | `error`."""
+
     name: str
     slug: str
     status: str
@@ -146,6 +176,7 @@ class DiscoveryResult:
 
 # ── Helpers ───────────────────────────────────────────────────────────────
 
+
 def _slugify(name: str) -> str:
     s = name.lower().strip()
     s = re.sub(r"[^a-z0-9]+", "-", s)
@@ -162,16 +193,79 @@ def _flat(text: str) -> str:
 # generic slugs were the original source of false-positive collisions
 # (`general`, `us`, `new`, `central` → matched dozens of unrelated boards).
 _GENERIC_TOKENS = {
-    "the", "and", "a", "an", "of", "for", "in", "on", "at", "to", "by",
-    "us", "uk", "eu", "usa", "new", "old", "all", "any", "big", "small",
-    "first", "second", "last", "next", "best", "top",
-    "general", "national", "international", "global", "world", "central",
-    "north", "south", "east", "west", "american", "european", "global",
-    "united", "alliance", "industry", "industries", "group", "co",
-    "company", "corp", "corporation", "ltd", "inc", "llc", "holdings",
-    "ventures", "partners", "capital", "labs", "lab", "studio", "studios",
-    "systems", "solutions", "services", "consulting", "media", "tech",
-    "digital", "online", "data", "cloud", "core", "main", "prime",
+    "the",
+    "and",
+    "a",
+    "an",
+    "of",
+    "for",
+    "in",
+    "on",
+    "at",
+    "to",
+    "by",
+    "us",
+    "uk",
+    "eu",
+    "usa",
+    "new",
+    "old",
+    "all",
+    "any",
+    "big",
+    "small",
+    "first",
+    "second",
+    "last",
+    "next",
+    "best",
+    "top",
+    "general",
+    "national",
+    "international",
+    "global",
+    "world",
+    "central",
+    "north",
+    "south",
+    "east",
+    "west",
+    "american",
+    "european",
+    "global",
+    "united",
+    "alliance",
+    "industry",
+    "industries",
+    "group",
+    "co",
+    "company",
+    "corp",
+    "corporation",
+    "ltd",
+    "inc",
+    "llc",
+    "holdings",
+    "ventures",
+    "partners",
+    "capital",
+    "labs",
+    "lab",
+    "studio",
+    "studios",
+    "systems",
+    "solutions",
+    "services",
+    "consulting",
+    "media",
+    "tech",
+    "digital",
+    "online",
+    "data",
+    "cloud",
+    "core",
+    "main",
+    "prime",
 }
 
 
@@ -215,10 +309,7 @@ def _name_compatible(name: str, slug: str) -> bool:
     #    embed the company name as a separate word (e.g. "trm-labs" for
     #    "TRM Labs") while still rejecting unrelated multi-word slugs.
     slug_tokens = [t.lower() for t in re.findall(r"[A-Z][a-z0-9]*|[a-z0-9]+", slug)]
-    overlap = {
-        t for t in slug_tokens
-        if len(t) >= 4 and t in name_tokens and t not in _GENERIC_TOKENS
-    }
+    overlap = {t for t in slug_tokens if len(t) >= 4 and t in name_tokens and t not in _GENERIC_TOKENS}
     if overlap:
         return True
     return False
@@ -295,9 +386,12 @@ def _looks_like_careers_url(url: str, name: str) -> bool:
     # The host or path should reference careers/jobs.
     path_hint = re.search(r"/(?:careers?|jobs?|work)(?:[/?]|$)", url.lower())
     host_hint = (
-        host.startswith("careers.") or host.startswith("jobs.")
-        or host.startswith("career.") or host.startswith("corporate.")
-        or "careers" in host or "jobs" in host
+        host.startswith("careers.")
+        or host.startswith("jobs.")
+        or host.startswith("career.")
+        or host.startswith("corporate.")
+        or "careers" in host
+        or "jobs" in host
     )
     if not (path_hint or host_hint):
         return False
@@ -344,12 +438,14 @@ def _extract_candidates(results: list[SearchResult]) -> list[_AtsCandidate]:
                 if key in seen:
                     continue
                 seen.add(key)
-                out.append(_AtsCandidate(
-                    ats=ats,
-                    slug=tenant,
-                    config={"tenant": tenant, "site_id": site_id, "wd_version": wd_version},
-                    evidence_url=url,
-                ))
+                out.append(
+                    _AtsCandidate(
+                        ats=ats,
+                        slug=tenant,
+                        config={"tenant": tenant, "site_id": site_id, "wd_version": wd_version},
+                        evidence_url=url,
+                    )
+                )
                 break
             elif ats == "eightfold":
                 slug = m.group(1).lower()
@@ -357,12 +453,14 @@ def _extract_candidates(results: list[SearchResult]) -> list[_AtsCandidate]:
                 if key in seen:
                     continue
                 seen.add(key)
-                out.append(_AtsCandidate(
-                    ats=ats,
-                    slug=slug,
-                    config={"company": slug, "domain": f"{slug}.com"},
-                    evidence_url=url,
-                ))
+                out.append(
+                    _AtsCandidate(
+                        ats=ats,
+                        slug=slug,
+                        config={"company": slug, "domain": f"{slug}.com"},
+                        evidence_url=url,
+                    )
+                )
                 break
             elif ats == "icims":
                 slug = m.group(1).lower()
@@ -370,12 +468,14 @@ def _extract_candidates(results: list[SearchResult]) -> list[_AtsCandidate]:
                 if key in seen:
                     continue
                 seen.add(key)
-                out.append(_AtsCandidate(
-                    ats=ats,
-                    slug=slug,
-                    config={"careers_url": f"https://{slug}.icims.com/jobs/search"},
-                    evidence_url=url,
-                ))
+                out.append(
+                    _AtsCandidate(
+                        ats=ats,
+                        slug=slug,
+                        config={"careers_url": f"https://{slug}.icims.com/jobs/search"},
+                        evidence_url=url,
+                    )
+                )
                 break
             else:
                 slug = m.group(1).lower()
@@ -402,15 +502,18 @@ async def _probe_candidate(
     """Hit the live ATS API; populate job_count if successful."""
     fn_by_ats = {
         "greenhouse": lambda: probe_mod.probe_greenhouse(client, cand.slug, sem),
-        "lever":      lambda: probe_mod.probe_lever(client, cand.slug, sem),
-        "ashby":      lambda: probe_mod.probe_ashby(client, cand.slug, sem),
+        "lever": lambda: probe_mod.probe_lever(client, cand.slug, sem),
+        "ashby": lambda: probe_mod.probe_ashby(client, cand.slug, sem),
         "smartrecruiters": lambda: probe_mod.probe_smartrecruiters(client, cand.slug, sem),
-        "eightfold":  lambda: probe_mod.probe_eightfold(client, cand.slug, sem),
-        "workday":    lambda: probe_mod.probe_workday(
-            client, cand.config["tenant"], cand.config["site_id"],
-            cand.config.get("wd_version", "5"), sem,
+        "eightfold": lambda: probe_mod.probe_eightfold(client, cand.slug, sem),
+        "workday": lambda: probe_mod.probe_workday(
+            client,
+            cand.config["tenant"],
+            cand.config["site_id"],
+            cand.config.get("wd_version", "5"),
+            sem,
         ),
-        "icims":      lambda: probe_mod.probe_icims(client, cand.slug, sem),
+        "icims": lambda: probe_mod.probe_icims(client, cand.slug, sem),
     }
     fn = fn_by_ats.get(cand.ats)
     if fn is None:
@@ -429,7 +532,8 @@ async def _probe_candidate(
 
 
 async def _fingerprint_careers_page(
-    client: httpx.AsyncClient, url: str,
+    client: httpx.AsyncClient,
+    url: str,
 ) -> list[_AtsCandidate]:
     """Fetch a candidate careers URL and harvest ATS candidates from it.
 
@@ -490,20 +594,15 @@ async def _sample_titles(client: httpx.AsyncClient, cand: _AtsCandidate, n: int 
     return []
 
 
-async def _llm_extract_from_search(
-    company_name: str, results: list[SearchResult]
-) -> _AtsCandidate | None:
+async def _llm_extract_from_search(company_name: str, results: list[SearchResult]) -> _AtsCandidate | None:
     """Fallback when no regex pattern matched: ask GPT-4 to identify the ATS + slug
     from the search snippets. Returns a candidate or None."""
     if not results:
         return None
     snippet_block = "\n".join(
-        f"{i+1}. {r.title}\n   URL: {r.url}\n   {r.snippet[:240]}"
-        for i, r in enumerate(results[:10])
+        f"{i + 1}. {r.title}\n   URL: {r.url}\n   {r.snippet[:240]}" for i, r in enumerate(results[:10])
     )
-    prompt = EXTRACT_ATS_FROM_SEARCH.format(
-        company_name=company_name, results=snippet_block
-    )
+    prompt = EXTRACT_ATS_FROM_SEARCH.format(company_name=company_name, results=snippet_block)
     try:
         client = get_ai_client()
         resp = await client.chat.completions.create(
@@ -521,18 +620,27 @@ async def _llm_extract_from_search(
     ats = (data.get("ats") or "").lower()
     cfg = data.get("config") or {}
     evidence = data.get("evidence_url") or ""
-    if ats not in {
-        "greenhouse", "lever", "ashby", "workday",
-        "smartrecruiters", "eightfold", "icims",
-    } or not cfg:
+    if (
+        ats
+        not in {
+            "greenhouse",
+            "lever",
+            "ashby",
+            "workday",
+            "smartrecruiters",
+            "eightfold",
+            "icims",
+        }
+        or not cfg
+    ):
         return None
 
     slug = (
         cfg.get("board_token")
-        or cfg.get("company_id")          # smartrecruiters canonical
-        or cfg.get("tenant")              # workday canonical
-        or cfg.get("company")             # lever / eightfold canonical
-        or cfg.get("site")                # tolerate old `site` key from older LLM outputs
+        or cfg.get("company_id")  # smartrecruiters canonical
+        or cfg.get("tenant")  # workday canonical
+        or cfg.get("company")  # lever / eightfold canonical
+        or cfg.get("site")  # tolerate old `site` key from older LLM outputs
         or ""
     )
     if not slug:
@@ -540,9 +648,7 @@ async def _llm_extract_from_search(
     return _AtsCandidate(ats=ats, slug=str(slug).lower(), config=cfg, evidence_url=evidence)
 
 
-async def _llm_verify_match(
-    company_name: str, cand: _AtsCandidate, titles: list[str]
-) -> bool:
+async def _llm_verify_match(company_name: str, cand: _AtsCandidate, titles: list[str]) -> bool:
     """Confirm the board actually belongs to the requested company."""
     if not titles:
         # No titles available — be conservative: only reject when slug
@@ -595,6 +701,7 @@ def _save_yaml(result: DiscoveryResult) -> None:
 
 # ── Public entry point ────────────────────────────────────────────────────
 
+
 async def discover_company(
     name: str,
     website: str | None = None,
@@ -618,7 +725,9 @@ async def discover_company(
     searcher = searcher or default_searcher()
     owns_client = http_client is None
     client = http_client or httpx.AsyncClient(
-        headers={"User-Agent": UA}, follow_redirects=True, timeout=15.0,
+        headers={"User-Agent": UA},
+        follow_redirects=True,
+        timeout=15.0,
     )
 
     try:
@@ -682,7 +791,7 @@ async def discover_company(
         if verified is None:
             seen_hosts: set[str] = set()
             fp_targets: list[str] = []
-            for r in (all_results or results):
+            for r in all_results or results:
                 if not _looks_like_careers_url(r.url, name):
                     continue
                 host = _host_of(r.url)

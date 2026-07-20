@@ -11,6 +11,7 @@ logger = logging.getLogger("artemis.workers.scrape")
 @app.task(name="artemis.workers.scrape.scrape_company_task", bind=True, max_retries=2)
 def scrape_company_task(self, company_id: str, query: str = "", limit: int = 50):
     """Scrape jobs for a company and enqueue new jobs for enrichment."""
+
     async def _run():
         from artemis.services.scrape import scrape_company
         from artemis.services.enrich import enqueue_jobs
@@ -27,6 +28,7 @@ def scrape_company_task(self, company_id: str, query: str = "", limit: int = 50)
 @app.task(name="artemis.workers.scrape.scrape_all_task")
 def scrape_all_task(query: str = ""):
     """Scrape all active companies."""
+
     async def _run():
         from artemis.services.scrape import scrape_all
         from artemis.services.enrich import enqueue_jobs
@@ -47,8 +49,10 @@ def scrape_all_task(query: str = ""):
 @app.task(name="artemis.workers.scrape.hunt_company_task", bind=True, max_retries=1)
 def hunt_company_task(self, company_name: str, careers_url: str | None = None):
     """Hunt a company: find careers page, detect ATS, create config."""
+
     async def _run():
         from artemis.services.hunt import hunt_company
+
         result = await hunt_company(company_name, careers_url=careers_url)
         logger.info(f"hunt result for {company_name}: {result.get('status')}")
         return result
@@ -59,8 +63,10 @@ def hunt_company_task(self, company_name: str, careers_url: str | None = None):
 @app.task(name="artemis.workers.scrape.discovery_agent_task")
 def discovery_agent_task(sources: list[str] | None = None, max_companies: int = 50):
     """Run autonomous discovery agent across sources."""
+
     async def _run():
         from artemis.services.hunt import run_discovery_agent
+
         result = await run_discovery_agent(seed_sources=sources, max_companies=max_companies)
         logger.info(f"discovery agent done: {result['total_discovered']} discovered")
         return result
@@ -87,9 +93,12 @@ def bulk_discover_task(
         # Reuse the script's main() logic by setting argv
         sys.argv = [
             "bulk",
-            "--sources", sources,
-            "--limit-per-source", str(limit_per_source),
-            "--concurrency", str(concurrency),
+            "--sources",
+            sources,
+            "--limit-per-source",
+            str(limit_per_source),
+            "--concurrency",
+            str(concurrency),
         ]
         if skip_existing:
             sys.argv.append("--skip-existing")
@@ -97,6 +106,7 @@ def bulk_discover_task(
             sys.argv.append("--skip-test-scrape")
 
         from artemis.discovery.bulk import main
+
         await main()
 
     return asyncio.run(_run())
@@ -121,9 +131,12 @@ def probe_ats_task(
     async def _run():
         sys.argv = [
             "probe",
-            "--concurrency", str(concurrency),
-            "--probe-rate", str(probe_rate),
-            "--max", str(max_companies),
+            "--concurrency",
+            str(concurrency),
+            "--probe-rate",
+            str(probe_rate),
+            "--max",
+            str(max_companies),
         ]
         if skip_existing:
             sys.argv.append("--skip-existing")
@@ -131,6 +144,7 @@ def probe_ats_task(
             sys.argv.append("--curated-only")
 
         from artemis.discovery.probe import main
+
         await main()
 
     return asyncio.run(_run())
@@ -150,11 +164,13 @@ def agent_discover_task(
     """AI-powered company discovery: search-grounded ATS detection.
     If `names` is None, picks the next `max_companies` unprocessed entries
     from the curated + Fortune-500 lists."""
+
     async def _run():
         from artemis.discovery.bulk import (
             bulk_discover_via_agent,
             _candidates_not_yet_known,
         )
+
         targets = names or _candidates_not_yet_known(max_companies)
         result = await bulk_discover_via_agent(
             targets,
@@ -163,8 +179,7 @@ def agent_discover_task(
             dry_run=dry_run,
         )
         logger.info(
-            f"agent_discover_task done: {result['hits']}/{result['total']} hits, "
-            f"cost ~${result['est_cost_usd']}"
+            f"agent_discover_task done: {result['hits']}/{result['total']} hits, cost ~${result['est_cost_usd']}"
         )
         return result
 
@@ -175,11 +190,13 @@ def agent_discover_task(
 def daily_agent_discover_task(daily_cap: int = 30):
     """Scheduled daily task: discover up to `daily_cap` new companies via the
     AI agent. Source: next unprocessed curated/F500 names."""
+
     async def _run():
         from artemis.discovery.bulk import (
             bulk_discover_via_agent,
             _candidates_not_yet_known,
         )
+
         targets = _candidates_not_yet_known(daily_cap)
         if not targets:
             logger.info("daily agent discover: no candidates left to process")
@@ -191,8 +208,7 @@ def daily_agent_discover_task(daily_cap: int = 30):
             summary_path="/tmp/agent_discover_daily.json",
         )
         logger.info(
-            f"daily agent discover: {result['hits']}/{result['total']} new companies "
-            f"(cost ~${result['est_cost_usd']})"
+            f"daily agent discover: {result['hits']}/{result['total']} new companies (cost ~${result['est_cost_usd']})"
         )
         return result
 

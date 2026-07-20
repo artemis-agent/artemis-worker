@@ -5,18 +5,22 @@ from pydantic import BaseModel
 
 # ── Jobs / Scrape ──
 
+
 class ScrapeRequest(BaseModel):
     company_id: str
     query: str = ""
     limit: int = 50
+
 
 class ScrapeResponse(BaseModel):
     status: str
     job_id: str
     company_id: str
 
+
 class EmbedRequest(BaseModel):
     text: str
+
 
 class EmbedResponse(BaseModel):
     embedding: list[float]
@@ -24,10 +28,12 @@ class EmbedResponse(BaseModel):
 
 # ── Resume ──
 
+
 class ResumeParseRequest(BaseModel):
     user_id: str
     resume_id: str
     s3_key: str
+
 
 class ResumeParseResponse(BaseModel):
     status: str
@@ -37,10 +43,12 @@ class ResumeParseResponse(BaseModel):
 
 # ── Recommendations ──
 
+
 class RecommendRequest(BaseModel):
     user_id: str
     limit: int = 20
     skip_cache: bool = False
+
 
 class RecommendResponse(BaseModel):
     recommendations: list[dict]
@@ -50,8 +58,10 @@ class RecommendResponse(BaseModel):
 
 # ── User Profile Embedding ──
 
+
 class UserEmbedRequest(BaseModel):
     user_id: str
+
 
 class UserEmbedResponse(BaseModel):
     status: str

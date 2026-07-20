@@ -84,7 +84,6 @@ FORTUNE_500_COMPANIES = [
     {"name": "Yelp", "careers_hint": "yelp.careers"},
     {"name": "Match Group", "careers_hint": "mtch.com/careers"},
     {"name": "Zillow", "careers_hint": "zillow.com/careers"},
-
     # ── Semiconductors ──
     {"name": "AMD", "careers_hint": "careers.amd.com"},
     {"name": "Qualcomm", "careers_hint": "qualcomm.com/company/careers"},
@@ -102,7 +101,6 @@ FORTUNE_500_COMPANIES = [
     {"name": "Western Digital", "careers_hint": "westerndigital.com/company/careers"},
     {"name": "Seagate", "careers_hint": "seagate.com/careers"},
     {"name": "Skyworks", "careers_hint": "skyworksinc.com/careers"},
-
     # ── Financial Services / Banking ──
     {"name": "JPMorgan Chase", "careers_hint": "careers.jpmorgan.com"},
     {"name": "Bank of America", "careers_hint": "careers.bankofamerica.com"},
@@ -145,7 +143,6 @@ FORTUNE_500_COMPANIES = [
     {"name": "Moody's", "careers_hint": "moodys.com/careers"},
     {"name": "Nasdaq", "careers_hint": "nasdaq.com/about/careers"},
     {"name": "Intercontinental Exchange", "careers_hint": "ice.com/careers"},
-
     # ── Healthcare / Pharma / Biotech ──
     {"name": "UnitedHealth Group", "careers_hint": "careers.unitedhealthgroup.com"},
     {"name": "CVS Health", "careers_hint": "jobs.cvshealth.com"},
@@ -182,7 +179,6 @@ FORTUNE_500_COMPANIES = [
     {"name": "Illumina", "careers_hint": "illumina.com/company/careers.html"},
     {"name": "Genentech", "careers_hint": "careers.gene.com"},
     {"name": "23andMe", "careers_hint": "23andme.com/careers"},
-
     # ── Retail / Consumer Goods ──
     {"name": "Walmart", "careers_hint": "careers.walmart.com"},
     {"name": "Costco", "careers_hint": "costco.com/careers.html"},
@@ -236,7 +232,6 @@ FORTUNE_500_COMPANIES = [
     {"name": "Chipotle", "careers_hint": "jobs.chipotle.com"},
     {"name": "Yum! Brands", "careers_hint": "jobs.yum.com"},
     {"name": "Domino's", "careers_hint": "jobs.dominos.com"},
-
     # ── Industrial / Manufacturing ──
     {"name": "Boeing", "careers_hint": "jobs.boeing.com"},
     {"name": "Lockheed Martin", "careers_hint": "lockheedmartinjobs.com"},
@@ -263,7 +258,6 @@ FORTUNE_500_COMPANIES = [
     {"name": "Otis Worldwide", "careers_hint": "otis.com/en/us/careers"},
     {"name": "Trane Technologies", "careers_hint": "tranetechnologies.com/en/index/careers.html"},
     {"name": "Johnson Controls", "careers_hint": "johnsoncontrols.com/careers"},
-
     # ── Energy / Oil & Gas / Utilities ──
     {"name": "ExxonMobil", "careers_hint": "exxonmobil.com/Careers"},
     {"name": "Chevron", "careers_hint": "careers.chevron.com"},
@@ -286,7 +280,6 @@ FORTUNE_500_COMPANIES = [
     {"name": "Sempra Energy", "careers_hint": "sempra.com/careers"},
     {"name": "Xcel Energy", "careers_hint": "xcelenergy.com/careers"},
     {"name": "Constellation Energy", "careers_hint": "constellationenergy.com/careers"},
-
     # ── Telecom / Media / Entertainment ──
     {"name": "AT&T", "careers_hint": "att.jobs"},
     {"name": "Verizon", "careers_hint": "mycareer.verizon.com"},
@@ -302,7 +295,6 @@ FORTUNE_500_COMPANIES = [
     {"name": "Live Nation Entertainment", "careers_hint": "careers.livenationentertainment.com"},
     {"name": "Liberty Media", "careers_hint": "libertymedia.com/careers"},
     {"name": "Lumen Technologies", "careers_hint": "jobs.lumen.com"},
-
     # ── Transportation / Logistics ──
     {"name": "FedEx", "careers_hint": "careers.fedex.com"},
     {"name": "UPS", "careers_hint": "jobs-ups.com"},
@@ -326,7 +318,6 @@ FORTUNE_500_COMPANIES = [
     {"name": "J.B. Hunt", "careers_hint": "jbhunt.jobs"},
     {"name": "Old Dominion Freight Line", "careers_hint": "odfl.com/careers"},
     {"name": "Penske", "careers_hint": "penske.jobs"},
-
     # ── Automotive ──
     {"name": "Ford", "careers_hint": "corporate.ford.com/careers.html"},
     {"name": "General Motors", "careers_hint": "careers.gm.com"},
@@ -348,7 +339,6 @@ FORTUNE_500_COMPANIES = [
     {"name": "O'Reilly Auto Parts", "careers_hint": "corporate.oreillyauto.com/onlinecareers"},
     {"name": "Carvana", "careers_hint": "careers.carvana.com"},
     {"name": "AutoNation", "careers_hint": "autonation.jobs"},
-
     # ── Hospitality / Real Estate ──
     {"name": "Marriott", "careers_hint": "careers.marriott.com"},
     {"name": "Hilton", "careers_hint": "jobs.hilton.com"},
@@ -365,7 +355,6 @@ FORTUNE_500_COMPANIES = [
     {"name": "Equinix", "careers_hint": "equinix.com/careers"},
     {"name": "American Tower", "careers_hint": "americantower.com/about/careers"},
     {"name": "Crown Castle", "careers_hint": "crowncastle.com/about-us/careers"},
-
     # ── Consulting / Professional Services ──
     {"name": "Accenture", "careers_hint": "accenture.com/us-en/careers"},
     {"name": "Deloitte", "careers_hint": "apply.deloitte.com"},
@@ -389,7 +378,6 @@ FORTUNE_500_COMPANIES = [
     {"name": "ADP", "careers_hint": "jobs.adp.com"},
     {"name": "Paychex", "careers_hint": "paychex.com/about/careers"},
     {"name": "Gartner", "careers_hint": "jobs.gartner.com"},
-
     # ── Construction / Materials ──
     {"name": "Lennar", "careers_hint": "lennarcareers.com"},
     {"name": "D.R. Horton", "careers_hint": "drhorton.com/careers"},
@@ -407,7 +395,6 @@ FORTUNE_500_COMPANIES = [
     {"name": "Corteva", "careers_hint": "corteva.com/careers"},
     {"name": "International Paper", "careers_hint": "internationalpaper.com/careers"},
     {"name": "Westrock", "careers_hint": "westrock.com/careers"},
-
     # ── Misc large employers ──
     {"name": "Allegion", "careers_hint": "allegion.com/corp/en/careers.html"},
     {"name": "Fastenal", "careers_hint": "fastenal.jobs"},
@@ -439,6 +426,7 @@ CLOUD_100_COMPANIES = [
 
 
 # ── Dynamic sources ───────────────────────────────────────────────────────
+
 
 async def fetch_crunchbase_top(limit: int = 100) -> list[dict]:
     """Fetch top companies from Crunchbase API v4 (ranked by org rank).
@@ -531,12 +519,14 @@ async def fetch_crunchbase_website(slug_or_url: str) -> str | None:
 
     payload = {
         "field_ids": ["website_url", "permalink", "identifier"],
-        "query": [{
-            "type": "predicate",
-            "field_id": "identifier",
-            "operator_id": "contains",
-            "values": [permalink],
-        }],
+        "query": [
+            {
+                "type": "predicate",
+                "field_id": "identifier",
+                "operator_id": "contains",
+                "values": [permalink],
+            }
+        ],
         "limit": 25,
     }
     try:
@@ -551,9 +541,7 @@ async def fetch_crunchbase_website(slug_or_url: str) -> str | None:
         return None
 
     if resp.status_code != 200:
-        logger.warning(
-            f"Crunchbase API error {resp.status_code} for {permalink}: {resp.text[:200]}"
-        )
+        logger.warning(f"Crunchbase API error {resp.status_code} for {permalink}: {resp.text[:200]}")
         return None
 
     entities = (resp.json() or {}).get("entities") or []
@@ -585,12 +573,12 @@ def crunchbase_logo_url(image_id: str | None) -> str | None:
 # Fields known to work on our Crunchbase API tier. Kept as a module-level
 # constant so callers / tests can reference the exact set.
 _CB_PROFILE_FIELDS = [
-    "identifier",          # {permalink, uuid, value (=name), image_id}
+    "identifier",  # {permalink, uuid, value (=name), image_id}
     "website_url",
     "short_description",
-    "linkedin",            # {value: url}
-    "twitter",             # {value: url}
-    "facebook",            # {value: url}
+    "linkedin",  # {value: url}
+    "twitter",  # {value: url}
+    "facebook",  # {value: url}
 ]
 
 
@@ -626,12 +614,14 @@ async def fetch_crunchbase_profile(slug_or_url: str) -> dict | None:
 
     payload = {
         "field_ids": _CB_PROFILE_FIELDS,
-        "query": [{
-            "type": "predicate",
-            "field_id": "identifier",
-            "operator_id": "contains",
-            "values": [permalink],
-        }],
+        "query": [
+            {
+                "type": "predicate",
+                "field_id": "identifier",
+                "operator_id": "contains",
+                "values": [permalink],
+            }
+        ],
         "limit": 25,
     }
     try:
@@ -646,9 +636,7 @@ async def fetch_crunchbase_profile(slug_or_url: str) -> dict | None:
         return None
 
     if resp.status_code != 200:
-        logger.warning(
-            f"Crunchbase API error {resp.status_code} for {permalink}: {resp.text[:200]}"
-        )
+        logger.warning(f"Crunchbase API error {resp.status_code} for {permalink}: {resp.text[:200]}")
         return None
 
     for ent in (resp.json() or {}).get("entities") or []:
@@ -656,6 +644,7 @@ async def fetch_crunchbase_profile(slug_or_url: str) -> dict | None:
         ident = props.get("identifier") or {}
         if (ident.get("permalink") or props.get("permalink") or "").lower() != permalink:
             continue
+
         # Social fields come back as {"value": url}; flatten them.
         def _unwrap(field):
             v = props.get(field)
@@ -663,15 +652,15 @@ async def fetch_crunchbase_profile(slug_or_url: str) -> dict | None:
 
         return {
             "crunchbase_permalink": ident.get("permalink") or props.get("permalink"),
-            "crunchbase_uuid":      ident.get("uuid") or ent.get("uuid"),
-            "crunchbase_image_id":  ident.get("image_id"),
-            "name":                 ident.get("value"),
-            "website":              props.get("website_url") or None,
-            "logo_url":             crunchbase_logo_url(ident.get("image_id")),
-            "description":          props.get("short_description") or None,
-            "linkedin_url":         _unwrap("linkedin"),
-            "twitter_url":          _unwrap("twitter"),
-            "facebook_url":         _unwrap("facebook"),
+            "crunchbase_uuid": ident.get("uuid") or ent.get("uuid"),
+            "crunchbase_image_id": ident.get("image_id"),
+            "name": ident.get("value"),
+            "website": props.get("website_url") or None,
+            "logo_url": crunchbase_logo_url(ident.get("image_id")),
+            "description": props.get("short_description") or None,
+            "linkedin_url": _unwrap("linkedin"),
+            "twitter_url": _unwrap("twitter"),
+            "facebook_url": _unwrap("facebook"),
         }
     return None
 
@@ -718,13 +707,15 @@ async def fetch_yc_companies(limit: int = 500) -> list[dict]:
 
             for co in companies:
                 if _accept(co):
-                    results.append({
-                        "name": co.get("name", ""),
-                        "website": co.get("website", ""),
-                        "source": "yc",
-                        "yc_batch": co.get("batch", ""),
-                        "yc_team_size": co.get("teamSize", 0),
-                    })
+                    results.append(
+                        {
+                            "name": co.get("name", ""),
+                            "website": co.get("website", ""),
+                            "source": "yc",
+                            "yc_batch": co.get("batch", ""),
+                            "yc_team_size": co.get("teamSize", 0),
+                        }
+                    )
                     if len(results) >= limit:
                         break
 
@@ -818,6 +809,7 @@ async def fetch_builtin_companies(limit: int = 100) -> list[dict]:
                     continue
 
                 from bs4 import BeautifulSoup
+
                 soup = BeautifulSoup(resp.text, "html.parser")
                 # BuiltIn company cards typically have company names in h2/h3 or specific classes
                 for el in soup.select("h2 a, h3 a, [data-id] a, .company-card a"):
@@ -847,12 +839,15 @@ async def search_careers_page(company_name: str) -> str | None:
                 return None
 
             from bs4 import BeautifulSoup
+
             soup = BeautifulSoup(resp.text, "html.parser")
             for link in soup.select("a.result__a"):
                 href = link.get("href", "")
                 # DDG wraps URLs in redirects: //duckduckgo.com/l/?uddg=https%3A...
                 actual = _extract_ddg_url(href)
-                if any(kw in actual.lower() for kw in ["career", "jobs", "job-board", "greenhouse", "lever", "workday"]):
+                if any(
+                    kw in actual.lower() for kw in ["career", "jobs", "job-board", "greenhouse", "lever", "workday"]
+                ):
                     return actual
             # fallback: first result
             first = soup.select_one("a.result__a")
@@ -866,6 +861,7 @@ async def search_careers_page(company_name: str) -> str | None:
 def _extract_ddg_url(href: str) -> str:
     """Extract actual URL from DDG redirect wrapper."""
     from urllib.parse import unquote, urlparse, parse_qs
+
     if "uddg=" in href:
         parsed = parse_qs(urlparse(href).query)
         urls = parsed.get("uddg", [])

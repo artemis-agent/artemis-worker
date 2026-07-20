@@ -68,15 +68,16 @@ async def scrape_company(company_id: str, query: str = "", limit: int = 0) -> di
 
                 # Rule-based normalization
                 from artemis.normalizer.rules import normalize_job_rules
+
                 normalized = normalize_job_rules(
-                    sj.title, sj.location or "", sj.description or "",
+                    sj.title,
+                    sj.location or "",
+                    sj.description or "",
                     ats_metadata=sj.metadata,
                 )
 
                 # Check if job exists for delta tracking
-                existing = await session.execute(
-                    select(Job).where(Job.url == sj.url)
-                )
+                existing = await session.execute(select(Job).where(Job.url == sj.url))
                 existing_job = existing.scalar_one_or_none()
 
                 if existing_job:
@@ -91,7 +92,9 @@ async def scrape_company(company_id: str, query: str = "", limit: int = 0) -> di
 
                     for field, old, new in changes:
                         await session.execute(
-                            text("INSERT INTO job_changes (job_id, change_type, field_name, old_value, new_value) VALUES (:jid, 'updated', :field, :old, :new)"),
+                            text(
+                                "INSERT INTO job_changes (job_id, change_type, field_name, old_value, new_value) VALUES (:jid, 'updated', :field, :old, :new)"
+                            ),
                             {"jid": existing_job.id, "field": field, "old": str(old)[:500], "new": str(new)[:500]},
                         )
                         updated_count += 1
@@ -142,7 +145,9 @@ async def scrape_company(company_id: str, query: str = "", limit: int = 0) -> di
 
                     # Track as new
                     await session.execute(
-                        text("INSERT INTO job_changes (job_id, change_type, field_name) VALUES (:jid, 'created', 'job')"),
+                        text(
+                            "INSERT INTO job_changes (job_id, change_type, field_name) VALUES (:jid, 'created', 'job')"
+                        ),
                         {"jid": new_job.id},
                     )
 
@@ -156,7 +161,9 @@ async def scrape_company(company_id: str, query: str = "", limit: int = 0) -> di
                     if job.url not in scraped_urls:
                         job.is_active = False
                         await session.execute(
-                            text("INSERT INTO job_changes (job_id, change_type, field_name, old_value, new_value) VALUES (:jid, 'closed', 'is_active', 'true', 'false')"),
+                            text(
+                                "INSERT INTO job_changes (job_id, change_type, field_name, old_value, new_value) VALUES (:jid, 'closed', 'is_active', 'true', 'false')"
+                            ),
                             {"jid": job.id},
                         )
 
@@ -186,9 +193,7 @@ async def scrape_company(company_id: str, query: str = "", limit: int = 0) -> di
 async def scrape_all(query: str = "") -> list[dict]:
     """Scrape all active companies. Returns list of per-company results."""
     async with async_session() as session:
-        result = await session.execute(
-            select(Company).where(Company.status == CompanyStatus.active)
-        )
+        result = await session.execute(select(Company).where(Company.status == CompanyStatus.active))
         companies = result.scalars().all()
 
     results = []

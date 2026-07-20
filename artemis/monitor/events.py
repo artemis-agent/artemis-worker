@@ -76,7 +76,8 @@ async def consume_events(
     await ensure_consumer_group(group_name)
     r = await get_redis()
     results = await r.xreadgroup(
-        group_name, consumer_name,
+        group_name,
+        consumer_name,
         {STREAM_KEY: ">"},
         count=count,
         block=block_ms,
@@ -84,13 +85,13 @@ async def consume_events(
 
     events = []
     if results:
-            for stream_name, messages in results:
-                for msg_id, fields in messages:
-                    try:
-                        data = json.loads(fields.get("data", "{}"))
-                    except json.JSONDecodeError:
-                        data = fields
-                    events.append((msg_id, data))
+        for stream_name, messages in results:
+            for msg_id, fields in messages:
+                try:
+                    data = json.loads(fields.get("data", "{}"))
+                except json.JSONDecodeError:
+                    data = fields
+                events.append((msg_id, data))
     return events
 
 

@@ -15,5 +15,6 @@ from artemis.core.config import settings
 def run_internal_api():
     """Run the internal API server (called from CLI)."""
     import uvicorn
+
     port = int(settings.internal_api_port)
     uvicorn.run(app, host="0.0.0.0", port=port, log_level="info")

@@ -6,6 +6,7 @@ Pipeline:
         -> discover_company(website=...)    (domain-anchored DDG queries)
         -> ATS candidates -> probe -> verify
 """
+
 from __future__ import annotations
 
 import asyncio
@@ -19,13 +20,14 @@ from artemis.discovery.sources import fetch_crunchbase_website
 
 class _SearchSpy(DuckDuckGoSearcher):
     """Logs every search query that gets issued."""
+
     async def search(self, query, max_results=10):
         print(f"  [search] q={query!r}  (max={max_results})")
         return await super().search(query, max_results=max_results)
 
 
 async def demo(permalink: str):
-    print(f"\n{'='*70}\nCRUNCHBASE PERMALINK: {permalink}\n{'='*70}")
+    print(f"\n{'=' * 70}\nCRUNCHBASE PERMALINK: {permalink}\n{'=' * 70}")
 
     print("\n[1] Resolve permalink -> website via Crunchbase API")
     website = await fetch_crunchbase_website(permalink)

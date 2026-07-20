@@ -54,11 +54,14 @@ async def test_extracts_permalink_from_full_url(monkeypatch):
     monkeypatch.setattr(sources_mod.settings, "crunchbase_api_key", "fake-key")
     captured: dict = {}
 
-    resp = _Resp(200, {
-        "entities": [
-            {"properties": {"permalink": "yubico", "website_url": "http://www.yubico.com"}},
-        ],
-    })
+    resp = _Resp(
+        200,
+        {
+            "entities": [
+                {"properties": {"permalink": "yubico", "website_url": "http://www.yubico.com"}},
+            ],
+        },
+    )
 
     async def fake_post(url, headers=None, json=None):
         captured["url"] = url
@@ -72,9 +75,7 @@ async def test_extracts_permalink_from_full_url(monkeypatch):
     ctx.__aexit__ = AsyncMock(return_value=None)
 
     with patch.object(sources_mod.httpx, "AsyncClient", return_value=ctx):
-        out = await fetch_crunchbase_website(
-            "https://www.crunchbase.com/organization/yubico"
-        )
+        out = await fetch_crunchbase_website("https://www.crunchbase.com/organization/yubico")
 
     assert out == "http://www.yubico.com"
     # The permalink (not the full URL) is what's sent to the API.
@@ -88,16 +89,16 @@ async def test_picks_exact_permalink_match_among_fuzzy_results(monkeypatch):
     otherwise return `stripe-press`, `stripe-climate`, etc."""
     monkeypatch.setattr(sources_mod.settings, "crunchbase_api_key", "fake-key")
 
-    resp = _Resp(200, {
-        "entities": [
-            {"properties": {"permalink": "stripe-press",
-                            "website_url": "https://press.stripe.com"}},
-            {"properties": {"permalink": "stripe",
-                            "website_url": "https://stripe.com"}},
-            {"properties": {"permalink": "stripe-climate",
-                            "website_url": "https://climate.stripe.com"}},
-        ],
-    })
+    resp = _Resp(
+        200,
+        {
+            "entities": [
+                {"properties": {"permalink": "stripe-press", "website_url": "https://press.stripe.com"}},
+                {"properties": {"permalink": "stripe", "website_url": "https://stripe.com"}},
+                {"properties": {"permalink": "stripe-climate", "website_url": "https://climate.stripe.com"}},
+            ],
+        },
+    )
     ctx, _ = _client_returning(resp)
     with patch.object(sources_mod.httpx, "AsyncClient", return_value=ctx):
         out = await fetch_crunchbase_website("stripe")
@@ -107,12 +108,14 @@ async def test_picks_exact_permalink_match_among_fuzzy_results(monkeypatch):
 @pytest.mark.asyncio
 async def test_returns_none_when_no_exact_permalink_match(monkeypatch):
     monkeypatch.setattr(sources_mod.settings, "crunchbase_api_key", "fake-key")
-    resp = _Resp(200, {
-        "entities": [
-            {"properties": {"permalink": "yubico-press",
-                            "website_url": "https://press.yubico.com"}},
-        ],
-    })
+    resp = _Resp(
+        200,
+        {
+            "entities": [
+                {"properties": {"permalink": "yubico-press", "website_url": "https://press.yubico.com"}},
+            ],
+        },
+    )
     ctx, _ = _client_returning(resp)
     with patch.object(sources_mod.httpx, "AsyncClient", return_value=ctx):
         assert await fetch_crunchbase_website("yubico") is None
@@ -150,17 +153,17 @@ async def test_rejects_input_with_slashes_outside_url_pattern(monkeypatch):
 
 # ── crunchbase_logo_url ───────────────────────────────────────────────────
 
+
 def test_logo_url_construction():
-    assert crunchbase_logo_url(
-        "v1483638230/l94zqzbvxcixwf62yord.png"
-    ) == "https://images.crunchbase.com/image/upload/v1483638230/l94zqzbvxcixwf62yord.png"
+    assert (
+        crunchbase_logo_url("v1483638230/l94zqzbvxcixwf62yord.png")
+        == "https://images.crunchbase.com/image/upload/v1483638230/l94zqzbvxcixwf62yord.png"
+    )
 
 
 def test_logo_url_strips_leading_slash():
     """Be tolerant of accidental leading slashes in image_id."""
-    assert crunchbase_logo_url(
-        "/v1483638230/x.png"
-    ) == "https://images.crunchbase.com/image/upload/v1483638230/x.png"
+    assert crunchbase_logo_url("/v1483638230/x.png") == "https://images.crunchbase.com/image/upload/v1483638230/x.png"
 
 
 def test_logo_url_none_or_empty():
@@ -169,6 +172,7 @@ def test_logo_url_none_or_empty():
 
 
 # ── fetch_crunchbase_profile ──────────────────────────────────────────────
+
 
 @pytest.mark.asyncio
 async def test_profile_returns_none_without_key(monkeypatch):
@@ -183,42 +187,45 @@ async def test_profile_flattens_payload(monkeypatch):
     from their {value: ...} envelopes."""
     monkeypatch.setattr(sources_mod.settings, "crunchbase_api_key", "fake-key")
 
-    resp = _Resp(200, {
-        "entities": [
-            {
-                "uuid": "dce5325d-f778-10ab-f2d1-ebd6dcdc00a3",
-                "properties": {
-                    "identifier": {
-                        "permalink": "yubico",
-                        "uuid": "dce5325d-f778-10ab-f2d1-ebd6dcdc00a3",
-                        "value": "Yubico",
-                        "image_id": "v1483638230/l94zqzbvxcixwf62yord.png",
-                        "entity_def_id": "organization",
+    resp = _Resp(
+        200,
+        {
+            "entities": [
+                {
+                    "uuid": "dce5325d-f778-10ab-f2d1-ebd6dcdc00a3",
+                    "properties": {
+                        "identifier": {
+                            "permalink": "yubico",
+                            "uuid": "dce5325d-f778-10ab-f2d1-ebd6dcdc00a3",
+                            "value": "Yubico",
+                            "image_id": "v1483638230/l94zqzbvxcixwf62yord.png",
+                            "entity_def_id": "organization",
+                        },
+                        "website_url": "http://www.yubico.com",
+                        "short_description": "Yubico protects logins with hardware devices.",
+                        "linkedin": {"value": "https://www.linkedin.com/company/yubico/"},
+                        "twitter": {"value": "https://x.com/Yubico"},
+                        "facebook": {"value": "http://www.facebook.com/Yubikey"},
                     },
-                    "website_url":       "http://www.yubico.com",
-                    "short_description": "Yubico protects logins with hardware devices.",
-                    "linkedin":          {"value": "https://www.linkedin.com/company/yubico/"},
-                    "twitter":           {"value": "https://x.com/Yubico"},
-                    "facebook":          {"value": "http://www.facebook.com/Yubikey"},
                 },
-            },
-        ],
-    })
+            ],
+        },
+    )
     ctx, _ = _client_returning(resp)
     with patch.object(sources_mod.httpx, "AsyncClient", return_value=ctx):
         profile = await fetch_crunchbase_profile("yubico")
 
     assert profile == {
         "crunchbase_permalink": "yubico",
-        "crunchbase_uuid":      "dce5325d-f778-10ab-f2d1-ebd6dcdc00a3",
-        "crunchbase_image_id":  "v1483638230/l94zqzbvxcixwf62yord.png",
-        "name":                 "Yubico",
-        "website":              "http://www.yubico.com",
-        "logo_url":             "https://images.crunchbase.com/image/upload/v1483638230/l94zqzbvxcixwf62yord.png",
-        "description":          "Yubico protects logins with hardware devices.",
-        "linkedin_url":         "https://www.linkedin.com/company/yubico/",
-        "twitter_url":          "https://x.com/Yubico",
-        "facebook_url":         "http://www.facebook.com/Yubikey",
+        "crunchbase_uuid": "dce5325d-f778-10ab-f2d1-ebd6dcdc00a3",
+        "crunchbase_image_id": "v1483638230/l94zqzbvxcixwf62yord.png",
+        "name": "Yubico",
+        "website": "http://www.yubico.com",
+        "logo_url": "https://images.crunchbase.com/image/upload/v1483638230/l94zqzbvxcixwf62yord.png",
+        "description": "Yubico protects logins with hardware devices.",
+        "linkedin_url": "https://www.linkedin.com/company/yubico/",
+        "twitter_url": "https://x.com/Yubico",
+        "facebook_url": "http://www.facebook.com/Yubikey",
     }
 
 
@@ -228,20 +235,25 @@ async def test_profile_picks_exact_permalink_match(monkeypatch):
     pick the one whose permalink is exactly the slug we asked for."""
     monkeypatch.setattr(sources_mod.settings, "crunchbase_api_key", "fake-key")
 
-    resp = _Resp(200, {
-        "entities": [
-            {"properties": {
-                "identifier": {"permalink": "stripe-press", "value": "Stripe Press",
-                               "image_id": "x/y.png"},
-                "website_url": "https://press.stripe.com",
-            }},
-            {"properties": {
-                "identifier": {"permalink": "stripe", "value": "Stripe",
-                               "image_id": "real/stripe.png"},
-                "website_url": "https://stripe.com",
-            }},
-        ],
-    })
+    resp = _Resp(
+        200,
+        {
+            "entities": [
+                {
+                    "properties": {
+                        "identifier": {"permalink": "stripe-press", "value": "Stripe Press", "image_id": "x/y.png"},
+                        "website_url": "https://press.stripe.com",
+                    }
+                },
+                {
+                    "properties": {
+                        "identifier": {"permalink": "stripe", "value": "Stripe", "image_id": "real/stripe.png"},
+                        "website_url": "https://stripe.com",
+                    }
+                },
+            ],
+        },
+    )
     ctx, _ = _client_returning(resp)
     with patch.object(sources_mod.httpx, "AsyncClient", return_value=ctx):
         profile = await fetch_crunchbase_profile("stripe")
@@ -255,9 +267,14 @@ async def test_profile_picks_exact_permalink_match(monkeypatch):
 @pytest.mark.asyncio
 async def test_profile_returns_none_on_no_match(monkeypatch):
     monkeypatch.setattr(sources_mod.settings, "crunchbase_api_key", "fake-key")
-    resp = _Resp(200, {"entities": [
-        {"properties": {"identifier": {"permalink": "yubico-press"}}},
-    ]})
+    resp = _Resp(
+        200,
+        {
+            "entities": [
+                {"properties": {"identifier": {"permalink": "yubico-press"}}},
+            ]
+        },
+    )
     ctx, _ = _client_returning(resp)
     with patch.object(sources_mod.httpx, "AsyncClient", return_value=ctx):
         assert await fetch_crunchbase_profile("yubico") is None
@@ -269,13 +286,19 @@ async def test_profile_handles_missing_social_fields(monkeypatch):
     not raise."""
     monkeypatch.setattr(sources_mod.settings, "crunchbase_api_key", "fake-key")
 
-    resp = _Resp(200, {"entities": [{
-        "properties": {
-            "identifier": {"permalink": "tinyorg", "value": "TinyOrg",
-                           "image_id": None},
-            "website_url": None,
+    resp = _Resp(
+        200,
+        {
+            "entities": [
+                {
+                    "properties": {
+                        "identifier": {"permalink": "tinyorg", "value": "TinyOrg", "image_id": None},
+                        "website_url": None,
+                    },
+                }
+            ]
         },
-    }]})
+    )
     ctx, _ = _client_returning(resp)
     with patch.object(sources_mod.httpx, "AsyncClient", return_value=ctx):
         profile = await fetch_crunchbase_profile("tinyorg")

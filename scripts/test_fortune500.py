@@ -20,7 +20,15 @@ async def test_company(company: dict) -> dict:
     hint = company["careers_hint"]
     url = f"https://{hint}" if not hint.startswith("http") else hint
 
-    result = {"name": name, "careers_url": url, "ats_type": None, "confidence": 0, "jobs_found": 0, "error": None, "needs_custom": False}
+    result = {
+        "name": name,
+        "careers_url": url,
+        "ats_type": None,
+        "confidence": 0,
+        "jobs_found": 0,
+        "error": None,
+        "needs_custom": False,
+    }
 
     # Step 1: Detect ATS
     try:
@@ -59,13 +67,21 @@ async def main():
 
     results = []
     for i, company in enumerate(companies):
-        sys.stdout.write(f"[{i+1}/{len(companies)}] {company['name']}... ")
+        sys.stdout.write(f"[{i + 1}/{len(companies)}] {company['name']}... ")
         sys.stdout.flush()
         start = time.time()
         try:
             r = await asyncio.wait_for(test_company(company), timeout=30)
         except asyncio.TimeoutError:
-            r = {"name": company["name"], "careers_url": f"https://{company['careers_hint']}", "ats_type": None, "confidence": 0, "jobs_found": 0, "error": "timeout", "needs_custom": True}
+            r = {
+                "name": company["name"],
+                "careers_url": f"https://{company['careers_hint']}",
+                "ats_type": None,
+                "confidence": 0,
+                "jobs_found": 0,
+                "error": "timeout",
+                "needs_custom": True,
+            }
         elapsed = time.time() - start
         results.append(r)
 

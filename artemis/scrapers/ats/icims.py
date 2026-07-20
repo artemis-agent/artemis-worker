@@ -49,22 +49,27 @@ class ICIMSScraper(BaseScraper):
 
         search_json = {"filters": [], "operator": "&"}
         if query:
-            search_json["filters"].append({
-                "name": "job.jobtitle",
-                "value": [query],
-                "operator": "=",
-            })
+            search_json["filters"].append(
+                {
+                    "name": "job.jobtitle",
+                    "value": [query],
+                    "operator": "=",
+                }
+            )
         # Only return posted jobs
-        search_json["filters"].append({
-            "name": "job.jobpost.isposted",
-            "value": ["1"],
-        })
+        search_json["filters"].append(
+            {
+                "name": "job.jobpost.isposted",
+                "value": ["1"],
+            }
+        )
 
         headers = {"Accept": "application/json"}
         api_key = self.ats_config.get("api_key", "")
         api_secret = self.ats_config.get("api_secret", "")
         if api_key and api_secret:
             import base64
+
             creds = base64.b64encode(f"{api_key}:{api_secret}".encode()).decode()
             headers["Authorization"] = f"Basic {creds}"
 
@@ -156,7 +161,9 @@ class ICIMSScraper(BaseScraper):
 
     def _extract_from_json_ld(self, html: str, base_url: str, limit: int) -> list[ScrapedJob]:
         jobs = []
-        for match in re.finditer(r'<script[^>]*type=["\']application/ld\+json["\'][^>]*>(.*?)</script>', html, re.DOTALL):
+        for match in re.finditer(
+            r'<script[^>]*type=["\']application/ld\+json["\'][^>]*>(.*?)</script>', html, re.DOTALL
+        ):
             try:
                 data = json.loads(match.group(1))
                 items = data if isinstance(data, list) else data.get("itemListElement", [data])
@@ -174,14 +181,16 @@ class ICIMSScraper(BaseScraper):
                         addr = loc_data.get("address", {})
                         location = addr.get("addressLocality", "")
 
-                    jobs.append(ScrapedJob(
-                        external_id=posting.get("identifier", {}).get("value", url),
-                        title=title,
-                        url=url,
-                        location=location,
-                        description=posting.get("description", ""),
-                        source="icims",
-                    ))
+                    jobs.append(
+                        ScrapedJob(
+                            external_id=posting.get("identifier", {}).get("value", url),
+                            title=title,
+                            url=url,
+                            location=location,
+                            description=posting.get("description", ""),
+                            source="icims",
+                        )
+                    )
             except (json.JSONDecodeError, KeyError):
                 continue
         return jobs
@@ -202,16 +211,19 @@ class ICIMSScraper(BaseScraper):
                 continue
             if not href.startswith("http"):
                 from urllib.parse import urljoin
+
                 href = urljoin(base_url, href)
             if href in seen:
                 continue
             seen.add(href)
 
             job_id_match = re.search(r"/jobs?/(\d+)", href)
-            jobs.append(ScrapedJob(
-                external_id=job_id_match.group(1) if job_id_match else href,
-                title=title,
-                url=href,
-                source="icims",
-            ))
+            jobs.append(
+                ScrapedJob(
+                    external_id=job_id_match.group(1) if job_id_match else href,
+                    title=title,
+                    url=href,
+                    source="icims",
+                )
+            )
         return jobs

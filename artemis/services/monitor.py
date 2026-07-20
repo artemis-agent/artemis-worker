@@ -37,9 +37,14 @@ async def check_active_jobs(
     async with async_session() as session:
         q = (
             select(
-                Job.id, Job.external_id, Job.url, Job.is_active,
+                Job.id,
+                Job.external_id,
+                Job.url,
+                Job.is_active,
                 Job.consecutive_check_failures,
-                Company.ats_type, Company.ats_config, Company.slug,
+                Company.ats_type,
+                Company.ats_config,
+                Company.slug,
             )
             .join(Company, Job.company_id == Company.id)
             .where(Job.is_active.is_(True))
@@ -87,15 +92,17 @@ async def check_active_jobs(
                     job.is_active = False
                     job.check_status = "inactive"
                     job.consecutive_check_failures = 0
-                    changes.append({
-                        "job_id": r.job_id,
-                        "url": job.url,
-                        "company": next((i.company_slug for i in items if i.job_id == r.job_id), ""),
-                        "old_status": "active",
-                        "new_status": "inactive",
-                        "detail": r.detail,
-                        "detected_at": now.isoformat(),
-                    })
+                    changes.append(
+                        {
+                            "job_id": r.job_id,
+                            "url": job.url,
+                            "company": next((i.company_slug for i in items if i.job_id == r.job_id), ""),
+                            "old_status": "active",
+                            "new_status": "inactive",
+                            "detail": r.detail,
+                            "detected_at": now.isoformat(),
+                        }
+                    )
                 inactive += 1
 
             elif r.status == CheckResult.OK:
@@ -125,6 +132,8 @@ async def run_monitor_cycle() -> dict:
     if result["changes"]:
         await publish_changes(result["changes"])
 
-    logger.info(f"monitor: {result['checked']} checked, {result['ok']} ok, "
-                f"{result['inactive']} inactive, {result['errors']} errors")
+    logger.info(
+        f"monitor: {result['checked']} checked, {result['ok']} ok, "
+        f"{result['inactive']} inactive, {result['errors']} errors"
+    )
     return result

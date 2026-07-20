@@ -84,8 +84,7 @@ class BaseScraper(ABC):
         query: str,
         limit: int = 50,
         skip_detail_urls: set[str] | None = None,
-    ) -> list[ScrapedJob]:
-        ...
+    ) -> list[ScrapedJob]: ...
 
     async def close(self):
         if self._client and not self._client.is_closed:

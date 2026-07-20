@@ -46,25 +46,146 @@ _COMMON_FIRST_WORDS = {
     # Generic English words / numbers / pronouns — never useful as ATS slugs
     # alone, used to filter SHORT first-word variants from multi-word names
     # (e.g. "Eli Lilly" → "eli" must not match a random Ashby "eli" board).
-    "the", "a", "an", "us", "uk", "new", "old", "big", "all", "any", "one",
-    "two", "three", "four", "five", "first", "last", "next", "best", "top",
-    "good", "great", "smart", "global", "national", "international", "general",
-    "united", "american", "world", "open", "free", "true", "blue", "red",
-    "green", "black", "white", "gold", "silver", "core", "main", "prime",
-    "alpha", "beta", "delta", "north", "south", "east", "west", "central",
-    "capital", "industries", "industry", "group", "company", "co", "corp",
-    "labs", "lab", "studio", "studios", "media", "systems", "system",
-    "solutions", "services", "consulting", "partners", "ventures", "venture",
-    "holdings", "holding", "ai", "io", "inc", "ltd", "llc", "eli", "fox",
-    "guild", "honor", "pine", "thrive", "nexus", "alloy", "indigo", "blink",
-    "ditto", "boom", "bubble", "button", "cortex", "forge", "human", "light",
-    "lunar", "maven", "minimal", "miso", "mistral", "nine", "nox", "odyssey",
-    "quantum", "rigetti", "river", "sequoia", "talon", "tomorrow",
-    "unframe", "unusual", "uplift", "voxel", "wynn", "yubico",
-    "applied", "arch", "armis", "basis", "bessemer", "colossal", "emergence",
-    "engine", "flourish", "founders", "iterative", "multiverse",
-    "parabilis", "peak", "rocket", "sportradar", "trm", "valor",
-    "ww", "charles", "alumni", "baidu", "ditto", "pear",
+    "the",
+    "a",
+    "an",
+    "us",
+    "uk",
+    "new",
+    "old",
+    "big",
+    "all",
+    "any",
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "first",
+    "last",
+    "next",
+    "best",
+    "top",
+    "good",
+    "great",
+    "smart",
+    "global",
+    "national",
+    "international",
+    "general",
+    "united",
+    "american",
+    "world",
+    "open",
+    "free",
+    "true",
+    "blue",
+    "red",
+    "green",
+    "black",
+    "white",
+    "gold",
+    "silver",
+    "core",
+    "main",
+    "prime",
+    "alpha",
+    "beta",
+    "delta",
+    "north",
+    "south",
+    "east",
+    "west",
+    "central",
+    "capital",
+    "industries",
+    "industry",
+    "group",
+    "company",
+    "co",
+    "corp",
+    "labs",
+    "lab",
+    "studio",
+    "studios",
+    "media",
+    "systems",
+    "system",
+    "solutions",
+    "services",
+    "consulting",
+    "partners",
+    "ventures",
+    "venture",
+    "holdings",
+    "holding",
+    "ai",
+    "io",
+    "inc",
+    "ltd",
+    "llc",
+    "eli",
+    "fox",
+    "guild",
+    "honor",
+    "pine",
+    "thrive",
+    "nexus",
+    "alloy",
+    "indigo",
+    "blink",
+    "ditto",
+    "boom",
+    "bubble",
+    "button",
+    "cortex",
+    "forge",
+    "human",
+    "light",
+    "lunar",
+    "maven",
+    "minimal",
+    "miso",
+    "mistral",
+    "nine",
+    "nox",
+    "odyssey",
+    "quantum",
+    "rigetti",
+    "river",
+    "sequoia",
+    "talon",
+    "tomorrow",
+    "unframe",
+    "unusual",
+    "uplift",
+    "voxel",
+    "wynn",
+    "yubico",
+    "applied",
+    "arch",
+    "armis",
+    "basis",
+    "bessemer",
+    "colossal",
+    "emergence",
+    "engine",
+    "flourish",
+    "founders",
+    "iterative",
+    "multiverse",
+    "parabilis",
+    "peak",
+    "rocket",
+    "sportradar",
+    "trm",
+    "valor",
+    "ww",
+    "charles",
+    "alumni",
+    "baidu",
+    "ditto",
+    "pear",
 }
 
 
@@ -72,9 +193,23 @@ def _normalize(text: str) -> str:
     """Lowercase + strip common corp suffixes + collapse whitespace."""
     base = text.lower().strip()
     for suffix in (
-        " inc", " inc.", " corp", " corp.", " corporation", " ltd", " ltd.",
-        " llc", " co.", " co", " company", " group", " holdings", " ag",
-        " (the)", " the", ",",
+        " inc",
+        " inc.",
+        " corp",
+        " corp.",
+        " corporation",
+        " ltd",
+        " ltd.",
+        " llc",
+        " co.",
+        " co",
+        " company",
+        " group",
+        " holdings",
+        " ag",
+        " (the)",
+        " the",
+        ",",
     ):
         if base.endswith(suffix):
             base = base[: -len(suffix)].strip()
@@ -180,7 +315,8 @@ async def probe_eightfold(client, slug, sem):
         url = f"https://{slug}.eightfold.ai/api/pcsx/search"
         try:
             r = await client.get(
-                url, timeout=10,
+                url,
+                timeout=10,
                 params={"domain": f"{slug}.com", "start": 0},
             )
             if r.status_code == 200:
@@ -199,10 +335,7 @@ async def probe_workday(client, tenant: str, site_id: str, wd_version: str, sem)
     (typically extracted from a *.wd[1-5].myworkdayjobs.com URL we found
     via search). Returns hit on POST with empty filters."""
     async with sem:
-        api_url = (
-            f"https://{tenant}.wd{wd_version}.myworkdayjobs.com/wday/cxs/"
-            f"{tenant}/{site_id}/jobs"
-        )
+        api_url = f"https://{tenant}.wd{wd_version}.myworkdayjobs.com/wday/cxs/{tenant}/{site_id}/jobs"
         try:
             # Workday requires a cookie session — GET the page first.
             page_url = f"https://{tenant}.wd{wd_version}.myworkdayjobs.com/en-US/{site_id}"
@@ -292,11 +425,13 @@ async def gather_candidates(curated_only: bool = False) -> list[dict]:
 
     # Fortune 500
     for c in FORTUNE_500_COMPANIES:
-        all_companies.append({
-            "name": c["name"],
-            "website": "",
-            "source": "fortune500",
-        })
+        all_companies.append(
+            {
+                "name": c["name"],
+                "website": "",
+                "source": "fortune500",
+            }
+        )
 
     if curated_only:
         # Skip YC/CB/Wellfound — too slow and very low hit rate for our ATS set.
@@ -312,11 +447,13 @@ async def gather_candidates(curated_only: bool = False) -> list[dict]:
     try:
         yc = await fetch_yc_companies(limit=5000)
         for c in yc:
-            all_companies.append({
-                "name": c["name"],
-                "website": c.get("website", ""),
-                "source": "yc",
-            })
+            all_companies.append(
+                {
+                    "name": c["name"],
+                    "website": c.get("website", ""),
+                    "source": "yc",
+                }
+            )
     except Exception as e:
         logger.error(f"YC fetch failed: {e}")
 
@@ -324,11 +461,13 @@ async def gather_candidates(curated_only: bool = False) -> list[dict]:
     try:
         cb = await fetch_crunchbase_top(limit=5000)
         for c in cb:
-            all_companies.append({
-                "name": c["name"],
-                "website": c.get("website", ""),
-                "source": "crunchbase",
-            })
+            all_companies.append(
+                {
+                    "name": c["name"],
+                    "website": c.get("website", ""),
+                    "source": "crunchbase",
+                }
+            )
     except Exception as e:
         logger.error(f"Crunchbase fetch failed: {e}")
 
@@ -336,11 +475,13 @@ async def gather_candidates(curated_only: bool = False) -> list[dict]:
     try:
         wf = await fetch_wellfound_companies(limit=300)
         for c in wf:
-            all_companies.append({
-                "name": c["name"],
-                "website": c.get("website", ""),
-                "source": "wellfound",
-            })
+            all_companies.append(
+                {
+                    "name": c["name"],
+                    "website": c.get("website", ""),
+                    "source": "wellfound",
+                }
+            )
     except Exception as e:
         logger.error(f"Wellfound fetch failed: {e}")
 
@@ -371,16 +512,18 @@ async def main():
     parser.add_argument("--concurrency", type=int, default=20)
     parser.add_argument("--max", type=int, default=10000)
     parser.add_argument("--skip-existing", action="store_true", default=True)
-    parser.add_argument("--probe-rate", type=int, default=50,
-                        help="max concurrent HTTP probes across all ATS endpoints")
-    parser.add_argument("--curated-only", action="store_true",
-                        help="only probe curated + Fortune 500 sources (skip YC/CB/WF)")
+    parser.add_argument(
+        "--probe-rate", type=int, default=50, help="max concurrent HTTP probes across all ATS endpoints"
+    )
+    parser.add_argument(
+        "--curated-only", action="store_true", help="only probe curated + Fortune 500 sources (skip YC/CB/WF)"
+    )
     args = parser.parse_args()
 
     logger.info("Gathering candidates from all sources...")
     candidates = await gather_candidates(curated_only=args.curated_only)
     logger.info(f"Total unique candidates: {len(candidates)}")
-    candidates = candidates[:args.max]
+    candidates = candidates[: args.max]
 
     if args.skip_existing:
         existing = existing_slugs()
@@ -403,6 +546,7 @@ async def main():
         headers={"User-Agent": UA},
         follow_redirects=True,
     ) as client:
+
         async def process(c):
             nonlocal done_count
             async with company_sem:
@@ -443,7 +587,7 @@ async def main():
 
     # Final summary
     print(f"\n{'═' * 70}")
-    print(f"  PROBE COMPLETE — {len(candidates)} companies in {time.time()-started:.0f}s")
+    print(f"  PROBE COMPLETE — {len(candidates)} companies in {time.time() - started:.0f}s")
     print(f"{'═' * 70}")
     print(f"  Hits:   {len(hits)}")
     print(f"  Misses: {len(misses)}")

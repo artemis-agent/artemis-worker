@@ -27,6 +27,7 @@ logger = logging.getLogger("artemis.services.user")
 
 # ── Resume parsing ────────────────────────────────────────────────────────
 
+
 async def extract_text_from_pdf(pdf_data: bytes) -> str:
     """Extract text from PDF using pdfplumber."""
     text_parts = []
@@ -157,6 +158,7 @@ async def parse_and_store_resume(user_id: str, resume_id: str, s3_key: str) -> d
 
         # Update user profile directly from parsed data
         from artemis.core.models import User
+
         user = await session.get(User, uuid.UUID(user_id))
         if user:
             user.profile = {
@@ -188,6 +190,7 @@ async def parse_and_store_resume(user_id: str, resume_id: str, s3_key: str) -> d
 
     # Fire-and-forget: generate embedding async (don't block the response)
     import asyncio
+
     asyncio.create_task(_embed_and_store(resume_id, parsed_data))
 
     return {
@@ -270,9 +273,7 @@ async def _compute_recommendations(user_id: str, limit: int = 20) -> list[dict]:
             return []
 
         # Get user's skills (normalized via taxonomy)
-        skills_result = await session.execute(
-            select(UserSkill.skill).where(UserSkill.user_id == user_id)
-        )
+        skills_result = await session.execute(select(UserSkill.skill).where(UserSkill.user_id == user_id))
         user_skills = {normalize_skill(row.skill).lower() for row in skills_result.all()}
         user_skill_categories = {get_skill_category(s) for s in user_skills} - {"other"}
 
@@ -299,10 +300,13 @@ async def _compute_recommendations(user_id: str, limit: int = 20) -> list[dict]:
             ORDER BY j.embedding <=> CAST(:embedding AS vector)
             LIMIT :candidate_limit
         """)
-        rows = await session.execute(q, {
-            "embedding": str(resume.embedding.tolist()),
-            "candidate_limit": limit * 10,
-        })
+        rows = await session.execute(
+            q,
+            {
+                "embedding": str(resume.embedding.tolist()),
+                "candidate_limit": limit * 10,
+            },
+        )
         candidates = rows.mappings().all()
 
     # Seniority adjacency map — adjacent levels get partial credit
@@ -338,7 +342,11 @@ async def _compute_recommendations(user_id: str, limit: int = 20) -> list[dict]:
 
         # ── Skill category overlap (domain match) ──
         job_categories = {get_skill_category(s) for s in job_skills} - {"other"}
-        category_overlap = len(user_skill_categories & job_categories) / max(len(user_skill_categories | job_categories), 1) if user_skill_categories else 0
+        category_overlap = (
+            len(user_skill_categories & job_categories) / max(len(user_skill_categories | job_categories), 1)
+            if user_skill_categories
+            else 0
+        )
 
         # ── Location match ──
         job_loc = (c["location"] or "").lower()
@@ -369,7 +377,7 @@ async def _compute_recommendations(user_id: str, limit: int = 20) -> list[dict]:
         # ── Recency boost ──
         posted = c["date_posted"] or c["created_at"]
         if posted:
-            if hasattr(posted, 'tzinfo') and posted.tzinfo is None:
+            if hasattr(posted, "tzinfo") and posted.tzinfo is None:
                 posted = posted.replace(tzinfo=timezone.utc)
             days_old = max((now - posted).days, 0)
             recency = max(1.0 - (days_old / 60), 0.0)  # linear decay over 60 days
@@ -378,35 +386,37 @@ async def _compute_recommendations(user_id: str, limit: int = 20) -> list[dict]:
 
         # ── Final weighted score ──
         score = (
-            0.35 * vector_sim +
-            0.20 * skill_overlap +
-            0.10 * category_overlap +
-            0.10 * loc_score +
-            0.10 * sen_score +
-            0.10 * role_score +
-            0.05 * recency
+            0.35 * vector_sim
+            + 0.20 * skill_overlap
+            + 0.10 * category_overlap
+            + 0.10 * loc_score
+            + 0.10 * sen_score
+            + 0.10 * role_score
+            + 0.05 * recency
         )
 
-        scored.append({
-            "job_id": str(c["id"]),
-            "title": c["title"],
-            "url": c["url"],
-            "location": c["location"],
-            "company_name": c["company_name"],
-            "company_slug": c["company_slug"],
-            "source": c["source"],
-            "score": round(score, 4),
-            "signals": {
-                "vector_similarity": round(vector_sim, 4),
-                "skill_overlap": round(skill_overlap, 4),
-                "category_match": round(category_overlap, 4),
-                "location_match": round(loc_score, 2),
-                "seniority_match": round(sen_score, 2),
-                "role_match": round(role_score, 2),
-                "recency": round(recency, 2),
-            },
-            "matched_skills": sorted(skill_intersection)[:10],
-        })
+        scored.append(
+            {
+                "job_id": str(c["id"]),
+                "title": c["title"],
+                "url": c["url"],
+                "location": c["location"],
+                "company_name": c["company_name"],
+                "company_slug": c["company_slug"],
+                "source": c["source"],
+                "score": round(score, 4),
+                "signals": {
+                    "vector_similarity": round(vector_sim, 4),
+                    "skill_overlap": round(skill_overlap, 4),
+                    "category_match": round(category_overlap, 4),
+                    "location_match": round(loc_score, 2),
+                    "seniority_match": round(sen_score, 2),
+                    "role_match": round(role_score, 2),
+                    "recency": round(recency, 2),
+                },
+                "matched_skills": sorted(skill_intersection)[:10],
+            }
+        )
 
     scored.sort(key=lambda x: x["score"], reverse=True)
     return scored[:limit]

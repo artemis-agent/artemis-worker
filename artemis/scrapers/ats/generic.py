@@ -66,14 +66,16 @@ class GenericScraper(BaseScraper):
                 url = f"{base_url}{url}"
             job_id = str(item.get("id") or item.get("jobId") or item.get("requisitionId") or url)
 
-            jobs.append(ScrapedJob(
-                external_id=job_id,
-                title=title,
-                url=url,
-                location=str(item.get("location") or item.get("locationName") or ""),
-                description=str(item.get("description") or item.get("shortDescription") or ""),
-                source="generic_api",
-            ))
+            jobs.append(
+                ScrapedJob(
+                    external_id=job_id,
+                    title=title,
+                    url=url,
+                    location=str(item.get("location") or item.get("locationName") or ""),
+                    description=str(item.get("description") or item.get("shortDescription") or ""),
+                    source="generic_api",
+                )
+            )
         return jobs
 
     async def _scrape_html(self, careers_url: str, query: str, limit: int) -> list[ScrapedJob]:
@@ -100,17 +102,20 @@ class GenericScraper(BaseScraper):
 
             if not href.startswith("http"):
                 from urllib.parse import urljoin
+
                 href = urljoin(careers_url, href)
 
             if href in seen_urls:
                 continue
             seen_urls.add(href)
 
-            jobs.append(ScrapedJob(
-                external_id=href,
-                title=title,
-                url=href,
-                source="generic_html",
-            ))
+            jobs.append(
+                ScrapedJob(
+                    external_id=href,
+                    title=title,
+                    url=href,
+                    source="generic_html",
+                )
+            )
 
         return jobs

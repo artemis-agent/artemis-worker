@@ -23,49 +23,88 @@ _URL_PATTERNS: list[tuple[re.Pattern, str, callable]] = [
     (re.compile(r"boards\.greenhouse\.io/(\w+)", re.I), "greenhouse", lambda m: {"board_token": m.group(1)}),
     (re.compile(r"job-boards\.greenhouse\.io/(\w+)", re.I), "greenhouse", lambda m: {"board_token": m.group(1)}),
     (re.compile(r"jobs\.lever\.co/(\w[\w-]+)", re.I), "lever", lambda m: {"company": m.group(1)}),
-    (re.compile(r"(\w[\w-]*)\.wd(\d+)\.myworkdayjobs\.com(?:/(?:en-[A-Z]{2}/)?(\w[\w-]*))?", re.I), "workday",
-     lambda m: {"tenant": m.group(1), "wd_version": m.group(2), "site_id": m.group(3) or "External_Career_Site"}),
-    (re.compile(r"(\w[\w-]*)\.eightfold\.ai", re.I), "eightfold",
-     lambda m: {"company": m.group(1), "domain": f"{m.group(1)}.com"}),
-    (re.compile(r"api\.ashbyhq\.com/posting-api/job-board/(\w+)", re.I), "ashby", lambda m: {"board_token": m.group(1)}),
+    (
+        re.compile(r"(\w[\w-]*)\.wd(\d+)\.myworkdayjobs\.com(?:/(?:en-[A-Z]{2}/)?(\w[\w-]*))?", re.I),
+        "workday",
+        lambda m: {"tenant": m.group(1), "wd_version": m.group(2), "site_id": m.group(3) or "External_Career_Site"},
+    ),
+    (
+        re.compile(r"(\w[\w-]*)\.eightfold\.ai", re.I),
+        "eightfold",
+        lambda m: {"company": m.group(1), "domain": f"{m.group(1)}.com"},
+    ),
+    (
+        re.compile(r"api\.ashbyhq\.com/posting-api/job-board/(\w+)", re.I),
+        "ashby",
+        lambda m: {"board_token": m.group(1)},
+    ),
     (re.compile(r"jobs\.ashbyhq\.com/(\w[\w-]*)", re.I), "ashby", lambda m: {"board_token": m.group(1)}),
     (re.compile(r"(\w[\w-]*)\.icims\.com", re.I), "icims", lambda m: {"subdomain": m.group(1)}),
-    (re.compile(r"api\.smartrecruiters\.com/v1/companies/(\w+)", re.I), "smartrecruiters", lambda m: {"company_id": m.group(1)}),
-    (re.compile(r"jobs\.smartrecruiters\.com/(\w[\w-]*)", re.I), "smartrecruiters", lambda m: {"company_id": m.group(1)}),
+    (
+        re.compile(r"api\.smartrecruiters\.com/v1/companies/(\w+)", re.I),
+        "smartrecruiters",
+        lambda m: {"company_id": m.group(1)},
+    ),
+    (
+        re.compile(r"jobs\.smartrecruiters\.com/(\w[\w-]*)", re.I),
+        "smartrecruiters",
+        lambda m: {"company_id": m.group(1)},
+    ),
 ]
 
 # HTML signatures for each ATS platform
 _HTML_SIGNATURES = [
-    ("greenhouse", [
-        re.compile(r"boards\.greenhouse\.io/(\w+)", re.I),
-        re.compile(r"greenhouse\.io/embed", re.I),
-        re.compile(r'id="grnhse_app"', re.I),
-        re.compile(r'class="[^"]*greenhouse[^"]*"', re.I),
-    ]),
-    ("lever", [
-        re.compile(r"jobs\.lever\.co/(\w[\w-]+)", re.I),
-        re.compile(r"lever-jobs-embed", re.I),
-        re.compile(r"api\.lever\.co", re.I),
-    ]),
-    ("workday", [
-        re.compile(r"(\w[\w-]*)\.wd(\d+)\.myworkdayjobs\.com", re.I),
-        re.compile(r"myworkdayjobs\.com", re.I),
-        re.compile(r"workday\.com/.*career", re.I),
-    ]),
-    ("ashby", [
-        re.compile(r"ashbyhq\.com", re.I),
-        re.compile(r"ashby-job-posting", re.I),
-        re.compile(r"jobs\.ashbyhq\.com/(\w[\w-]*)", re.I),
-    ]),
-    ("eightfold", [
-        re.compile(r"(\w[\w-]*)\.eightfold\.ai", re.I),
-    ]),
-    ("icims", [
-        re.compile(r"(\w[\w-]*)\.icims\.com", re.I),
-    ]),
-    ("smartrecruiters", [
-        re.compile(r"smartrecruiters\.com", re.I),
-    ]),
+    (
+        "greenhouse",
+        [
+            re.compile(r"boards\.greenhouse\.io/(\w+)", re.I),
+            re.compile(r"greenhouse\.io/embed", re.I),
+            re.compile(r'id="grnhse_app"', re.I),
+            re.compile(r'class="[^"]*greenhouse[^"]*"', re.I),
+        ],
+    ),
+    (
+        "lever",
+        [
+            re.compile(r"jobs\.lever\.co/(\w[\w-]+)", re.I),
+            re.compile(r"lever-jobs-embed", re.I),
+            re.compile(r"api\.lever\.co", re.I),
+        ],
+    ),
+    (
+        "workday",
+        [
+            re.compile(r"(\w[\w-]*)\.wd(\d+)\.myworkdayjobs\.com", re.I),
+            re.compile(r"myworkdayjobs\.com", re.I),
+            re.compile(r"workday\.com/.*career", re.I),
+        ],
+    ),
+    (
+        "ashby",
+        [
+            re.compile(r"ashbyhq\.com", re.I),
+            re.compile(r"ashby-job-posting", re.I),
+            re.compile(r"jobs\.ashbyhq\.com/(\w[\w-]*)", re.I),
+        ],
+    ),
+    (
+        "eightfold",
+        [
+            re.compile(r"(\w[\w-]*)\.eightfold\.ai", re.I),
+        ],
+    ),
+    (
+        "icims",
+        [
+            re.compile(r"(\w[\w-]*)\.icims\.com", re.I),
+        ],
+    ),
+    (
+        "smartrecruiters",
+        [
+            re.compile(r"smartrecruiters\.com", re.I),
+        ],
+    ),
 ]
 
 
@@ -168,7 +207,7 @@ def _detect_from_html_text(html: str) -> DetectionResult | None:
             m = p.search(html)
             if m:
                 # Try to extract config using URL patterns on a wider context
-                context = html[max(0, m.start() - 50):m.end() + 300]
+                context = html[max(0, m.start() - 50) : m.end() + 300]
                 result = _match_url_patterns(context)
                 if result:
                     result.confidence = 0.75
@@ -201,14 +240,30 @@ def _extract_slug_from_url(url: str) -> str:
 async def _blind_probe(slug: str) -> DetectionResult | None:
     """Try common ATS API endpoints using the company slug."""
     probes = [
-        ("greenhouse", f"https://boards-api.greenhouse.io/v1/boards/{slug}/jobs",
-         {"board_token": slug}, lambda r: "jobs" in r.json()),
-        ("lever", f"https://api.lever.co/v0/postings/{slug}?mode=json&limit=1",
-         {"company": slug}, lambda r: isinstance(r.json(), list)),
-        ("ashby", f"https://api.ashbyhq.com/posting-api/job-board/{slug}",
-         {"board_token": slug}, lambda r: "jobs" in r.json()),
-        ("eightfold", f"https://{slug}.eightfold.ai/api/pcsx/search?domain={slug}.com&query=&start=0",
-         {"company": slug, "domain": f"{slug}.com"}, lambda r: len(r.json().get("data", {}).get("positions", [])) > 0),
+        (
+            "greenhouse",
+            f"https://boards-api.greenhouse.io/v1/boards/{slug}/jobs",
+            {"board_token": slug},
+            lambda r: "jobs" in r.json(),
+        ),
+        (
+            "lever",
+            f"https://api.lever.co/v0/postings/{slug}?mode=json&limit=1",
+            {"company": slug},
+            lambda r: isinstance(r.json(), list),
+        ),
+        (
+            "ashby",
+            f"https://api.ashbyhq.com/posting-api/job-board/{slug}",
+            {"board_token": slug},
+            lambda r: "jobs" in r.json(),
+        ),
+        (
+            "eightfold",
+            f"https://{slug}.eightfold.ai/api/pcsx/search?domain={slug}.com&query=&start=0",
+            {"company": slug, "domain": f"{slug}.com"},
+            lambda r: len(r.json().get("data", {}).get("positions", [])) > 0,
+        ),
     ]
 
     async with httpx.AsyncClient(
@@ -237,6 +292,7 @@ async def _probe_api(result: DetectionResult) -> DetectionResult:
         return result
     try:
         from artemis.scrapers.registry import get_scraper
+
         scraper = get_scraper(result.ats_type, result.config)
         async with scraper:
             jobs = await scraper.scrape(query="", limit=3)

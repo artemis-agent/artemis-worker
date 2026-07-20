@@ -10,6 +10,7 @@ def register(ats_type: ATSType):
         cls.ats_type = ats_type
         _REGISTRY[ats_type] = cls
         return cls
+
     return decorator
 
 

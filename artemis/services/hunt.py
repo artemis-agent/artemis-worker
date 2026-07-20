@@ -30,6 +30,7 @@ def _slugify(name: str) -> str:
 
 # ── User-triggered hunt ──────────────────────────────────────────────────
 
+
 async def hunt_company(company_name: str, careers_url: str | None = None) -> dict:
     """
     Hunt a single company: find careers page → detect ATS → create config → optionally scrape.
@@ -72,20 +73,24 @@ async def hunt_company(company_name: str, careers_url: str | None = None) -> dic
 
     # Persist to DB (the agent already wrote the YAML).
     async with async_session() as session:
-        stmt = pg_insert(Company).values(
-            name=company_name,
-            slug=slug,
-            ats_type=discovery.ats,
-            careers_url=discovery.careers_url or "",
-            ats_config=discovery.ats_config or {},
-            status=CompanyStatus.active,
-        ).on_conflict_do_update(
-            index_elements=["slug"],
-            set_={
-                "ats_type": discovery.ats,
-                "careers_url": discovery.careers_url or "",
-                "ats_config": discovery.ats_config or {},
-            },
+        stmt = (
+            pg_insert(Company)
+            .values(
+                name=company_name,
+                slug=slug,
+                ats_type=discovery.ats,
+                careers_url=discovery.careers_url or "",
+                ats_config=discovery.ats_config or {},
+                status=CompanyStatus.active,
+            )
+            .on_conflict_do_update(
+                index_elements=["slug"],
+                set_={
+                    "ats_type": discovery.ats,
+                    "careers_url": discovery.careers_url or "",
+                    "ats_config": discovery.ats_config or {},
+                },
+            )
         )
         await session.execute(stmt)
         await session.commit()
@@ -109,6 +114,7 @@ async def hunt_company(company_name: str, careers_url: str | None = None) -> dic
 
 
 # ── Batch hunt (from dynamic sources) ────────────────────────────────────
+
 
 async def hunt_from_source(source: str, limit: int = 50) -> dict:
     """Hunt companies from a source (crunchbase, yc, fortune500, cloud100)."""
@@ -168,6 +174,7 @@ async def hunt_from_source(source: str, limit: int = 50) -> dict:
 
 # ── Crunchbase enrichment ────────────────────────────────────────────────
 
+
 async def enrich_company_from_crunchbase(
     slug: str,
     *,
@@ -189,9 +196,7 @@ async def enrich_company_from_crunchbase(
     from artemis.discovery.sources import fetch_crunchbase_profile
 
     async with async_session() as session:
-        row = (await session.execute(
-            select(Company).where(Company.slug == slug)
-        )).scalar_one_or_none()
+        row = (await session.execute(select(Company).where(Company.slug == slug))).scalar_one_or_none()
         if row is None:
             return {"slug": slug, "status": "unknown_slug"}
 
@@ -219,9 +224,15 @@ async def enrich_company_from_crunchbase(
         # Apply only the CB-managed fields — don't clobber `name`,
         # `slug`, `careers_url`, `ats_config`, etc.
         for col in (
-            "crunchbase_permalink", "crunchbase_uuid", "crunchbase_image_id",
-            "website", "logo_url", "description",
-            "linkedin_url", "twitter_url", "facebook_url",
+            "crunchbase_permalink",
+            "crunchbase_uuid",
+            "crunchbase_image_id",
+            "website",
+            "logo_url",
+            "description",
+            "linkedin_url",
+            "twitter_url",
+            "facebook_url",
         ):
             val = profile.get(col)
             if val is not None:
@@ -261,8 +272,7 @@ async def bulk_enrich_companies_from_crunchbase(
             q = q.where(Company.crunchbase_synced_at.is_(None))
         slugs = [r[0] for r in (await session.execute(q)).all()]
 
-    counts = {"enriched": 0, "not_found": 0, "already_synced": 0,
-              "error": 0, "unknown_slug": 0}
+    counts = {"enriched": 0, "not_found": 0, "already_synced": 0, "error": 0, "unknown_slug": 0}
     processed: list[dict] = []
     for i, slug in enumerate(slugs):
         if i > 0:
@@ -270,7 +280,7 @@ async def bulk_enrich_companies_from_crunchbase(
         r = await enrich_company_from_crunchbase(slug, force=force)
         counts[r["status"]] = counts.get(r["status"], 0) + 1
         processed.append(r)
-        logger.info(f"cb-enrich {i+1}/{len(slugs)} {slug}: {r['status']}")
+        logger.info(f"cb-enrich {i + 1}/{len(slugs)} {slug}: {r['status']}")
         if r["status"] == "error":
             logger.warning("cb-enrich: stopping early after error")
             break
@@ -278,6 +288,7 @@ async def bulk_enrich_companies_from_crunchbase(
 
 
 # ── Autonomous discovery agent (BFS + AI expansion) ──────────────────────
+
 
 async def run_discovery_agent(seed_sources: list[str] | None = None, max_companies: int = 100) -> dict:
     """
@@ -379,6 +390,7 @@ async def _expand_via_search(limit: int) -> dict:
 
 
 # ── Config file management ────────────────────────────────────────────────
+
 
 def _save_config(slug: str, config_data: dict):
     """Save company config as YAML file."""

@@ -16,9 +16,7 @@ from artemis.core.config import settings
 _pools: dict[int, aioredis.Redis] = {}
 
 # Detect Celery context the same way core/database.py does
-_in_celery = bool(os.environ.get("CELERY_WORKER")) or any(
-    "celery" in arg.lower() for arg in os.sys.argv
-)
+_in_celery = bool(os.environ.get("CELERY_WORKER")) or any("celery" in arg.lower() for arg in os.sys.argv)
 
 
 async def get_redis() -> aioredis.Redis:
