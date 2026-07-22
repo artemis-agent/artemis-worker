@@ -31,7 +31,6 @@ class ATSType(str, enum.Enum):
     eightfold = "eightfold"
     icims = "icims"
     smartrecruiters = "smartrecruiters"
-    taleo = "taleo"
     custom = "custom"
 
 

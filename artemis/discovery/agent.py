@@ -38,6 +38,7 @@ from artemis.core.ai import get_ai_client
 from artemis.core.config import settings
 from artemis.core.prompts import EXTRACT_ATS_FROM_SEARCH, VERIFY_COMPANY_MATCH
 from artemis.discovery import probe as probe_mod
+from artemis.services.hunt import _slugify
 from artemis.discovery.search import (
     SearchResult,
     WebSearch,
@@ -175,12 +176,6 @@ class DiscoveryResult:
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────
-
-
-def _slugify(name: str) -> str:
-    s = name.lower().strip()
-    s = re.sub(r"[^a-z0-9]+", "-", s)
-    return s.strip("-")
 
 
 def _flat(text: str) -> str:

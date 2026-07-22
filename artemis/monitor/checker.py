@@ -16,15 +16,9 @@ from urllib.parse import urlparse
 import httpx
 
 from artemis.core.models import ATSType
+from artemis.scrapers.base import USER_AGENTS
 
 logger = logging.getLogger("artemis.monitor")
-
-USER_AGENTS = [
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
-    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
-]
-
 # Patterns that indicate a job has been removed (case-insensitive)
 INACTIVE_TEXT_PATTERNS = [
     r"no longer (available|accepting)",

@@ -50,10 +50,6 @@ class Settings(BaseSettings):
     monitor_interval_seconds: int = Field(default=120, description="Cron interval for monitor worker")
     monitor_max_consecutive_failures: int = Field(default=5, description="Mark stale after this many errors")
 
-    # Webhook
-    webhook_url: str = Field(default="", description="URL to POST job status changes to")
-    webhook_secret: str = Field(default="", description="HMAC-SHA256 secret for webhook signing")
-
     # S3 / MinIO (resume storage)
     s3_endpoint: str = Field(default="http://localhost:9000", description="MinIO/S3 endpoint")
     s3_access_key: str = Field(default="artemis", description="S3 access key")

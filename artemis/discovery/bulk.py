@@ -22,6 +22,8 @@ import re
 import time
 from urllib.parse import urlparse
 
+from artemis.services.hunt import _slugify
+
 import yaml
 
 from artemis.core.config import settings
@@ -425,11 +427,6 @@ def _candidates_not_yet_known(limit: int) -> list[str]:
         pool.append(entry["name"])
     for entry in FORTUNE_500_COMPANIES:
         pool.append(entry["name"])
-
-    def _slugify(name: str) -> str:
-        s = name.lower().strip()
-        s = re.sub(r"[^a-z0-9]+", "-", s)
-        return s.strip("-")
 
     out: list[str] = []
     seen: set[str] = set()

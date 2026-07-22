@@ -389,15 +389,6 @@ def normalize_skills(skills: list[str]) -> list[str]:
     return result
 
 
-def get_related_skills(skill: str) -> list[str]:
-    """Get related skills for a given skill."""
-    skill_lower = skill.lower()
-    for entry in SKILL_TAXONOMY:
-        if entry["canonical"].lower() == skill_lower or skill_lower in [a.lower() for a in entry["aliases"]]:
-            return entry["related"]
-    return []
-
-
 def get_skill_category(skill: str) -> str:
     """Get the category of a skill."""
     skill_lower = skill.lower()
