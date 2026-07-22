@@ -7,11 +7,9 @@ Two modes:
 """
 
 import logging
-import pathlib
 import re
 from datetime import datetime, timezone
 
-import yaml
 from sqlalchemy import select
 from sqlalchemy.dialects.postgresql import insert as pg_insert
 
@@ -387,17 +385,3 @@ async def _expand_via_search(limit: int) -> dict:
             logger.debug(f"expansion search failed for '{query}': {e}")
 
     return {"discovered": discovered, "failed": failed}
-
-
-# ── Config file management ────────────────────────────────────────────────
-
-
-def _save_config(slug: str, config_data: dict):
-    """Save company config as YAML file."""
-    configs_dir = pathlib.Path(settings.configs_dir)
-    configs_dir.mkdir(parents=True, exist_ok=True)
-
-    filepath = configs_dir / f"{slug}.yaml"
-    with open(filepath, "w") as f:
-        yaml.dump(config_data, f, default_flow_style=False, sort_keys=False)
-    logger.info(f"saved config: {filepath}")
